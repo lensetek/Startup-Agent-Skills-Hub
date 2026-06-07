@@ -122,18 +122,11 @@
                     <div class="flex items-center justify-between mb-4 border-b border-themeBorderCard pb-4">
                         <div class="flex items-center space-x-2">
                             <span class="w-3.5 h-3.5 rounded-full bg-red-500/80"></span>
-                <div class="bg-themeCard border border-themeBorderCard rounded-2xl p-6 shadow-themeCard relative overflow-hidden backdrop-blur-md">
-                    <!-- Glow decoration inside card -->
-                    <div class="absolute -top-12 -right-12 w-24 h-24 bg-accentBlue/20 rounded-full blur-2xl"></div>
-                    
-                    <div class="flex items-center justify-between mb-4 border-b border-themeBorderCard pb-4">
-                        <div class="flex items-center space-x-2">
-                            <span class="w-3.5 h-3.5 rounded-full bg-red-500/80"></span>
                             <span class="w-3.5 h-3.5 rounded-full bg-yellow-500/80"></span>
                             <span class="w-3.5 h-3.5 rounded-full bg-green-500/80"></span>
                             <span class="text-xs text-themeTextMuted font-mono ml-2">Terminal - Quick Install</span>
                         </div>
-                        <div class="text-xs text-themeTextSecondary font-medium">Git / Prompt</div>
+                        <div class="text-xs text-themeTextSecondary font-medium hidden sm:block">Git / Prompt</div>
                     </div>
 
                     <!-- Interactive Command steps -->
@@ -145,7 +138,7 @@
                             </div>
                             <span class="text-themeTextMuted block text-xs mb-1">// Clone the skill repository (run this once)</span>
                             <div class="bg-themeTerminal rounded-xl p-4 flex items-center justify-between border border-themeBorderCard group hover:border-accentBlue/50 transition-all duration-300">
-                                <span class="text-accentBlue select-all">git clone https://github.com/lensetek/Startup-Agent-Skills-Hub.git</span>
+                                <span class="text-accentBlue select-all break-all flex-1 mr-2">git clone https://github.com/lensetek/Startup-Agent-Skills-Hub.git</span>
                                 <button onclick="copyCommand('git clone https://github.com/lensetek/Startup-Agent-Skills-Hub.git', this)" class="text-themeTextSecondary hover:text-themeText p-2 rounded-lg hover:bg-themeTerminal/80 transition-all duration-200" title="Copy to clipboard">
                                     <i class="fa-regular fa-copy"></i>
                                 </button>
@@ -166,7 +159,7 @@
                             </div>
                             <span class="text-themeTextMuted block text-xs mb-1">// Already cloned before? Just pull the latest updates</span>
                             <div class="bg-themeTerminal rounded-xl p-4 flex items-center justify-between border border-themeBorderCard group hover:border-accentGreen/50 transition-all duration-300">
-                                <span class="text-accentGreen select-all">cd Startup-Agent-Skills-Hub && git pull</span>
+                                <span class="text-accentGreen select-all break-all flex-1 mr-2">cd Startup-Agent-Skills-Hub && git pull</span>
                                 <button onclick="copyCommand('cd Startup-Agent-Skills-Hub && git pull', this)" class="text-themeTextSecondary hover:text-themeText p-2 rounded-lg hover:bg-themeTerminal/80 transition-all duration-200" title="Copy to clipboard">
                                     <i class="fa-regular fa-copy"></i>
                                 </button>
@@ -176,7 +169,7 @@
                         <div>
                             <span class="text-themeTextMuted block text-xs mb-1">// Ask your agent to install these as skills</span>
                             <div class="bg-themeTerminal rounded-xl p-4 flex items-center justify-between border border-themeBorderCard group hover:border-accentPurple/50 transition-all duration-300">
-                                <span class="text-accentPurple select-all">Install every skills/*/SKILL.md folder in this repository as callable skills using each folder name.</span>
+                                <span class="text-accentPurple select-all break-all flex-1 mr-2">Install every skills/*/SKILL.md folder in this repository as callable skills using each folder name.</span>
                                 <button onclick="copyCommand('Install every skills/*/SKILL.md folder in this repository as callable skills using each folder name.', this)" class="text-themeTextSecondary hover:text-themeText p-2 rounded-lg hover:bg-themeTerminal/80 transition-all duration-200" title="Copy to clipboard">
                                     <i class="fa-regular fa-copy"></i>
                                 </button>
@@ -186,7 +179,7 @@
                         <div>
                             <span class="text-themeTextMuted block text-xs mb-1">// Starter example: use the first strategy skill</span>
                             <div class="bg-themeTerminal rounded-xl p-4 flex items-center justify-between border border-themeBorderCard group hover:border-accentPink/50 transition-all duration-300">
-                                <span class="text-accentPink select-all">Use the ceo-strategy-planner skill to evaluate my startup idea and create a CEO Vision Document.</span>
+                                <span class="text-accentPink select-all break-all flex-1 mr-2">Use the ceo-strategy-planner skill to evaluate my startup idea and create a CEO Vision Document.</span>
                                 <button onclick="copyCommand('Use the ceo-strategy-planner skill to evaluate my startup idea and create a CEO Vision Document.', this)" class="text-themeTextSecondary hover:text-themeText p-2 rounded-lg hover:bg-themeTerminal/80 transition-all duration-200" title="Copy to clipboard">
                                     <i class="fa-regular fa-copy"></i>
                                 </button>

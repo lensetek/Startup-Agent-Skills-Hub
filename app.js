@@ -362,3 +362,47 @@ function showToast(message) {
     }
 }
 
+// Installation Tab Switcher
+function switchInstallTab(tabType) {
+    const npxTab = document.getElementById('installTab-npx');
+    const gitTab = document.getElementById('installTab-git');
+    const npxPanel = document.getElementById('installPanel-npx');
+    const gitPanel = document.getElementById('installPanel-git');
+
+    if (tabType === 'npx') {
+        npxTab.className = "px-4 py-2 text-xs font-bold font-mono tracking-wider border-b-2 border-accentBlue text-accentBlue transition-all duration-200";
+        gitTab.className = "px-4 py-2 text-xs font-bold font-mono tracking-wider border-b-2 border-transparent text-themeTextMuted hover:text-themeText transition-all duration-200";
+        npxPanel.classList.remove('hidden');
+        gitPanel.classList.add('hidden');
+    } else {
+        gitTab.className = "px-4 py-2 text-xs font-bold font-mono tracking-wider border-b-2 border-accentBlue text-accentBlue transition-all duration-200";
+        npxTab.className = "px-4 py-2 text-xs font-bold font-mono tracking-wider border-b-2 border-transparent text-themeTextMuted hover:text-themeText transition-all duration-200";
+        gitPanel.classList.remove('hidden');
+        npxPanel.classList.add('hidden');
+    }
+}
+
+// Update NPX command input display text
+function updateInstallCommand(command, buttonEl) {
+    const codeDisplay = document.getElementById('npxCommandDisplay');
+    if (codeDisplay) {
+        codeDisplay.textContent = command;
+        
+        // Update copy button onclick action
+        const copyBtn = codeDisplay.nextElementSibling;
+        if (copyBtn) {
+            copyBtn.setAttribute('onclick', `copyCommand('${command}', this)`);
+        }
+    }
+
+    // Toggle button selection styling
+    const buttons = buttonEl.parentNode.querySelectorAll('button');
+    buttons.forEach(btn => {
+        btn.classList.remove('border-accentBlue/60', 'text-accentBlue');
+        btn.classList.add('border-themeBorderCard', 'text-themeText');
+    });
+    buttonEl.classList.remove('border-themeBorderCard', 'text-themeText');
+    buttonEl.classList.add('border-accentBlue/60', 'text-accentBlue');
+}
+
+

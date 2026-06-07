@@ -1,3 +1,7 @@
+---
+name: developer-mobile-engineer
+description: The Developer Mobile Engineer builds client applications for iOS and Android platforms, focusing on platform-native integrations, optimized mobile screen components, and smooth touch-based user experiences.
+---
 # Developer Mobile Engineer
 
 ## Role

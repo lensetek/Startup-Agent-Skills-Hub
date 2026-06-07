@@ -78,23 +78,87 @@ This repository is a modular collection of **Skills** for **Startup Agents** —
 
 ---
 
-## Instalasi via Git & Prompt / Installation via Git & Prompt
+## Panduan Instalasi / Installation Guide
 
 ### 🇮🇩 Bahasa Indonesia
+
+#### Cara 1: Menggunakan CLI Bawaan (Node.js)
+Gunakan skrip CLI bawaan (`bin/cli.js`) untuk mempermudah pemasangan secara otomatis ke folder proyek atau direktori agen Anda:
+
+- **Instalasi Lokal (ke dalam proyek aktif Anda):**
+  ```bash
+  node bin/cli.js init
+  ```
+  *(Ini akan menyalin folder `skills/` langsung ke direktori aktif proyek Anda).*
+
+- **Instalasi Global (untuk semua workspace agen tertentu):**
+  - **Gemini / Antigravity:**
+    ```bash
+    node bin/cli.js install-plugin --target antigravity
+    ```
+  - **Claude Code:**
+    ```bash
+    node bin/cli.js install-plugin --target claude
+    ```
+  - **Codex:**
+    ```bash
+    node bin/cli.js install-plugin --target codex
+    ```
+  - **Folder Kustom:**
+    ```bash
+    node bin/cli.js install-plugin --path <folder-tujuan>
+    ```
+
+---
+
+#### Cara 2: Manual via Git & Prompt Agen
+Jika Anda ingin mengkloning repositori ini secara manual atau melakukan pembaruan (`git pull`):
 
 1.  **Kloning Repositori:**
     ```bash
     git clone https://github.com/lensetek/Startup-Agent-Skills-Hub.git
     ```
-    *(Atau gunakan `git pull` di dalam folder jika sudah pernah clone sebelumnya).*
+    *(Atau jalankan `git pull` di dalam folder jika sebelumnya sudah pernah kloning).*
 
-2.  **Gunakan Prompt:**
-    Berikan instruksi berikut kepada agen AI Anda:
-    > *"Baca folder skill dari repositori Startup-Agent-Skills-Hub yang sudah saya clone, lalu muat dan daftarkan seluruh skill ke dalam sistem."*
+2.  **Berikan Prompt ke Agen Anda:**
+    Gunakan prompt berikut agar agen mendaftarkan ke-16 skill dengan benar:
+    > *"Salin seluruh folder di dalam direktori `skills/` dari repositori `Startup-Agent-Skills-Hub` yang sudah saya clone/pull, lalu daftarkan ke dalam sistem sebagai skill yang dapat dipanggil menggunakan nama foldernya masing-masing beserta berkas `SKILL.md` dan YAML frontmatter di dalamnya."*
 
 ---
 
 ### 🇬🇧 English
+
+#### Method 1: Using Bundled CLI (Node.js)
+Use the bundled CLI script (`bin/cli.js`) to automatically install the skills into your project folder or agent directory:
+
+- **Local Installation (into your active project folder):**
+  ```bash
+  node bin/cli.js init
+  ```
+  *(This will copy the `skills/` directory directly into your current working directory).*
+
+- **Global Installation (for all workspaces of a specific agent):**
+  - **Gemini / Antigravity:**
+    ```bash
+    node bin/cli.js install-plugin --target antigravity
+    ```
+  - **Claude Code:**
+    ```bash
+    node bin/cli.js install-plugin --target claude
+    ```
+  - **Codex:**
+    ```bash
+    node bin/cli.js install-plugin --target codex
+    ```
+  - **Custom Folder:**
+    ```bash
+    node bin/cli.js install-plugin --path <custom-folder>
+    ```
+
+---
+
+#### Method 2: Manual via Git & Agent Prompt
+If you prefer to clone the repository manually or fetch updates (`git pull`):
 
 1.  **Clone the Repository:**
     ```bash
@@ -102,9 +166,9 @@ This repository is a modular collection of **Skills** for **Startup Agents** —
     ```
     *(Or run `git pull` inside the folder if you have previously cloned it).*
 
-2.  **Use Prompt:**
-    Give the following prompt to your AI agent:
-    > *"Read the skills folder from the cloned Startup-Agent-Skills-Hub repository, then load and register all skills into your system."*
+2.  **Prompt Your Agent:**
+    Give the following prompt to your AI agent to register all 16 skills correctly:
+    > *"Copy all subdirectories inside the `skills/` folder of the cloned `Startup-Agent-Skills-Hub` repository, then register each of them as a callable skill using their folder names along with their `SKILL.md` files and YAML frontmatter."*
 
 ---
 

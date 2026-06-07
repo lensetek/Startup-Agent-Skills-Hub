@@ -1,3 +1,7 @@
+---
+name: startup-finance-planner
+description: The Startup Finance Planner runs unit economics projections, hosting/API cost estimates, and pricing structure models to ensure the product idea is financially sustainable and viable.
+---
 # Startup Finance Planner
 
 ## Role

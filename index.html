@@ -129,50 +129,42 @@
                         <div class="text-xs text-themeTextSecondary font-medium hidden sm:block">Git / Prompt</div>
                     </div>
 
-                    <!-- Interactive Command steps -->
-                    <div class="space-y-4 text-left font-mono">
-                        <!-- SECTION: First Install -->
+                    <!-- Tabs for CLI vs Manual -->
+                    <div class="flex border-b border-themeBorderCard mb-4">
+                        <button onclick="switchInstallTab('npx')" id="installTab-npx" class="px-4 py-2 text-xs font-bold font-mono tracking-wider border-b-2 border-accentBlue text-accentBlue transition-all duration-200">
+                            CLI INSTALLER (NODE)
+                        </button>
+                        <button onclick="switchInstallTab('git')" id="installTab-git" class="px-4 py-2 text-xs font-bold font-mono tracking-wider border-b-2 border-transparent text-themeTextMuted hover:text-themeText transition-all duration-200">
+                            MANUAL IMPORT (GIT)
+                        </button>
+                    </div>
+
+                    <!-- CLI Install Content -->
+                    <div id="installPanel-npx" class="space-y-4 text-left font-mono">
                         <div>
-                            <div class="flex items-center gap-2 mb-2">
-                                <span class="inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-widest bg-accentBlue/15 text-accentBlue border border-accentBlue/25">Step 1 — First Install</span>
-                            </div>
-                            <span class="text-themeTextMuted block text-xs mb-1">// Clone the skill repository (run this once)</span>
+                            <span class="text-themeTextMuted block text-xs mb-1">// Option A: Local project initialization (inside your existing project)</span>
                             <div class="bg-themeTerminal rounded-xl p-4 flex items-center justify-between border border-themeBorderCard group hover:border-accentBlue/50 transition-all duration-300">
-                                <span class="text-accentBlue select-all break-all flex-1 min-w-0 mr-2">git clone https://github.com/lensetek/Startup-Agent-Skills-Hub.git</span>
-                                <button onclick="copyCommand('git clone https://github.com/lensetek/Startup-Agent-Skills-Hub.git', this)" class="text-themeTextSecondary hover:text-themeText p-2 rounded-lg hover:bg-themeTerminal/80 transition-all duration-200 flex-shrink-0" title="Copy to clipboard">
-                                    <i class="fa-regular fa-copy"></i>
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- Divider between install and update -->
-                        <div class="flex items-center gap-3 py-1">
-                            <div class="flex-1 h-px bg-themeBorderCard"></div>
-                            <span class="text-[10px] text-themeTextMuted uppercase tracking-widest font-semibold">or, if already cloned</span>
-                            <div class="flex-1 h-px bg-themeBorderCard"></div>
-                        </div>
-
-                        <!-- SECTION: Update Later -->
-                        <div>
-                            <div class="flex items-center gap-2 mb-2">
-                                <span class="inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-widest bg-accentGreen/15 text-accentGreen border border-accentGreen/25">Update — Pull Latest</span>
-                            </div>
-                            <span class="text-themeTextMuted block text-xs mb-1">// Already cloned before? Just pull the latest updates</span>
-                            <div class="bg-themeTerminal rounded-xl p-4 flex items-center justify-between border border-themeBorderCard group hover:border-accentGreen/50 transition-all duration-300">
-                                <span class="text-accentGreen select-all break-all flex-1 min-w-0 mr-2">cd Startup-Agent-Skills-Hub && git pull</span>
-                                <button onclick="copyCommand('cd Startup-Agent-Skills-Hub && git pull', this)" class="text-themeTextSecondary hover:text-themeText p-2 rounded-lg hover:bg-themeTerminal/80 transition-all duration-200 flex-shrink-0" title="Copy to clipboard">
+                                <span class="text-accentBlue select-all break-all flex-1 min-w-0 mr-2">node bin/cli.js init</span>
+                                <button onclick="copyCommand('node bin/cli.js init', this)" class="text-themeTextSecondary hover:text-themeText p-2 rounded-lg hover:bg-themeTerminal/80 transition-all duration-200 flex-shrink-0" title="Copy to clipboard">
                                     <i class="fa-regular fa-copy"></i>
                                 </button>
                             </div>
                         </div>
 
                         <div>
-                            <span class="text-themeTextMuted block text-xs mb-1">// Ask your agent to install these as skills</span>
+                            <span class="text-themeTextMuted block text-xs mb-1">// Option B: Global installation for Antigravity, Claude Code, or Codex</span>
                             <div class="bg-themeTerminal rounded-xl p-4 flex items-center justify-between border border-themeBorderCard group hover:border-accentPurple/50 transition-all duration-300">
-                                <span class="text-accentPurple select-all break-all flex-1 min-w-0 mr-2">Install every skills/*/SKILL.md folder in this repository as callable skills using each folder name.</span>
-                                <button onclick="copyCommand('Install every skills/*/SKILL.md folder in this repository as callable skills using each folder name.', this)" class="text-themeTextSecondary hover:text-themeText p-2 rounded-lg hover:bg-themeTerminal/80 transition-all duration-200 flex-shrink-0" title="Copy to clipboard">
+                                <span id="npxCommandDisplay" class="text-accentPurple select-all break-all flex-1 min-w-0 mr-2">node bin/cli.js install-plugin --target antigravity</span>
+                                <button onclick="copyCommand('node bin/cli.js install-plugin --target antigravity', this)" class="text-themeTextSecondary hover:text-themeText p-2 rounded-lg hover:bg-themeTerminal/80 transition-all duration-200 flex-shrink-0" title="Copy to clipboard">
                                     <i class="fa-regular fa-copy"></i>
                                 </button>
+                            </div>
+                            <div class="mt-2 flex flex-wrap gap-2 items-center">
+                                <span class="text-[10px] text-themeTextMuted">Select Target:</span>
+                                <button onclick="updateInstallCommand('node bin/cli.js install-plugin --target antigravity', this)" class="px-2 py-0.5 rounded bg-themeTerminal border border-accentBlue/60 text-[10px] text-accentBlue transition-all duration-200 font-bold">--target antigravity</button>
+                                <button onclick="updateInstallCommand('node bin/cli.js install-plugin --target claude', this)" class="px-2 py-0.5 rounded bg-themeTerminal border border-themeBorderCard hover:border-accentBlue/50 text-[10px] text-themeText transition-all duration-200">--target claude</button>
+                                <button onclick="updateInstallCommand('node bin/cli.js install-plugin --target codex', this)" class="px-2 py-0.5 rounded bg-themeTerminal border border-themeBorderCard hover:border-accentBlue/50 text-[10px] text-themeText transition-all duration-200">--target codex</button>
+                                <button onclick="updateInstallCommand('node bin/cli.js install-plugin --path <custom-folder>', this)" class="px-2 py-0.5 rounded bg-themeTerminal border border-themeBorderCard hover:border-accentBlue/50 text-[10px] text-themeText transition-all duration-200">--path &lt;custom-folder&gt;</button>
                             </div>
                         </div>
 
@@ -184,9 +176,39 @@
                                     <i class="fa-regular fa-copy"></i>
                                 </button>
                             </div>
-                            <p class="mt-2 text-xs text-themeTextSecondary leading-relaxed">
-                                This starter skill is used first to turn a raw idea into vision, target users, value proposition, a 3-phase roadmap, and success metrics.
-                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Git Install Content -->
+                    <div id="installPanel-git" class="space-y-4 text-left font-mono hidden">
+                        <div>
+                            <span class="text-themeTextMuted block text-xs mb-1">// 1. Clone the repository into your system</span>
+                            <div class="bg-themeTerminal rounded-xl p-4 flex items-center justify-between border border-themeBorderCard group hover:border-accentBlue/50 transition-all duration-300">
+                                <span class="text-accentBlue select-all break-all flex-1 min-w-0 mr-2">git clone https://github.com/lensetek/Startup-Agent-Skills-Hub.git</span>
+                                <button onclick="copyCommand('git clone https://github.com/lensetek/Startup-Agent-Skills-Hub.git', this)" class="text-themeTextSecondary hover:text-themeText p-2 rounded-lg hover:bg-themeTerminal/80 transition-all duration-200 flex-shrink-0" title="Copy to clipboard">
+                                    <i class="fa-regular fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <span class="text-themeTextMuted block text-xs mb-1">// or, pull updates inside your cloned directory</span>
+                            <div class="bg-themeTerminal rounded-xl p-4 flex items-center justify-between border border-themeBorderCard group hover:border-accentGreen/50 transition-all duration-300">
+                                <span class="text-accentGreen select-all break-all flex-1 min-w-0 mr-2">cd Startup-Agent-Skills-Hub && git pull</span>
+                                <button onclick="copyCommand('cd Startup-Agent-Skills-Hub && git pull', this)" class="text-themeTextSecondary hover:text-themeText p-2 rounded-lg hover:bg-themeTerminal/80 transition-all duration-200 flex-shrink-0" title="Copy to clipboard">
+                                    <i class="fa-regular fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <span class="text-themeTextMuted block text-xs mb-1">// 2. Ask your AI agent to register all 16 skills recursively</span>
+                            <div class="bg-themeTerminal rounded-xl p-4 flex items-center justify-between border border-themeBorderCard group hover:border-accentPurple/50 transition-all duration-300">
+                                <span class="text-accentPurple select-all break-all flex-1 min-w-0 mr-2">Copy all subdirectories inside the 'skills/' folder of the cloned Startup-Agent-Skills-Hub repository, then register each of them as a callable skill using their folder names along with their 'SKILL.md' files and YAML frontmatter.</span>
+                                <button onclick="copyCommand('Copy all subdirectories inside the \'skills/\' folder of the cloned Startup-Agent-Skills-Hub repository, then register each of them as a callable skill using their folder names along with their \'SKILL.md\' files and YAML frontmatter.', this)" class="text-themeTextSecondary hover:text-themeText p-2 rounded-lg hover:bg-themeTerminal/80 transition-all duration-200 flex-shrink-0" title="Copy to clipboard">
+                                    <i class="fa-regular fa-copy"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>

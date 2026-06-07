@@ -1,3 +1,7 @@
+---
+name: ceo-strategy-planner
+description: The CEO Strategy Planner defines the startup's core vision, high-level business goals, target market positioning, and strategic roadmaps.
+---
 # CEO Strategy Planner
 
 ## Role

@@ -1,3 +1,7 @@
+---
+name: prd-generator
+description: The PRD Generator takes the product scope, objectives, and user flows defined by the Product Manager and drafts a detailed, structured, and developer-ready Product Requirement Document (PRD).
+---
 # PRD Generator
 
 ## Role

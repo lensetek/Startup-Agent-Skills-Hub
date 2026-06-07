@@ -1,3 +1,7 @@
+---
+name: developer-fullstack-engineer
+description: The Developer Fullstack Engineer handles both the client-side user interface (frontend) and the server-side infrastructure (backend/database), optimizing delivery speed for lean startup MVP launches.
+---
 # Developer Fullstack Engineer
 
 ## Role

@@ -6,131 +6,196 @@
 
 ## Bahasa Indonesia
 
-Repositori ini adalah kumpulan **Skills** khusus untuk **Startup Agent** (Asisten Agen Peneliti). Kumpulan skill ini dipasang langsung ke dalam sistem plugin `science` untuk membekali agen AI dengan prosedur metodologis ilmiah yang kokoh dalam mencari, menganalisis, mengekstrak, dan mengevaluasi literatur akademis serta paten teknologi secara valid tanpa halusinasi.
+Repositori ini adalah kumpulan **Skills** modular untuk **Startup Agent** — sebuah tim virtual agen AI yang dirancang untuk mengotomatiskan seluruh siklus hidup startup digital, mulai dari perencanaan strategi bisnis, desain produk, pengembangan perangkat lunak, hingga peluncuran dan pemasaran. Dilengkapi juga dengan skill riset ilmiah untuk validasi ide dan analisis literatur akademis.
 
-### Kumpulan Skill yang Tersedia (15 Skills)
+### Kumpulan Skill yang Tersedia (32 Skills)
 
-#### 🚀 Orkestrator Utama (Starter Skill)
-*   **[research-orchestrator](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/research_orchestrator/SKILL.md)**: Pintu masuk utama untuk menjalankan alur kerja riset 4 fase otomatis penuh secara sekuensial.
+#### 🏢 Divisi Strategi & Produk (Product & Strategy)
+1.  **ceo-strategy-planner** — Menyusun visi CEO, misi bisnis, segmentasi target pengguna, dan peta jalan 3 fase.
+2.  **market-analyst** — Analisis kompetitor, matriks harga, celah pasar, dan laporan peluang.
+3.  **product-manager** — Manajemen fitur produk dengan prioritasi MoSCoW dan lingkup MVP.
+4.  **prd-generator** — Menghasilkan dokumen Product Requirements Document (PRD) final.
+5.  **designer-uiux-specialist** — Merancang wireframe, desain antarmuka, dan panduan UI/UX.
 
-#### 📁 Fase 1 — Discovery & Framing (Masalah)
-1.  **[discover-phenomenon-and-gap](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/discover_phenomenon_and_gap/SKILL.md)**: Eksplorasi tren fenomena baru, anomali, dan pemetaan celah ilmiah (*research gap*) formal.
-2.  **[research-question-builder](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/research_question_builder/SKILL.md)**: Mengubah celah riset menjadi Pertanyaan Riset (RQ), tujuan penelitian, kontribusi, dan batasan ruang lingkup (*scope limitation*).
-3.  **[hypothesis-or-proposition-builder](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/hypothesis_or_proposition_builder/SKILL.md)**: Menyusun pernyataan hipotesis/proposisi logis disertai diagram Mermaid kerangka konseptual.
+#### 💻 Divisi Pengembangan (Development)
+6.  **developer-scrum-master** — Mengelola sprint, membuat backlog tiket dengan Acceptance Criteria.
+7.  **developer-frontend-engineer** — Membangun antarmuka pengguna (frontend).
+8.  **developer-backend-engineer** — Membangun logika server dan API (backend).
+9.  **developer-fullstack-engineer** — Pengembangan end-to-end (frontend + backend).
+10. **developer-mobile-engineer** — Pengembangan aplikasi mobile.
+11. **developer-database-specialist** — Desain skema database, query, dan optimasi.
+12. **developer-qa-reviewer** — Pengujian kualitas kode, scanning API key di client-side.
 
-#### 📁 Fase 2 — Research Methodology (Perencanaan)
-4.  **[research-design-planner](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/research_design_planner/SKILL.md)**: Merancang desain metode (kuantitatif, kualitatif, mixed-method, komputasional AI/ML) beserta skenario validasi, pengujian robustness, dan studi ablasi.
+#### 🚀 Divisi DevOps & Keuangan (DevOps & Finance)
+13. **devops-git-guard** — Audit keamanan pre-push: cek credential, validasi `.gitignore`, dan pembaruan dokumentasi.
+14. **startup-finance-planner** — Model keuangan startup: unit economics, proyeksi biaya backend & API.
 
-#### 📁 Fase 3 — Literature Intelligence (Kajian & Validasi)
-5.  **[literature-review-generator](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/literature_review_generator/SKILL.md)**: Penyusunan draf tinjauan pustaka bertema dengan mode khusus (Narrative, SLR, Thematic, Chronological, Critical) dan Peta Argumen.
-6.  **[extract-methodology](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/extract_methodology/SKILL.md)**: Membedah paper untuk ekstraksi 10 komponen teknis wajib (tujuan, parameter, dataset, dll.).
-7.  **[source-quality-appraiser](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/source_quality_appraiser/SKILL.md)**: Menilai kuartil jurnal (Q1-Q4), peringkat konferensi (CORE), bias metodologis, dan status kelayakan rujukan.
-8.  **[citation-and-reference-validator](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/citation_and_reference_validator/SKILL.md)**: Audit keaslian rujukan (DOI) dan memvalidasi dukungan kontekstual kalimat rujukan (mencegah salah sitasi).
-9.  **[paper-matrix-builder](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/paper_matrix_builder/SKILL.md)**: Mengotomatiskan pembuatan tabel ringkasan komparasi State-of-the-Art (SotA) dan peta bukti (*evidence map*).
+#### 📣 Divisi Pemasaran (Marketing & Sales)
+15. **marketing-content-planner** — Penyusunan kalender konten 30 hari dan brief peluncuran.
+16. **marketing-copywriter** — Pembuatan copywriting untuk media sosial, SEO, dan email kampanye.
 
-#### 📁 Fase 4 — Synthesis, Novelty & Publication (Sintesis & Publikasi)
-10. **[synthesize-research](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/synthesize_research/SKILL.md)**: Analisis komparasi temuan kritis, memetakan konsensus & kontradiksi, serta memisahkan opini dari bukti rujukan.
-11. **[patent-and-literature-matcher](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/patent_and_literature_matcher/SKILL.md)**: Mendeteksi potensi *prior art* dengan mencocokkan komponen klaim invensi terhadap literatur ilmiah.
-12. **[journal-recommendation-finder](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/journal_recommendation_finder/SKILL.md)**: Mencari jurnal target terbaik berdasarkan kuartil, relevansi scope, biaya APC, dan turnaround time (bebas jurnal predator).
-13. **[academic-peer-reviewer](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/academic_peer_reviewer/SKILL.md)**: Simulasi peer review independen (Accept/Revision/Reject) dengan daftar masalah mayor/minor.
-14. **[reviewer-response-and-revision](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/reviewer_response_and_revision/SKILL.md)**: Memformulasikan draf jawaban diplomatis *Response to Reviewers* dan merencanakan revisi naskah secara konsisten.
+---
+
+#### 🔬 Divisi Riset Ilmiah (Scientific Research — 15 Skills)
+
+**Orkestrator Utama:**
+*   **research-orchestrator** — Pintu masuk utama untuk menjalankan alur kerja riset 4 fase otomatis secara sekuensial.
+
+**Fase 1 — Discovery & Framing:**
+1.  **discover-phenomenon-and-gap** — Eksplorasi tren fenomena baru dan pemetaan celah riset.
+2.  **research-question-builder** — Mengubah celah riset menjadi Pertanyaan Riset (RQ) dan tujuan penelitian.
+3.  **hypothesis-or-proposition-builder** — Menyusun hipotesis/proposisi logis dengan diagram kerangka konseptual.
+
+**Fase 2 — Research Methodology:**
+4.  **research-design-planner** — Merancang desain metode penelitian beserta skenario validasi.
+
+**Fase 3 — Literature Intelligence:**
+5.  **literature-review-generator** — Penyusunan tinjauan pustaka (Narrative, SLR, Thematic, Chronological, Critical).
+6.  **extract-methodology** — Membedah paper untuk ekstraksi komponen teknis.
+7.  **source-quality-appraiser** — Menilai kuartil jurnal (Q1-Q4) dan kelayakan rujukan.
+8.  **citation-and-reference-validator** — Audit keaslian rujukan (DOI) dan validasi kontekstual sitasi.
+9.  **paper-matrix-builder** — Pembuatan tabel komparasi State-of-the-Art (SotA).
+
+**Fase 4 — Synthesis & Publication:**
+10. **synthesize-research** — Analisis komparasi temuan kritis dan pemetaan konsensus.
+11. **patent-and-literature-matcher** — Mendeteksi potensi prior art dari literatur ilmiah.
+12. **journal-recommendation-finder** — Rekomendasi jurnal target terbaik (bebas predator).
+13. **academic-peer-reviewer** — Simulasi peer review independen.
+14. **reviewer-response-and-revision** — Draf jawaban Response to Reviewers.
+
+---
+
+#### 🛠️ Utilitas
+*   **project-setup-git** — Panduan setup proyek via git clone/pull.
 
 ---
 
 ## English
 
-This repository is a collection of custom **Skills** for **Startup Agents**. These skills are directly installed into the `science` plugin system to equip AI agents with solid scientific methodology procedures to search, analyze, extract, and evaluate academic literature and technology patents factually without hallucination.
+This repository is a modular collection of **Skills** for **Startup Agents** — a virtual AI team designed to automate the entire digital startup lifecycle, from business strategy planning, product design, software development, to launch and marketing. It also includes scientific research skills for idea validation and academic literature analysis.
 
-### Available Skills (15 Skills)
+### Available Skills (32 Skills)
 
-#### 🚀 Main Orchestrator (Starter Skill)
-*   **[research-orchestrator](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/research_orchestrator/SKILL.md)**: Main entry point to run the full 4-phase research workflow sequentially and automatically.
+#### 🏢 Product & Strategy Division
+1.  **ceo-strategy-planner** — Drafts CEO vision, business mission, target user segmentation, and a 3-phase roadmap.
+2.  **market-analyst** — Competitor analysis, pricing matrix, market gaps, and opportunity reports.
+3.  **product-manager** — Product feature management with MoSCoW prioritization and MVP scoping.
+4.  **prd-generator** — Generates the final Product Requirements Document (PRD).
+5.  **designer-uiux-specialist** — Wireframe design, UI/UX interface, and design guidelines.
 
-#### 📁 Phase 1 — Discovery & Framing (Problem Framing)
-1.  **[discover-phenomenon-and-gap](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/discover_phenomenon_and_gap/SKILL.md)**: Explores new phenomenon trends, anomalies, and maps formal academic research gaps.
-2.  **[research-question-builder](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/research_question_builder/SKILL.md)**: Translates gaps into Research Questions (RQs), research objectives, theoretical/methodological/practical contributions, and scope limitations.
-3.  **[hypothesis-or-proposition-builder](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/hypothesis_or_proposition_builder/SKILL.md)**: Formulates directional hypotheses or qualitative propositions with conceptual framework diagrams (Mermaid format).
+#### 💻 Development Division
+6.  **developer-scrum-master** — Sprint management, backlog tickets with Acceptance Criteria.
+7.  **developer-frontend-engineer** — Builds user interfaces (frontend).
+8.  **developer-backend-engineer** — Builds server logic and APIs (backend).
+9.  **developer-fullstack-engineer** — End-to-end development (frontend + backend).
+10. **developer-mobile-engineer** — Mobile application development.
+11. **developer-database-specialist** — Database schema design, queries, and optimization.
+12. **developer-qa-reviewer** — Code quality testing, client-side API key scanning.
 
-#### 📁 Phase 2 — Research Methodology (Planning)
-4.  **[research-design-planner](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/research_design_planner/SKILL.md)**: Designs methodologies (quantitative, qualitative, mixed-methods, computational AI/ML experiments) with validations, robustness checks, and ablation plans.
+#### 🚀 DevOps & Finance Division
+13. **devops-git-guard** — Pre-push security audit: credential checks, `.gitignore` validation, and documentation updates.
+14. **startup-finance-planner** — Startup financial modeling: unit economics, backend & API cost projections.
 
-#### 📁 Phase 3 — Literature Intelligence (Review & Audit)
-5.  **[literature-review-generator](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/literature_review_generator/SKILL.md)**: Generates structured, themed literature reviews using specific modes (Narrative, SLR, Thematic, Chronological, Critical) with Argument Maps.
-6.  **[extract-methodology](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/extract_methodology/SKILL.md)**: Dissects papers to extract 10 mandatory technical components (objectives, parameters, datasets, metrics, etc.).
-7.  **[source-quality-appraiser](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/source_quality_appraiser/SKILL.md)**: Appraises journal quartiles (Q1-Q4), conference rankings (CORE), methodological flaws, bias risks, and overall reference eligibility.
-8.  **[citation-and-reference-validator](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/citation_and_reference_validator/SKILL.md)**: Audits citation metadata (DOIs) and validates contextual citation support (preventing misattribution/fake citations).
-9.  **[paper-matrix-builder](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/paper_matrix_builder/SKILL.md)**: Automates the creation of standardized State-of-the-Art (SotA) matrices and evidence maps.
-
-#### 📁 Phase 4 — Synthesis, Novelty & Publication (Synthesis & Publishing)
-10. **[synthesize-research](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/synthesize_research/SKILL.md)**: Compares critical findings, maps consensuses and debates, and separates objective evidence from agent interpretation.
-11. **[patent-and-literature-matcher](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/patent_and_literature_matcher/SKILL.md)**: Discovers potential prior art by mapping patent/invention claims against scientific publications.
-12. **[journal-recommendation-finder](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/journal_recommendation_finder/SKILL.md)**: Discovers ideal target journals by quartile, scope alignment, APC costs, and turnaround times, avoiding predatory venues.
-13. **[academic-peer-reviewer](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/academic_peer_reviewer/SKILL.md)**: Simulates peer reviews (Accept/Revision/Reject) with categorized major and minor concerns.
-14. **[reviewer-response-and-revision](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/reviewer_response_and_revision/SKILL.md)**: Drafts formal Responses to Reviewers and plans manuscript modifications consistently.
+#### 📣 Marketing & Sales Division
+15. **marketing-content-planner** — 30-day content calendar and launch brief creation.
+16. **marketing-copywriter** — Social media copywriting, SEO copies, and campaign emails.
 
 ---
 
-## Dependensi Sistem Pencarian / Search System Dependencies
+#### 🔬 Scientific Research Division (15 Skills)
 
-Seluruh skill ini memanfaatkan modul pencarian literatur bawaan sistem / All these skills utilize the system's built-in literature search modules:
-*   **arXiv API** (`literature-search-arxiv`)
-*   **OpenAlex API** (`literature-search-openalex`)
-*   **bioRxiv/medRxiv API** (`literature-search-biorxiv`)
-*   **PubMed/Entrez API** (`pubmed-database`)
-*   **Europe PMC API** (`literature-search-europepmc`)
+**Main Orchestrator:**
+*   **research-orchestrator** — Main entry point to run the full 4-phase research workflow automatically.
+
+**Phase 1 — Discovery & Framing:**
+1.  **discover-phenomenon-and-gap** — Explores new phenomenon trends and maps research gaps.
+2.  **research-question-builder** — Translates gaps into Research Questions (RQs) and objectives.
+3.  **hypothesis-or-proposition-builder** — Formulates hypotheses with conceptual framework diagrams.
+
+**Phase 2 — Research Methodology:**
+4.  **research-design-planner** — Designs research methodologies with validation scenarios.
+
+**Phase 3 — Literature Intelligence:**
+5.  **literature-review-generator** — Generates structured literature reviews (Narrative, SLR, Thematic, Chronological, Critical).
+6.  **extract-methodology** — Dissects papers to extract technical components.
+7.  **source-quality-appraiser** — Appraises journal quartiles (Q1-Q4) and reference eligibility.
+8.  **citation-and-reference-validator** — Audits citation metadata (DOIs) and validates contextual support.
+9.  **paper-matrix-builder** — Automates State-of-the-Art (SotA) comparison matrices.
+
+**Phase 4 — Synthesis & Publication:**
+10. **synthesize-research** — Compares critical findings and maps consensuses.
+11. **patent-and-literature-matcher** — Discovers potential prior art from scientific publications.
+12. **journal-recommendation-finder** — Recommends ideal target journals (predator-free).
+13. **academic-peer-reviewer** — Simulates independent peer reviews.
+14. **reviewer-response-and-revision** — Drafts formal Responses to Reviewers.
+
+---
+
+#### 🛠️ Utilities
+*   **project-setup-git** — Project setup guide via git clone/pull.
 
 ---
 
 ## Instalasi via Git & Prompt / Installation via Git & Prompt
 
 ### 🇮🇩 Bahasa Indonesia
-Anda dapat memasang seluruh 15 skill ini dengan melakukan kloning repositori dan menggunakan *prompt* kepada agen untuk memuatnya.
 
-1.  **Kloning Repositori**:
-    Jalankan perintah berikut di terminal Anda:
+1.  **Kloning Repositori:**
     ```bash
     git clone https://github.com/lensetek/Startup-Agent-Skills-Hub.git
     ```
-    *(Atau gunakan `git pull` jika Anda sudah pernah melakukan kloning sebelumnya).*
+    *(Atau gunakan `git pull` di dalam folder jika sudah pernah clone sebelumnya).*
 
-2.  **Gunakan Prompt**:
-    Berikan instruksi (*prompt*) berikut kepada agen Anda:
-    > *"Tolong baca folder skill dari repositori yang baru saja saya clone, lalu muat dan daftarkan seluruh skill tersebut ke dalam sistem Anda."*
+2.  **Gunakan Prompt:**
+    Berikan instruksi berikut kepada agen AI Anda:
+    > *"Baca folder skill dari repositori Startup-Agent-Skills-Hub yang sudah saya clone, lalu muat dan daftarkan seluruh skill ke dalam sistem."*
 
 ---
 
 ### 🇬🇧 English
-You can install all 15 skills by cloning the repository and using a prompt to instruct the agent to load them.
 
-1.  **Clone the Repository**:
-    Run the following command in your terminal:
+1.  **Clone the Repository:**
     ```bash
     git clone https://github.com/lensetek/Startup-Agent-Skills-Hub.git
     ```
-    *(Or use `git pull` if you have previously cloned it).*
+    *(Or run `git pull` inside the folder if you have previously cloned it).*
 
-2.  **Use Prompt**:
-    Give the following prompt to your agent:
-    > *"Please read the skills folder from the newly cloned repository, then load and register all the skills into your system."*
-
----
-
-## Cara Menggunakan Skill / How to Use the Skills
-
-### 🚀 1. Alur Orkestrasi Otomatis (Automatic Orchestration Flow - RECOMMENDED)
-Untuk memulai seluruh alur penelitian otomatis dari satu pintu masuk, jalankan skill **`research-orchestrator`** dengan memberikan topik atau domain riset Anda.
-
-> **ID**: *"Gunakan skill **research-orchestrator** untuk memulai riset otomatis penuh tentang efektivitas Graph Neural Networks dalam fraud detection transaksi keuangan."*
->
-> **EN**: *"Use the **research-orchestrator** skill to start a full automatic research flow on the effectiveness of Graph Neural Networks for financial transaction fraud detection."*
-
-Setelah diaktifkan, agen akan menjalankan Fase 1 hingga Fase 4 secara otomatis dan memberikan keluaran akhir berupa **Integrated Research Dashboard**.
+2.  **Use Prompt:**
+    Give the following prompt to your AI agent:
+    > *"Read the skills folder from the cloned Startup-Agent-Skills-Hub repository, then load and register all skills into your system."*
 
 ---
 
-### 🛠️ 2. Menjalankan Skill Secara Terpisah (Individual Execution)
-Anda juga dapat memicu setiap skill secara terpisah menggunakan perintah berbahasa alami:
+## Cara Menggunakan / How to Use
 
-> **ID**: *"Gunakan skill **academic-peer-reviewer** untuk meninjau draf paper ini secara kritis."*
+### 🚀 1. Alur Startup Otomatis (Startup Workflow — RECOMMENDED)
+
+Mulai dari skill `ceo-strategy-planner` sebagai pintu masuk utama:
+
+> **ID**: *"Gunakan skill **ceo-strategy-planner** untuk mengevaluasi ide startup saya dan membuat CEO Vision Document."*
 >
-> **EN**: *"Use the **academic-peer-reviewer** skill to critically review this manuscript draft."*
+> **EN**: *"Use the **ceo-strategy-planner** skill to evaluate my startup idea and create a CEO Vision Document."*
+
+Dari sana, agen akan mengalirkan output ke skill berikutnya sesuai alur kerja (market-analyst → product-manager → prd-generator → development → devops → marketing).
+
+### 🔬 2. Alur Riset Otomatis (Research Workflow)
+
+Untuk riset ilmiah, gunakan `research-orchestrator` sebagai pintu masuk:
+
+> **ID**: *"Gunakan skill **research-orchestrator** untuk memulai riset otomatis penuh tentang topik saya."*
+>
+> **EN**: *"Use the **research-orchestrator** skill to start a full automatic research flow on my topic."*
+
+### 🛠️ 3. Menjalankan Skill Secara Terpisah (Individual Execution)
+
+Anda juga dapat memicu setiap skill secara terpisah:
+
+> **ID**: *"Gunakan skill **developer-qa-reviewer** untuk memeriksa kualitas kode proyek ini."*
+>
+> **EN**: *"Use the **developer-qa-reviewer** skill to review the code quality of this project."*
+
+---
+
+## Lisensi / License
+
+MIT

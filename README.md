@@ -89,7 +89,7 @@ Anda dapat memasang seluruh 15 skill ini dengan melakukan kloning repositori dan
 1.  **Kloning Repositori**:
     Jalankan perintah berikut di terminal Anda:
     ```bash
-    git clone https://github.com/lensetek/Research-Agent-Skills-Collection.git
+    git clone https://github.com/lensetek/Startup-Agent-Skills-Hub.git
     ```
     *(Atau gunakan `git pull` jika Anda sudah pernah melakukan kloning sebelumnya).*
 
@@ -105,7 +105,7 @@ You can install all 15 skills by cloning the repository and using a prompt to in
 1.  **Clone the Repository**:
     Run the following command in your terminal:
     ```bash
-    git clone https://github.com/lensetek/Research-Agent-Skills-Collection.git
+    git clone https://github.com/lensetek/Startup-Agent-Skills-Hub.git
     ```
     *(Or use `git pull` if you have previously cloned it).*
 

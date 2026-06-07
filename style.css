@@ -1,0 +1,186 @@
+/* Custom CSS for Startup Agent Skills Hub Landing Page */
+
+:root {
+    /* Light Theme Variables (Default) */
+    --bg-color: #f8fafc;
+    --card-color: #ffffff;
+    --card-hover-border: rgba(59, 130, 246, 0.5);
+    
+    /* WCAG AA Compliant Light Mode Texts */
+    --text-primary: #0f172a;        /* Slate-900 */
+    --text-secondary: #1e293b;      /* Slate-800 (Higher contrast) */
+    --text-muted: #334155;          /* Slate-700 (Higher contrast) */
+    
+    --border-color: #cbd5e1;
+    --border-card: #cbd5e1;
+    --shadow-card: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+    --glow-opacity-scale: 0.4;
+    --terminal-bg: #f1f5f9;
+    --header-bg: rgba(248, 250, 252, 0.8);
+    --workflow-panel-bg: rgba(255, 255, 255, 0.9);
+    --workflow-step-bg: #f1f5f9;
+
+    --accent-blue: #1d4ed8;
+    --accent-purple: #7e22ce;
+    --accent-pink: #be185d;
+    --accent-green: #047857;
+}
+
+html.dark {
+    /* Dark Theme Variables */
+    --bg-color: #090a0f;
+    --card-color: #121420;
+    --card-hover-border: rgba(59, 130, 246, 0.3);
+    
+    /* WCAG AA Compliant Dark Mode Texts */
+    --text-primary: #f8fafc;        /* Slate-50 (Contrast > 15:1) */
+    --text-secondary: #cbd5e1;      /* Slate-300 (Contrast > 6.5:1) */
+    --text-muted: #94a3b8;          /* Slate-400 (Contrast of 4.8:1 on #121420) */
+    
+    --border-color: rgba(51, 65, 85, 0.5);
+    --border-card: rgba(51, 65, 85, 0.4);
+    --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    --glow-opacity-scale: 1.0;
+    --terminal-bg: rgba(0, 0, 0, 0.4);
+    --header-bg: rgba(9, 10, 15, 0.7);
+    --workflow-panel-bg: rgba(18, 20, 32, 0.7);
+    --workflow-step-bg: rgba(0, 0, 0, 0.4);
+
+    --accent-blue: #3b82f6;
+    --accent-purple: #a855f7;
+    --accent-pink: #ec4899;
+    --accent-green: #10b981;
+}
+
+/* Base Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Animations */
+@keyframes pulseGlow {
+    0%, 100% {
+        opacity: 0.6;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.9;
+        transform: scale(1.05);
+    }
+}
+
+.animate-pulse-slow {
+    animation: pulseGlow 6s infinite ease-in-out;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
+}
+
+/* Workflow Navigation Tabs Style */
+.workflow-tab-btn {
+    background: var(--card-color);
+    border-color: var(--border-card);
+    color: var(--text-secondary);
+    transition: all 0.3s ease;
+}
+
+.workflow-tab-btn:hover {
+    color: var(--text-primary);
+    border-color: var(--accent-purple);
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.15);
+}
+
+.workflow-tab-btn.active {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(168, 85, 247, 0.1));
+    border-color: var(--accent-purple);
+    color: var(--text-primary);
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
+}
+
+/* Flow Step Card Hover */
+.flow-step-card {
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    background: var(--workflow-step-bg);
+    border-color: var(--border-card);
+}
+
+.flow-step-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--card-hover-border);
+    box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.3);
+}
+
+/* Tag filter buttons styling */
+.tag-filter-btn {
+    background: var(--card-color);
+    border-color: var(--border-card);
+    color: var(--text-secondary);
+    transition: all 0.3s ease;
+}
+
+.tag-filter-btn:hover {
+    color: var(--text-primary);
+    border-color: var(--accent-blue);
+    background: rgba(59, 130, 246, 0.05);
+}
+
+.tag-filter-btn.active {
+    background: var(--accent-blue);
+    border-color: var(--accent-blue);
+    color: #ffffff;
+    box-shadow: 0 0 12px rgba(59, 130, 246, 0.4);
+}
+
+/* Skills card transition */
+.skill-card {
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    background: var(--card-color);
+    border-color: var(--border-card);
+    box-shadow: var(--shadow-card);
+}
+
+.skill-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--card-hover-border);
+    box-shadow: 0 20px 40px -15px rgba(168, 85, 247, 0.2);
+}
+
+/* Toast alert notification style */
+.toast-alert {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: var(--card-color);
+    border: 1px solid var(--accent-green);
+    color: var(--text-primary);
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-size: 14px;
+    box-shadow: var(--shadow-card);
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 100;
+}
+
+.toast-alert.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+

@@ -122,6 +122,13 @@
                     <div class="flex items-center justify-between mb-4 border-b border-themeBorderCard pb-4">
                         <div class="flex items-center space-x-2">
                             <span class="w-3.5 h-3.5 rounded-full bg-red-500/80"></span>
+                <div class="bg-themeCard border border-themeBorderCard rounded-2xl p-6 shadow-themeCard relative overflow-hidden backdrop-blur-md">
+                    <!-- Glow decoration inside card -->
+                    <div class="absolute -top-12 -right-12 w-24 h-24 bg-accentBlue/20 rounded-full blur-2xl"></div>
+                    
+                    <div class="flex items-center justify-between mb-4 border-b border-themeBorderCard pb-4">
+                        <div class="flex items-center space-x-2">
+                            <span class="w-3.5 h-3.5 rounded-full bg-red-500/80"></span>
                             <span class="w-3.5 h-3.5 rounded-full bg-yellow-500/80"></span>
                             <span class="w-3.5 h-3.5 rounded-full bg-green-500/80"></span>
                             <span class="text-xs text-themeTextMuted font-mono ml-2">Terminal - Quick Install</span>
@@ -131,8 +138,12 @@
 
                     <!-- Interactive Command steps -->
                     <div class="space-y-4 text-left font-mono">
+                        <!-- SECTION: First Install -->
                         <div>
-                            <span class="text-themeTextMuted block text-xs mb-1">// Clone the skill repository once</span>
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-widest bg-accentBlue/15 text-accentBlue border border-accentBlue/25">Step 1 — First Install</span>
+                            </div>
+                            <span class="text-themeTextMuted block text-xs mb-1">// Clone the skill repository (run this once)</span>
                             <div class="bg-themeTerminal rounded-xl p-4 flex items-center justify-between border border-themeBorderCard group hover:border-accentBlue/50 transition-all duration-300">
                                 <span class="text-accentBlue select-all">git clone https://github.com/lensetek/Startup-Agent-Skills-Hub.git</span>
                                 <button onclick="copyCommand('git clone https://github.com/lensetek/Startup-Agent-Skills-Hub.git', this)" class="text-themeTextSecondary hover:text-themeText p-2 rounded-lg hover:bg-themeTerminal/80 transition-all duration-200" title="Copy to clipboard">
@@ -141,8 +152,19 @@
                             </div>
                         </div>
 
+                        <!-- Divider between install and update -->
+                        <div class="flex items-center gap-3 py-1">
+                            <div class="flex-1 h-px bg-themeBorderCard"></div>
+                            <span class="text-[10px] text-themeTextMuted uppercase tracking-widest font-semibold">or, if already cloned</span>
+                            <div class="flex-1 h-px bg-themeBorderCard"></div>
+                        </div>
+
+                        <!-- SECTION: Update Later -->
                         <div>
-                            <span class="text-themeTextMuted block text-xs mb-1">// Pull the latest skill updates</span>
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-widest bg-accentGreen/15 text-accentGreen border border-accentGreen/25">Update — Pull Latest</span>
+                            </div>
+                            <span class="text-themeTextMuted block text-xs mb-1">// Already cloned before? Just pull the latest updates</span>
                             <div class="bg-themeTerminal rounded-xl p-4 flex items-center justify-between border border-themeBorderCard group hover:border-accentGreen/50 transition-all duration-300">
                                 <span class="text-accentGreen select-all">cd Startup-Agent-Skills-Hub && git pull</span>
                                 <button onclick="copyCommand('cd Startup-Agent-Skills-Hub && git pull', this)" class="text-themeTextSecondary hover:text-themeText p-2 rounded-lg hover:bg-themeTerminal/80 transition-all duration-200" title="Copy to clipboard">

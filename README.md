@@ -1,4 +1,4 @@
-# Research Agent Skills Collection
+# Startup Agent Skills Hub
 
 *Read this in other languages: [English](#english), [Bahasa Indonesia](#bahasa-indonesia).*
 
@@ -6,7 +6,7 @@
 
 ## Bahasa Indonesia
 
-Repositori ini adalah kumpulan **Skills** khusus untuk **Research Agent** (Asisten Agen Peneliti). Kumpulan skill ini dipasang langsung ke dalam sistem plugin `science` untuk membekali agen AI dengan prosedur metodologis ilmiah yang kokoh dalam mencari, menganalisis, mengekstrak, dan mengevaluasi literatur akademis serta paten teknologi secara valid tanpa halusinasi.
+Repositori ini adalah kumpulan **Skills** khusus untuk **Startup Agent** (Asisten Agen Peneliti). Kumpulan skill ini dipasang langsung ke dalam sistem plugin `science` untuk membekali agen AI dengan prosedur metodologis ilmiah yang kokoh dalam mencari, menganalisis, mengekstrak, dan mengevaluasi literatur akademis serta paten teknologi secara valid tanpa halusinasi.
 
 ### Kumpulan Skill yang Tersedia (15 Skills)
 
@@ -39,7 +39,7 @@ Repositori ini adalah kumpulan **Skills** khusus untuk **Research Agent** (Asist
 
 ## English
 
-This repository is a collection of custom **Skills** for **Research Agents**. These skills are directly installed into the `science` plugin system to equip AI agents with solid scientific methodology procedures to search, analyze, extract, and evaluate academic literature and technology patents factually without hallucination.
+This repository is a collection of custom **Skills** for **Startup Agents**. These skills are directly installed into the `science` plugin system to equip AI agents with solid scientific methodology procedures to search, analyze, extract, and evaluate academic literature and technology patents factually without hallucination.
 
 ### Available Skills (15 Skills)
 

@@ -1,11 +1,7 @@
 {
-  "name": "research-agent-skills-collection",
+  "name": "startup-agent-skills-hub",
   "version": "1.0.0",
-  "description": "Kumpulan skill metodologis ilmiah terstruktur untuk Research Agent di bawah sistem plugin science.",
-  "main": "bin/install.js",
-  "bin": {
-    "install-research-skills": "./bin/install.js"
-  },
+  "description": "Kumpulan skill metodologis ilmiah terstruktur untuk Startup Agent di bawah sistem plugin science.",
   "files": [
     "skills",
     "bin",

@@ -143,6 +143,15 @@ const SKILLS_DATA = [
         category: "finance",
         responsibility: "Projects unit economics, hosting/API pricing structures, break-even targets, financial viability.",
         boundaries: "No feature/MVP scope definition, no coding/configuration."
+    },
+    {
+        id: "devops-update-manager",
+        name: "devops-update-manager",
+        role: "DevOps Update Manager",
+        icon: "fa-rotate",
+        category: "finance",
+        responsibility: "Periodically checks for agent updates via ZIP archive download, lists release notes, and automates downloads/updates.",
+        boundaries: "No product scoping, no source code logic development, no security configuration alterations."
     }
 ];
 

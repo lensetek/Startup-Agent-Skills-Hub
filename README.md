@@ -16,7 +16,7 @@
 
 Repositori ini adalah kumpulan **Skills** modular untuk **Startup Agent** — sebuah tim virtual agen AI yang dirancang untuk mengotomatiskan seluruh siklus hidup startup digital, mulai dari perencanaan strategi bisnis, desain produk, pengembangan perangkat lunak, hingga peluncuran dan pemasaran.
 
-### Kumpulan Skill yang Tersedia (16 Skills)
+### Kumpulan Skill yang Tersedia (17 Skills)
 
 #### 🏢 Divisi Strategi & Produk (Product & Strategy)
 1.  **ceo-strategy-planner** — Menyusun visi CEO, misi bisnis, segmentasi target pengguna, dan peta jalan 3 fase.
@@ -37,10 +37,11 @@ Repositori ini adalah kumpulan **Skills** modular untuk **Startup Agent** — se
 #### 🚀 Divisi DevOps & Keuangan (DevOps & Finance)
 13. **devops-git-guard** — Audit keamanan pre-push: cek credential, validasi `.gitignore`, dan pembaruan dokumentasi.
 14. **startup-finance-planner** — Model keuangan startup: unit economics, proyeksi biaya backend & API.
+15. **devops-update-manager** — Cek update versi agent berkala dari repositori (ZIP), tampilkan perubahan, dan lakukan update otomatis.
 
 #### 📣 Divisi Pemasaran (Marketing & Sales)
-15. **marketing-content-planner** — Penyusunan kalender konten 30 hari dan brief peluncuran.
-16. **marketing-copywriter** — Pembuatan copywriting untuk media sosial, SEO, dan email kampanye.
+16. **marketing-content-planner** — Penyusunan kalender konten 30 hari dan brief peluncuran.
+17. **marketing-copywriter** — Pembuatan copywriting untuk media sosial, SEO, dan email kampanye.
 
 ---
 
@@ -61,7 +62,7 @@ Repositori ini adalah kumpulan **Skills** modular untuk **Startup Agent** — se
 
 This repository is a modular collection of **Skills** for **Startup Agents** — a virtual AI team designed to automate the entire digital startup lifecycle, from business strategy planning, product design, software development, to launch and marketing.
 
-### Available Skills (16 Skills)
+### Available Skills (17 Skills)
 
 #### 🏢 Product & Strategy Division
 1.  **ceo-strategy-planner** — Drafts CEO vision, business mission, target user segmentation, and a 3-phase roadmap.
@@ -82,10 +83,11 @@ This repository is a modular collection of **Skills** for **Startup Agents** —
 #### 🚀 DevOps & Finance Division
 13. **devops-git-guard** — Pre-push security audit: credential checks, `.gitignore` validation, and documentation updates.
 14. **startup-finance-planner** — Startup financial modeling: unit economics, backend & API cost projections.
+15. **devops-update-manager** — Periodically checks for agent updates from ZIP archive, lists release notes, and automates downloads/updates.
 
 #### 📣 Marketing & Sales Division
-15. **marketing-content-planner** — 30-day content calendar and launch brief creation.
-16. **marketing-copywriter** — Social media copywriting, SEO copies, and campaign emails.
+16. **marketing-content-planner** — 30-day content calendar and launch brief creation.
+17. **marketing-copywriter** — Social media copywriting, SEO copies, and campaign emails.
 
 ---
 

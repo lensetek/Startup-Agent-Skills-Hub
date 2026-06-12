@@ -23,11 +23,7 @@ Pemasangan kini jauh lebih sederhana! Anda tidak perlu lagi menjalankan perintah
 
 #### 2. 🧬 Auto-Scan Project DNA & Personalization (`startup_dna.md`)
 Kini agen Anda bisa bekerja lebih pintar dan patuh pada spesifikasi teknologi Anda tanpa harus diingatkan berulang kali.
-- **Inisialisasi via Prompt**: Anda tidak perlu menjalankan perintah di terminal. Cukup instruksikan asisten AI Anda menggunakan prompt:
-  ```text
-  Analyze my project structure and dependencies, then automatically generate my startup_dna.md file inside the .agents directory.
-  ```
-  AI asisten Anda akan secara otomatis memindai struktur proyek dan membuat profil DNA tersebut.
+- **100% Otonom & Seamless**: Dengan penambahan aturan proyek **[.antigravityrules](file:///c:/Users/ACER/Documents/antigravity/Startup-Agents/.antigravityrules)** dan **[.cursorrules](file:///c:/Users/ACER/Documents/antigravity/Startup-Agents/.cursorrules)**, asisten AI akan secara mandiri memindai dependensi proyek Anda di latar belakang dan membuat `.agents/startup_dna.md` tanpa perlu Anda minta.
 - **Single Source of Truth**: Profil disimpan di `.agents/startup_dna.md` sebagai panduan global bagi seluruh agen saat menulis kode untuk proyek Anda.
 
 #### 3. 🧠 Kolektif Memori & Feedback Loop (`session_memory.md`)
@@ -35,6 +31,7 @@ Agen sekarang dibekali memori sesi terstruktur di `.agents/session_memory.md`. S
 
 ### Apa yang Berubah di Codebase?
 *   **[NEW]** **[init-dna.js](file:///c:/Users/ACER/Documents/antigravity/Startup-Agents/bin/init-dna.js)**: Script internal untuk pemindaian tech stack proyek di latar belakang.
+*   **[NEW]** **[.antigravityrules](file:///c:/Users/ACER/Documents/antigravity/Startup-Agents/.antigravityrules)** & **[.cursorrules](file:///c:/Users/ACER/Documents/antigravity/Startup-Agents/.cursorrules)**: File aturan otonom global untuk asisten AI.
 *   **[MODIFY]** **[README.md](file:///c:/Users/ACER/Documents/antigravity/Startup-Agents/README.md)**: Panduan instalasi dan penggunaan diperbarui sepenuhnya dengan metode prompt natural dan personalisasi DNA.
 *   **[MODIFY]** **[index.html](file:///c:/Users/ACER/Documents/antigravity/Startup-Agents/index.html)**: Visual dashboard diperbarui untuk menampilkan modul Prompt-Based Copy, tab bilingual (ID/EN), navigasi personalisasi, serta visualisasi file `startup_dna.md`.
 
@@ -59,11 +56,7 @@ Installation is now much simpler! You no longer need to run complex Node or Git 
 
 #### 2. 🧬 Auto-Scan Project DNA & Personalization (`startup_dna.md`)
 Your agents can now work smarter and comply with your exact tech stack without constant reminders.
-- **Initialization via Prompt**: You do not need to run terminal commands. Just instruct your AI assistant using the prompt:
-  ```text
-  Analyze my project structure and dependencies, then automatically generate my startup_dna.md file inside the .agents directory.
-  ```
-  Your AI assistant will automatically scan your project structure and generate the DNA profile.
+- **100% Autonomous & Seamless**: With the integration of **[.antigravityrules](file:///c:/Users/ACER/Documents/antigravity/Startup-Agents/.antigravityrules)** and **[.cursorrules](file:///c:/Users/ACER/Documents/antigravity/Startup-Agents/.cursorrules)**, the AI assistant will automatically scan your project dependencies in the background and generate `.agents/startup_dna.md` autonomously.
 - **Single Source of Truth**: The profile is saved under `.agents/startup_dna.md` as a global guide for all agents when generating code for your project.
 
 #### 3. 🧠 Collective Memory & Feedback Loop (`session_memory.md`)
@@ -71,6 +64,7 @@ Agents are now equipped with structured session memory in `.agents/session_memor
 
 ### What Changed in the Codebase?
 *   **[NEW]** **[init-dna.js](file:///c:/Users/ACER/Documents/antigravity/Startup-Agents/bin/init-dna.js)**: Internal script for background project tech stack scanning.
+*   **[NEW]** **[.antigravityrules](file:///c:/Users/ACER/Documents/antigravity/Startup-Agents/.antigravityrules)** & **[.cursorrules](file:///c:/Users/ACER/Documents/antigravity/Startup-Agents/.cursorrules)**: Global rules files for autonomous AI agent behavior.
 *   **[MODIFY]** **[README.md](file:///c:/Users/ACER/Documents/antigravity/Startup-Agents/README.md)**: Completely updated installation and usage guides using the natural prompt method and DNA personalization.
 *   **[MODIFY]** **[index.html](file:///c:/Users/ACER/Documents/antigravity/Startup-Agents/index.html)**: Updated landing page dashboard UI to showcase the Prompt-Based Copy module, bilingual tabs (ID/EN), personalization navigation, and the `startup_dna.md` visualizer.
 

@@ -1,0 +1,16 @@
+# Global Project Rules (Autonomous & Seamless Workflows)
+
+## 1. Autonomous Project Personalization (Seamless DNA)
+- **Automatic Check**: At the start of every session, task, or directory analysis, you must autonomously check if `.agents/startup_dna.md` exists and is up to date.
+- **Autonomous Scan**: If the file is missing, or if `package.json` / codebase structure has changed, autonomously scan the dependencies and generate/update `.agents/startup_dna.md` in the background. **Do not ask the user for permission or prompts.**
+- **Strict Compliance**: Always read and comply with the tech stack, styling guidelines, and business constraints defined in `.agents/startup_dna.md` before generating any code or documentation.
+
+## 2. Autonomous Session Memory & Context Sharing
+- **Decision Tracking**: Autonomously keep track of all architectural choices, user preferences, and feedback (e.g., database choices, UI color schemes) during the session.
+- **Memory Logging**: Document these decisions in `.agents/session_memory.md` automatically at the end of each task.
+- **Context Sharing**: Ensure all specialized agents (Frontend, Backend, QA) read `.agents/session_memory.md` to ensure design and engineering consistency.
+
+## 3. Mandatory Security & UX Standards
+- **Zero Secret Leakage**: Never write API keys, database passwords, or environment secrets in client-side or frontend files.
+- **Mobile-First Responsive**: All user interface code must prioritize mobile responsiveness first, followed by tablet and desktop layouts.
+- **Secure Proxies**: Route all database queries and external integrations through secure backend endpoints.

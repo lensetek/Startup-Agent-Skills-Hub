@@ -152,24 +152,14 @@ Anda juga dapat memicu setiap skill secara terpisah:
 
 ---
 
-### 🧬 3. Personalisasi Agen (Startup DNA & Memory / Project Personalization)
+### 🧬 3. Personalisasi Agen Secara Otonom (Autonomous & Seamless Personalization)
 
-Agen Anda dapat dipersonalisasikan agar otomatis mengetahui spesifikasi teknologi (*tech stack*) dan preferensi bisnis Anda menggunakan file profil `.agents/startup_dna.md`.
-Your agents can be personalized to automatically adapt to your tech stack and business preferences using the `.agents/startup_dna.md` profile.
+Proyek ini dilengkapi dengan berkas aturan global **[.antigravityrules](file:///c:/Users/ACER/Documents/antigravity/Startup-Agents/.antigravityrules)** dan **[.cursorrules](file:///c:/Users/ACER/Documents/antigravity/Startup-Agents/.cursorrules)** yang membuat alur personalisasi berjalan secara **100% otonom dan seamless**:
 
-*   **🇮🇩 Bahasa Indonesia (Inisialisasi via Prompt):**
-    Anda tidak perlu menjalankan perintah terminal yang rumit. Cukup berikan instruksi langsung (prompt) berikut ke asisten AI Anda:
-    ```text
-    Analyze my project structure and dependencies, then automatically generate my startup_dna.md file inside the .agents directory.
-    ```
-    Asisten AI Anda akan secara otomatis memindai struktur proyek, menganalisis file konfigurasi/dependensi, dan menghasilkan file profil DNA proyek untuk Anda.
-
-*   **🇬🇧 English (Initialization via Prompt):**
-    You do not need to run complex terminal commands. Just give the following prompt instructions to your AI assistant:
-    ```text
-    Analyze my project structure and dependencies, then automatically generate my startup_dna.md file inside the .agents directory.
-    ```
-    Your AI assistant will automatically scan your project structure, analyze configuration/dependency files, and generate the project DNA profile for you.
+*   **Deteksi & Pemindaian Otomatis (Auto-Scan):**
+    Setiap kali asisten AI memulai tugas baru di workspace ini, ia akan memeriksa secara mandiri apakah berkas profil `.agents/startup_dna.md` sudah ada dan up-to-date. Jika belum ada atau jika dependensi Anda berubah, asisten AI akan memindai proyek Anda dan menghasilkan berkas DNA tersebut **secara otonom di latar belakang**. Anda tidak perlu mengetik perintah atau memberikan prompt apa pun.
+*   **Kepatuhan Global (Strict Compliance):**
+    Semua agen spesialis (seperti Frontend, Backend, Database) akan membaca berkas `.agents/startup_dna.md` dan `.agents/session_memory.md` secara otomatis untuk menghasilkan kode yang konsisten dengan *tech stack* (e.g. Vanilla CSS, PostgreSQL) dan keputusan yang telah Anda setujui sebelumnya.
 
 ---
 

@@ -152,6 +152,42 @@ const SKILLS_DATA = [
         category: "finance",
         responsibility: "Periodically checks for agent updates via ZIP archive download, lists release notes, and automates downloads/updates.",
         boundaries: "No product scoping, no source code logic development, no security configuration alterations."
+    },
+    {
+        id: "devops-infrastructure-engineer",
+        name: "devops-infrastructure-engineer",
+        role: "DevOps Infrastructure Engineer",
+        icon: "fa-server",
+        category: "finance",
+        responsibility: "Manages cloud hosting configuration templates, CI/CD pipelines, Docker environments, backup systems, and uptime/monitoring services.",
+        boundaries: "No database schema optimization, no application feature code implementation, no product scoping decisions."
+    },
+    {
+        id: "ops-customer-success",
+        name: "ops-customer-success",
+        role: "Ops Customer Success",
+        icon: "fa-headset",
+        category: "marketing",
+        responsibility: "Drafts help center FAQs and user guides, designs support workflows, compiles feedback reports, and maps retention strategies.",
+        boundaries: "No product features scoping or MVP roadmap changes, no code/database bug fixing, no pricing definition."
+    },
+    {
+        id: "ops-legal-compliance",
+        name: "ops-legal-compliance",
+        role: "Ops Legal & Compliance",
+        icon: "fa-scale-balanced",
+        category: "finance",
+        responsibility: "Drafts Terms of Service, Privacy Policies (GDPR/PDPA compliant), data handling rules, compliance checklists, and standard contracts.",
+        boundaries: "No formal legal counsel representation in litigation, no source code development, no financial planning."
+    },
+    {
+        id: "ops-growth-analytics",
+        name: "ops-growth-analytics",
+        role: "Ops Growth & Analytics",
+        icon: "fa-chart-line",
+        category: "product",
+        responsibility: "Designs event-tracking plans, monitors business metrics (CAC, LTV, churn), maps funnels, organizes A/B tests, and designs growth loops.",
+        boundaries: "No final corporate strategy decisions, no analytical tracking code implementation, no raw campaign copywriting."
     }
 ];
 

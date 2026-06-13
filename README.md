@@ -180,4 +180,4 @@ Proyek ini dilengkapi dengan berkas aturan universal **[ai_instructions.md](file
 
 ## Lisensi / License
 
-MIT
+Apache-2.0

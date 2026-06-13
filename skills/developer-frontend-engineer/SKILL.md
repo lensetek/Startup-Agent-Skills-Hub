@@ -21,7 +21,8 @@ The Developer Frontend Engineer translates user interfaces, interactive structur
 - Do not alter MVP scope or user flows (respect the PM).
 
 ## Credential & Security Protocols
-- **Zero Exposed Secrets Rule**: You are strictly prohibited from writing API keys, passwords, database URLs, or secret tokens inside any HTML, CSS, JavaScript, or TypeScript files.
+- **Zero Exposed Secrets Rule**: You are strictly prohibited from writing secret API keys, passwords, private database URLs, service-role keys, bearer tokens, or client secrets inside any HTML, CSS, JavaScript, or TypeScript files.
+- **Public Config Classification**: Public client identifiers such as Firebase web config, Supabase anon keys, or Stripe publishable keys may appear only when the provider explicitly documents them as public. Label them as public config, never treat them as authorization secrets, and pair them with backend rules, RLS, or domain restrictions.
 - **Backend API Routing**: All integrations requiring third-party credentials (like OpenAI, Midtrans, Supabase) must be executed by sending payload data to `/api/...` backend proxy endpoints.
 - **Client Storage Security**: Never store raw user credentials or sensitive auth tokens in localStorage or cookies without hashing/encryption. Use secure HttpOnly cookies where possible.
 
@@ -41,7 +42,8 @@ The Developer Frontend Engineer translates user interfaces, interactive structur
 5. Deliver files to the Developer QA Reviewer.
 
 ## Quality Checklist
-- Are there any API secret tokens or database connection passwords in the frontend code? (Must be empty/zero).
+- Are there any secret API tokens, private database connection strings, or service-role credentials in the frontend code? (Must be empty/zero).
+- Are public client configs explicitly documented as public and protected by backend rules or provider-side access controls?
 - Does the UI layout adapt correctly on mobile widths (360px to 480px)?
 - Are components modular and reusable?
 

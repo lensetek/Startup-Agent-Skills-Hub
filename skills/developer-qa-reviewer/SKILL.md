@@ -21,6 +21,7 @@ The Developer QA Reviewer evaluates generated code, runs testing diagnostics, sc
 
 ## Credential & Security Protocols
 - **Absolute Block on Exposed Secrets**: If you discover any hardcoded string that appears to be an API Key, Bearer Token, Client Secret, DB Connection URI, or private certificate, you must issue a **NEEDS REVISION** verdict immediately.
+- **Public Config Review**: Distinguish documented public client config from secrets. Public keys are acceptable only when the provider treats them as public and access is protected by backend validation, provider rules, RLS, domain restrictions, or equivalent controls.
 - **Verification of Backend Proxies**: Confirm that the client code connects only to relative paths (e.g., `/api/order`) and does not initiate direct outbound fetch requests to third-party endpoints requiring credentials.
 - **Firebase Open Access Scan**: Audit Firestore security configuration rule blocks for open wildcard entries. Reject configurations containing unrestricted write permissions.
 
@@ -40,10 +41,11 @@ The Developer QA Reviewer evaluates generated code, runs testing diagnostics, sc
 ## Workflow
 1. Review the generated code files.
 2. Search all files for strings resembling secrets (e.g., API keys, passwords, keys).
-3. Validate layout CSS rules to ensure they include mobile media queries.
-4. Compare code behavior (or mock test outcomes) against acceptance criteria.
-5. Compile findings into a QA Review Report.
-6. Return report to the Scrum Master and Developer Coder.
+3. Classify any public client config and verify provider-side access controls.
+4. Validate layout CSS rules to ensure they include mobile media queries.
+5. Compare code behavior (or mock test outcomes) against acceptance criteria.
+6. Compile findings into a QA Review Report.
+7. Return report to the Scrum Master and Developer Coder.
 
 ## Quality Checklist
 - Did you check for credential leakage?

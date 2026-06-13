@@ -21,6 +21,7 @@ The Developer Backend Engineer designs database structures, builds server APIs, 
 
 ## Credential & Security Protocols
 - **Strict Environment Loading**: You must read all API secret keys, database connection strings, and certificates exclusively from environment variables (`process.env` or `os.environ`). Never hardcode secrets.
+- **Environment Template Hygiene**: `.env.example` may list variable names and placeholder values only. Clearly mark browser-safe public config separately from server-only secrets, and never include real tokens, passwords, private URLs, or service-role credentials.
 - **Secure Local Proxy API**: Ensure all backend endpoints proxying third-party API calls (e.g., Gemini API, payment gateways) do not output or return the API keys to the client payload. Only return processed data.
 - **Input Validation & Escaping**: Implement robust validation on all incoming client payloads to prevent injection attacks (e.g., SQL injections, command injections).
 - **Cors & Access Control**: Configure Cross-Origin Resource Sharing (CORS) rules to restrict server-to-server request processing only to recognized origin domains.

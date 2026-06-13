@@ -1,5 +1,14 @@
-// 16 Specialized Agent Skills Database
+// 22 Specialized Agent Skills Database
 const SKILLS_DATA = [
+    {
+        id: "startup-workflow-orchestrator",
+        name: "startup-workflow-orchestrator",
+        role: "Startup Workflow Orchestrator",
+        icon: "fa-diagram-project",
+        category: "product",
+        responsibility: "Selects the right specialist agents, sequences handoffs, and enforces security gates across the startup delivery workflow.",
+        boundaries: "No final implementation code, no override of PM/CEO/QA decisions, and no release approval when security gates fail."
+    },
     {
         id: "ceo-strategy-planner",
         name: "ceo-strategy-planner",
@@ -150,7 +159,7 @@ const SKILLS_DATA = [
         role: "DevOps Update Manager",
         icon: "fa-rotate",
         category: "finance",
-        responsibility: "Periodically checks for agent updates via ZIP archive download, lists release notes, and automates downloads/updates.",
+        responsibility: "Periodically checks for agent updates via Git metadata, previews changes, and applies confirmed updates.",
         boundaries: "No product scoping, no source code logic development, no security configuration alterations."
     },
     {
@@ -237,9 +246,49 @@ function updateThemeToggleIcon(isDark) {
     }
 }
 
+// Mobile Menu Manager
+function initMobileMenu() {
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+    const btnIcon = mobileMenuBtn ? mobileMenuBtn.querySelector('i') : null;
+
+    if (!mobileMenuBtn || !mobileMenu) return;
+
+    function toggleMobileMenu() {
+        const isClosed = mobileMenu.classList.contains('translate-x-full');
+        
+        if (isClosed) {
+            // Open menu
+            mobileMenu.classList.remove('translate-x-full');
+            mobileMenu.classList.add('translate-x-0');
+            btnIcon.className = 'fa-solid fa-xmark text-lg text-themeText'; // Change to close icon
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        } else {
+            // Close menu
+            mobileMenu.classList.add('translate-x-full');
+            mobileMenu.classList.remove('translate-x-0');
+            btnIcon.className = 'fa-solid fa-bars'; // Change back to hamburger
+            document.body.style.overflow = ''; // Restore scrolling
+        }
+    }
+
+    mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+
+    // Close menu when a link is clicked
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (!mobileMenu.classList.contains('translate-x-full')) {
+                toggleMobileMenu();
+            }
+        });
+    });
+}
+
 // DOMContentLoaded Initialization
 document.addEventListener("DOMContentLoaded", () => {
     initTheme();
+    initMobileMenu();
     renderSkillsGrid(SKILLS_DATA);
     createToastElement();
 });
@@ -449,5 +498,3 @@ function updateInstallCommand(command, buttonEl) {
     buttonEl.classList.remove('border-themeBorderCard', 'text-themeText');
     buttonEl.classList.add('border-accentBlue/60', 'text-accentBlue');
 }
-
-

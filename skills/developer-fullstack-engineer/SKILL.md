@@ -21,6 +21,7 @@ The Developer Fullstack Engineer handles both the client-side user interface (fr
 
 ## Credential & Security Protocols
 - **Separation of Secrets**: Strictly enforce that secret keys are loaded in server-side routing controllers (`dotenv`) and never declared, referenced, or printed in HTML templates, CSS, or JS/TS client-side components.
+- **Public vs Secret Config**: Clearly separate public client config from backend secrets in `.env.example`. Public values must use explicit names such as `PUBLIC_` or `VITE_` only when safe for browser exposure; service-role keys, payment secrets, LLM keys, database passwords, and private connection strings must remain server-only.
 - **Secure Backend Proxies**: Expose server-side `/api/...` proxy routes to process outgoing operations requiring credentials (such as external AI model gateways or payment SDKs). Do not pass these credentials back to the browser.
 - **Payload Sanitization**: Sanitize all client-side inputs on the server controllers prior to executing database queries to block injections.
 
@@ -42,6 +43,7 @@ The Developer Fullstack Engineer handles both the client-side user interface (fr
 
 ## Quality Checklist
 - Are secrets fully contained in backend process environments and hidden from client layouts?
+- Are public client variables clearly marked and free of privileged credentials?
 - Does the frontend scale dynamically down to 360px viewport widths?
 - Are backend database interactions protected against common injection attacks?
 

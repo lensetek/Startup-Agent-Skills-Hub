@@ -27,7 +27,7 @@ if (path.resolve(sourceSkillsDir) === path.resolve(targetSkillsDir)) {
   process.exit(0);
 }
 
-console.log('🔄 Memulai pemasangan Research Agent Skills...');
+console.log('🔄 Memulai pemasangan Startup Agent Skills...');
 console.log(`📂 Asal: ${sourceSkillsDir}`);
 console.log(`📂 Tujuan: ${targetSkillsDir}`);
 
@@ -40,7 +40,7 @@ try {
   // Gunakan fs.cpSync untuk menyalin seluruh folder secara rekursif (Node.js >= 16.7.0)
   fs.cpSync(sourceSkillsDir, targetSkillsDir, { recursive: true });
   
-  console.log('\n✅ Sukses! Semua Research Agent Skills berhasil dipasang.');
+  console.log('\n✅ Sukses! Semua Startup Agent Skills berhasil dipasang.');
   if (isGlobal) {
     console.log('💡 Pasang secara Global: Sekarang skill ini dapat diakses oleh agen AI di semua workspace Anda.');
   } else {

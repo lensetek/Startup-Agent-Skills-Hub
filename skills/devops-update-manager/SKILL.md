@@ -1,11 +1,11 @@
 ---
 name: devops-update-manager
-description: The DevOps Update Manager periodically checks for updates to the Startup Agent Skills Hub repository via Git metadata and applies updates only after preview and user confirmation.
+description: The DevOps Update Manager checks for Startup Agent Skills Hub updates, applies Git-based updates by default, and uses a guarded ZIP fallback only when Git is unavailable.
 ---
 # DevOps Update Manager
 
 ## Role
-The DevOps Update Manager periodically checks for version updates of the Startup Agent Skills Hub from the remote Git repository, reads version information, informs the user of changes, and applies updates through auditable Git operations upon user confirmation.
+The DevOps Update Manager periodically checks for version updates of the Startup Agent Skills Hub, reads version information, informs the user of changes, and applies updates through auditable Git operations by default. If the user does not have Git or the workspace is not a Git checkout, it may use a guarded ZIP fallback with validation, backup, preview, and restore behavior.
 
 ## Responsibilities
 - Fetch the latest version information from the remote repository's `package.json` file.
@@ -13,16 +13,21 @@ The DevOps Update Manager periodically checks for version updates of the Startup
 - Query the remote release log (e.g. `WHATS_NEW.md` or git commits) if there is an update.
 - Notify the user in clear, friendly natural language of any available version updates.
 - Fetch remote Git metadata, preview incoming changes, update the local workspace through Git, and re-run installation to target agent platforms (e.g., Antigravity, Codex, Claude Code) upon user confirmation.
+- Use the safe ZIP fallback only when Git is unavailable or not applicable, and only after validating the archive structure and backing up existing files.
 
 ## Boundaries
 - Do not perform updates without user confirmation.
 - Do not edit or modify product requirements, database designs, or source code features.
-- Adhere strictly to auditable Git update logic. Never use ZIP archive updates, leak credentials, or run unsafe scripts.
+- Prefer auditable Git update logic whenever possible.
+- Never run scripts from downloaded archives automatically.
+- Never overwrite user files without backup and confirmation.
+- Never leak credentials, copy `.env`, or modify `.agents/session_memory.md`.
 
 ## Inputs
 - **Local package.json**: `c:/Users/ACER/Documents/antigravity/Startup-Agents/package.json`
 - **Remote Git Repository**: `https://github.com/lensetek/Startup-Agent-Skills-Hub`
 - **Remote Branch**: `main`
+- **Fallback ZIP Source**: `https://github.com/lensetek/Startup-Agent-Skills-Hub/archive/refs/heads/main.zip`
 
 ## Outputs
 - **Version Check Status**: Notification of whether the workspace is up-to-date or has an update available.
@@ -31,8 +36,19 @@ The DevOps Update Manager periodically checks for version updates of the Startup
 
 ## Workflow
 
-### 1. Version Verification Check
-- Verify the workspace is a Git repository with the expected remote origin.
+### 1. Capability Check
+- Check whether Git is available:
+  ```powershell
+  git --version
+  ```
+- Check whether the current workspace is a Git checkout with the expected remote:
+  ```powershell
+  git remote -v
+  ```
+- If Git is available and the expected remote exists, use the Git update path.
+- If Git is unavailable or the workspace is not a Git checkout, explain that the update will use the guarded ZIP fallback and ask for confirmation before downloading anything.
+
+### 2. Git Version Verification
 - Fetch remote metadata without modifying the working tree:
   ```powershell
   git fetch origin main
@@ -46,7 +62,7 @@ The DevOps Update Manager periodically checks for version updates of the Startup
 - If the remote version is newer (or if the user requests a force update):
   - Proceed to the Update Alert step.
 
-### 2. Update Alert & Confirmation
+### 3. Git Update Alert & Confirmation
 - Present the available version and release notes/changes (if available).
 - Show a concise preview of incoming changes before asking for confirmation:
   ```powershell
@@ -57,7 +73,7 @@ The DevOps Update Manager periodically checks for version updates of the Startup
   > "Sebuah update versi terbaru (**vX.Y.Z**) tersedia. Apakah Anda ingin menerapkan update ini melalui Git setelah melihat ringkasan perubahannya?"
 - Wait for user confirmation before executing any write commands.
 
-### 3. Applying the Update (Git Only)
+### 4. Applying the Update via Git
 - Once the user confirms the update, execute the following terminal commands to update the files securely:
   1. Confirm there are no uncommitted user changes that would be overwritten:
      ```powershell
@@ -74,8 +90,42 @@ The DevOps Update Manager periodically checks for version updates of the Startup
      ```
   5. Report the final installed version and any files changed by the update.
 
+### 5. Safe ZIP Fallback (Only Without Git)
+- Use this path only when Git is not installed or the workspace is not a Git checkout.
+- Before writing anything, ask the user to confirm the fallback update method:
+  > "Git tidak tersedia di environment ini. Apakah Anda ingin menggunakan ZIP fallback yang aman dengan validasi struktur, backup, dan restore otomatis jika gagal?"
+- Download the ZIP to a temporary path:
+  ```powershell
+  Invoke-WebRequest -Uri "https://github.com/lensetek/Startup-Agent-Skills-Hub/archive/refs/heads/main.zip" -OutFile "startup-agent-skills-update.zip"
+  ```
+- Extract only into a temporary folder:
+  ```powershell
+  Expand-Archive -Path "startup-agent-skills-update.zip" -DestinationPath "startup-agent-skills-update-temp" -Force
+  ```
+- Validate that the extracted archive contains the expected structure before copying:
+  - `Startup-Agent-Skills-Hub-main/package.json`
+  - `Startup-Agent-Skills-Hub-main/README.md`
+  - `Startup-Agent-Skills-Hub-main/bin/cli.js`
+  - `Startup-Agent-Skills-Hub-main/skills/`
+- If validation fails, delete the temporary files and stop.
+- Create timestamped backups before overwriting any managed paths:
+  - `skills.backup-YYYYMMDD-HHMMSS`
+  - `bin.backup-YYYYMMDD-HHMMSS`
+  - `README.backup-YYYYMMDD-HHMMSS.md`
+- Copy only managed update targets:
+  - `skills/`
+  - `bin/`
+  - `README.md`
+  - `WHATS_NEW.md`
+  - `package.json`
+- Never copy `.env`, `.agents/`, `.git/`, local cache folders, or user-generated project files.
+- After copying, report changed targets and re-run installation if the user asks for a target agent reinstall.
+- If any copy step fails, restore from backup and report the failure.
+- Clean up temporary ZIP and extraction folders after success or failure.
+
 ## Quality Checklist
 - Is the version compared correctly?
-- Was the update performed without ZIP archives or temporary extracted repositories?
-- Were incoming changes previewed before confirmation?
+- Was Git used by default when available?
+- If ZIP fallback was used, were archive structure validation, backup, restricted copy targets, cleanup, and restore-on-failure enforced?
+- Were incoming changes previewed before confirmation whenever Git was available?
 - Is the user prompted before any files are modified?

@@ -159,7 +159,7 @@ const SKILLS_DATA = [
         role: "DevOps Update Manager",
         icon: "fa-rotate",
         category: "finance",
-        responsibility: "Periodically checks for agent updates via Git metadata, previews changes, and applies confirmed updates.",
+        responsibility: "Checks for agent updates via Git by default, with a guarded ZIP fallback for users without Git.",
         boundaries: "No product scoping, no source code logic development, no security configuration alterations."
     },
     {

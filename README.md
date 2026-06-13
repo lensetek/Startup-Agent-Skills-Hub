@@ -39,7 +39,7 @@ Repositori ini adalah kumpulan **Skills** modular untuk **Startup Agent** — se
 #### 🚀 Divisi DevOps & Keuangan (DevOps & Finance)
 15. **devops-git-guard** — Audit keamanan pre-push: cek credential, validasi `.gitignore`, dan pembaruan dokumentasi.
 16. **startup-finance-planner** — Model keuangan startup: unit economics, proyeksi biaya backend & API.
-17. **devops-update-manager** — Cek update versi agent berkala lewat Git, tampilkan perubahan, dan terapkan update setelah konfirmasi.
+17. **devops-update-manager** — Cek update versi agent lewat Git secara default, dengan ZIP fallback aman untuk pengguna tanpa Git.
 18. **devops-infrastructure-engineer** — Konfigurasi deployment cloud hosting, pipeline CI/CD (GitHub Actions), containerization (Docker), backup data, dan monitoring uptime.
 19. **ops-legal-compliance** — Penyusunan berkas Terms of Service, Privacy Policy (kepatuhan GDPR/PDPA), compliance checklist, dan draf kontrak kesepakatan standar.
 
@@ -90,7 +90,7 @@ This repository is a modular collection of **Skills** for **Startup Agents** —
 #### 🚀 DevOps & Finance Division
 15. **devops-git-guard** — Pre-push security audit: credential checks, `.gitignore` validation, and documentation updates.
 16. **startup-finance-planner** — Startup financial modeling: unit economics, backend & API cost projections.
-17. **devops-update-manager** — Periodically checks for agent updates via Git, lists release notes, and applies confirmed updates.
+17. **devops-update-manager** — Checks for agent updates via Git by default, with a guarded ZIP fallback for users without Git.
 18. **devops-infrastructure-engineer** — Configures cloud hosting deployment environments, CI/CD pipelines (GitHub Actions), containerization (Docker), backups, and uptime monitoring.
 19. **ops-legal-compliance** — Drafts Terms of Service, Privacy Policies (GDPR/PDPA compliance), security checklists, and standard business contracts.
 

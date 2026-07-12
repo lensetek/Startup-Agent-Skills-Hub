@@ -1,4 +1,4 @@
-# What's New in Startup Agents v1.1.0 🚀
+# What's New in Startup Agents v1.1.1 🚀
 
 *Read this in other languages: [English](#english), [Bahasa Indonesia](#bahasa-indonesia).*
 
@@ -6,11 +6,18 @@
 
 ## Bahasa Indonesia
 
-Kami senang mengumumkan rilis versi **v1.1.0** yang membawa pembaruan besar pada kemudahan penggunaan (*user experience*) dan kecerdasan personalisasi agen AI Anda.
+Kami senang mengumumkan rilis versi **v1.1.1** yang membawa pembaruan besar pada kemudahan penggunaan (*user experience*) dan kecerdasan personalisasi agen AI Anda.
 
 ### Fitur Utama & Pembaruan
 
-#### 1. 🤖 AI-First & Prompt-Based Installation (Rekomendasi)
+#### 1. 🤝 Seamless Agent Handoff (Interoperability)
+Pembaruan struktural pada memori sesi memungkinkan Anda berganti agen (contoh: dari Antigravity pindah ke Claude Code atau Cursor) di tengah proyek tanpa kehilangan konteks. Agen baru akan membaca memori secara otomatis dan melanjutkan tugas dari titik terakhir agen sebelumnya berhenti.
+
+#### 2. 📱 Mobile-First UI & OpenAI Codex Identity
+- **Mobile-First**: Navigasi desktop telah dirapikan dan landing page kini dilengkapi dengan menu navigasi *sliding* khusus untuk perangkat mobile.
+- **OpenAI Codex**: Memperjelas identitas OpenAI Codex di UI sebagai *autonomous agent* independen, dipisah dari ekstensi GitHub Copilot.
+
+#### 3. 🤖 AI-First & Prompt-Based Installation (Rekomendasi)
 Pemasangan kini jauh lebih sederhana! Anda tidak perlu lagi menjalankan perintah terminal Node atau Git manual yang rumit di workspace Anda.
 - **Unduh & Pasang Instan**: Cukup berikan link Github dan perintahkan agen AI Anda melalui prompt natural:
   ```text
@@ -40,11 +47,18 @@ Agen sekarang dibekali memori sesi terstruktur di `.agents/session_memory.md`. S
 
 ## English
 
-We are excited to announce the release of **v1.1.0**, bringing major updates to the user experience and personalization capabilities of your AI agents.
+We are excited to announce the release of **v1.1.1**, bringing major updates to the user experience and personalization capabilities of your AI agents.
 
 ### Key Features & Updates
 
-#### 1. 🤖 AI-First & Prompt-Based Installation (Recommended)
+#### 1. 🤝 Seamless Agent Handoff (Interoperability)
+Structural updates to the session memory system allow you to switch AI agents (e.g., from Antigravity to Claude Code or Cursor) mid-project without losing context. The new agent automatically reads the memory and resumes exactly where the previous agent left off.
+
+#### 2. 📱 Mobile-First UI & OpenAI Codex Identity
+- **Mobile-First**: Cleaned up desktop navigation spacing and added a functional sliding navigation menu specifically for mobile devices.
+- **OpenAI Codex**: Clarified the identity of OpenAI Codex on the UI as an independent autonomous agent, separating it from the GitHub Copilot IDE extension.
+
+#### 3. 🤖 AI-First & Prompt-Based Installation (Recommended)
 Installation is now much simpler! You no longer need to run complex Node or Git terminal commands in your workspace.
 - **Instant Download & Install**: Just provide the GitHub link and instruct your AI assistant using a natural language prompt:
   ```text
@@ -71,4 +85,4 @@ Agents are now equipped with structured session memory in `.agents/session_memor
 *   **[MODIFY]** **[index.html](file:///c:/Users/ACER/Documents/antigravity/Startup-Agents/index.html)**: Updated landing page dashboard UI to showcase the Prompt-Based Copy module, bilingual tabs (ID/EN), personalization navigation, and the `startup_dna.md` visualizer.
 
 ---
-*Startup Agents v1.1.0 — Automating your startup with smarter, highly personalized AI teams.*
+*Startup Agents v1.1.1 — Automating your startup with smarter, highly personalized AI teams.*

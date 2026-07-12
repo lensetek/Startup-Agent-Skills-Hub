@@ -1,15 +1,19 @@
 # Startup Agent Skills Hub
 
+# Startup Agent Skills Hub
+
 *Read this in other languages: [English](#english), [Bahasa Indonesia](#bahasa-indonesia).*
 
 ---
 
 ## Bahasa Indonesia
 
-### 🚀 Apa yang Baru di v1.1.0
+### 🚀 Apa yang Baru di v1.1.1
+- **Seamless Agent Handoff**: Pembaruan sistem `session_memory.md` untuk menjembatani perpindahan antar asisten AI (misal dari Antigravity ke Claude Code) secara mulus.
+- **Mobile-First & UI Fixes**: Menu navigasi responsif baru untuk versi mobile dan penyempurnaan UI.
+- **OpenAI Codex vs Copilot**: Pemisahan identitas agen otonom OpenAI Codex dari ekstensi IDE GitHub Copilot.
 - **Prompt-Based Installation**: Pemasangan instan hanya menggunakan prompt asisten AI Anda tanpa instruksi CLI/Git yang rumit. Lihat [Panduan Instalasi](#panduan-instalasi--installation-guide).
-- **Auto-Scan Project DNA & Personalization**: Script `bin/init-dna.js` untuk memindai dependencies proyek dan menghasilkan file `.agents/startup_dna.md` secara otomatis demi mempersonalisasikan pemahaman agen.
-- **Kolektif Memori & Feedback Loop**: Pencatatan riwayat keputusan proyek di `.agents/session_memory.md` agar agen tidak mengulangi kesalahan sebelumnya.
+- **Auto-Scan Project DNA**: Script `bin/init-dna.js` untuk memindai dependencies proyek.
 - Selengkapnya baca di [WHATS_NEW.md](file:///c:/Users/ACER/Documents/antigravity/Startup-Agents/WHATS_NEW.md).
 
 ---
@@ -57,10 +61,12 @@ Repositori ini adalah kumpulan **Skills** modular untuk **Startup Agent** — se
 
 ## English
 
-### 🚀 What's New in v1.1.0
+### 🚀 What's New in v1.1.1
+- **Seamless Agent Handoff**: Updated `session_memory.md` architecture to bridge workflows seamlessly between different AI assistants (e.g., Antigravity to Claude Code).
+- **Mobile-First & UI Fixes**: New responsive sliding navigation menu and UI refinements.
+- **OpenAI Codex vs Copilot**: Clear distinction of OpenAI Codex as an autonomous agent separate from the GitHub Copilot IDE extension.
 - **Prompt-Based Installation**: Instant installation using your AI assistant prompt without complex CLI/Git instructions. See [Installation Guide](#panduan-instalasi--installation-guide).
-- **Auto-Scan Project DNA & Personalization**: `bin/init-dna.js` script to scan dependencies and generate `.agents/startup_dna.md` automatically to personalize agent logic.
-- **Collective Memory & Feedback Loop**: Logging project decisions in `.agents/session_memory.md` to prevent agents from repeating mistakes.
+- **Auto-Scan Project DNA**: `bin/init-dna.js` script to scan dependencies automatically.
 - Read more in [WHATS_NEW.md](file:///c:/Users/ACER/Documents/antigravity/Startup-Agents/WHATS_NEW.md).
 
 ---

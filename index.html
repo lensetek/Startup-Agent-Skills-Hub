@@ -296,6 +296,32 @@
                     </div>
                 </div>
             </div>
+
+            <!-- NPX Installation Card -->
+            <div class="mt-8 max-w-2xl mx-auto">
+                <div class="bg-themeCard border border-themeBorderCard rounded-2xl p-6 shadow-themeCard relative overflow-hidden backdrop-blur-md">
+                    <div class="flex items-center justify-between mb-4 border-b border-themeBorderCard pb-4">
+                        <div class="flex items-center space-x-2">
+                            <i class="fa-brands fa-npm text-red-500 text-lg"></i>
+                            <span class="text-xs text-themeTextMuted font-mono ml-2">CLI Installation (Advanced)</span>
+                        </div>
+                        <div class="text-xs text-themeTextSecondary font-medium hidden sm:block">NPX Command</div>
+                    </div>
+                    
+                    <p class="text-themeTextSecondary text-xs leading-relaxed mb-4">If you prefer using the command line interface, you can instantly install all agent modules using NPX. This command will download and register this GitHub repository into your local agent configuration.</p>
+
+                    <div class="space-y-4 text-left font-mono">
+                        <div>
+                            <div class="bg-themeTerminal rounded-xl p-4 flex items-center justify-between border border-themeBorderCard group hover:border-accentPink/50 transition-all duration-300">
+                                <span class="text-accentPink select-all break-word flex-1 min-w-0 mr-2 text-sm leading-relaxed font-semibold">npx skills add https://github.com/lensetek/Startup-Agent-Skills-Hub</span>
+                                <button onclick="copyCommand('npx skills add https://github.com/lensetek/Startup-Agent-Skills-Hub', this)" class="text-themeTextSecondary hover:text-themeText p-2 rounded-lg hover:bg-themeTerminal/80 transition-all duration-200 flex-shrink-0" title="Copy Command">
+                                    <i class="fa-regular fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 

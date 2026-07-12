@@ -129,6 +129,14 @@ Anda tidak perlu menjalankan perintah terminal yang rumit. Cukup berikan instruk
     Verifikasi ada berapa agent/skills yang terdapat di project saya saat ini dan daftarkan semuanya.
     ```
 
+### 💻 Instalasi CLI (Lanjutan / NPX)
+
+Jika Anda lebih menyukai menggunakan *command line interface*, Anda dapat memasang seluruh modul agen secara instan menggunakan NPX. Perintah ini akan mengunduh dan meregistrasikan repositori GitHub ini ke dalam konfigurasi agen lokal Anda:
+
+```bash
+npx skills add https://github.com/lensetek/Startup-Agent-Skills-Hub
+```
+
 ---
 
 ### 🇬🇧 English (Recommended - Via Direct Prompt)
@@ -145,6 +153,14 @@ You do not need to run complex terminal commands. Just give the following prompt
     ```text
     Verify how many agents/skills are present in my project right now and register all of them.
     ```
+
+### 💻 CLI Installation (Advanced / NPX)
+
+If you prefer using the command line interface, you can instantly install all agent modules using NPX. This command will download and register this GitHub repository into your local agent configuration:
+
+```bash
+npx skills add https://github.com/lensetek/Startup-Agent-Skills-Hub
+```
 
 ---
 

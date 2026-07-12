@@ -1,7 +1,5 @@
 # Startup Agent Skills Hub
 
-# Startup Agent Skills Hub
-
 *Read this in other languages: [English](#english), [Bahasa Indonesia](#bahasa-indonesia).*
 
 ---

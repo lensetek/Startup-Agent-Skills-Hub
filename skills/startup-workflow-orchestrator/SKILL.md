@@ -13,6 +13,7 @@ The Startup Workflow Orchestrator selects the right specialist agents, sequences
 - Require clear handoff artifacts between agents before the next agent begins.
 - Enforce security gates before engineering output, QA approval, update operations, and git push readiness.
 - Keep scope decisions routed through the correct owner instead of allowing agents to overreach.
+- **Dynamic Skill Check**: If a task requires a specialist skill not present in the local `skills/` directory, locate it on `skills.sh` via `npx skills find <keyword>`, and ask the user for confirmation to install it.
 
 ## Boundaries
 - Do not write final implementation code unless explicitly asked to act as an implementer.
@@ -37,9 +38,12 @@ Every specialist handoff should include:
    - Validation: Developer QA Reviewer.
    - Release: DevOps Git Guard, DevOps Infrastructure Engineer, DevOps Update Manager.
    - Growth/Ops: Marketing Content Planner, Marketing Copywriter, Growth Analytics, Customer Success, Legal & Compliance.
-3. Create a concise execution sequence with expected artifacts.
-4. Route work to the right specialist and require the Handoff Contract in the response.
-5. Stop release flow if secrets, unsafe public config, open database rules, or unresolved QA failures are detected.
+3. Verify if the required specialist agent skills are present in the `skills/` directory. If any required skill is missing (e.g. scientific analysis, peer-reviewer, or clinical database tools), search the `skills.sh` registry via `npx skills find <keyword>`.
+4. If found, present the package details to the user and request explicit confirmation to install it via `npx skills add <package>`. Do not install silently.
+5. Create a concise execution sequence with expected artifacts.
+6. Route work to the right specialist and require the Handoff Contract in the response.
+7. Stop release flow if secrets, unsafe public config, open database rules, or unresolved QA failures are detected.
+
 
 ## Quality Checklist
 - Was the correct specialist selected for the current phase?

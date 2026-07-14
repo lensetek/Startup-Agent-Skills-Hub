@@ -1,0 +1,52 @@
+{
+  "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
+  "notGrouped": "bottom",
+  "groupings": [
+    {
+      "title": "Product & Strategy",
+      "description": "Skills for defining product vision, analyzing markets, and planning roadmaps.",
+      "skills": [
+        "startup-workflow-orchestrator",
+        "ceo-strategy-planner",
+        "market-analyst",
+        "product-manager",
+        "prd-generator",
+        "designer-uiux-specialist",
+        "ops-growth-analytics"
+      ]
+    },
+    {
+      "title": "Development",
+      "description": "Skills for engineering web app codebases, databases, QA, and backlog tickets.",
+      "skills": [
+        "developer-scrum-master",
+        "developer-frontend-engineer",
+        "developer-backend-engineer",
+        "developer-fullstack-engineer",
+        "developer-mobile-engineer",
+        "developer-database-specialist",
+        "developer-qa-reviewer"
+      ]
+    },
+    {
+      "title": "DevOps & Finance",
+      "description": "Skills for deployments, CI/CD, credential security, and unit economics.",
+      "skills": [
+        "devops-git-guard",
+        "startup-finance-planner",
+        "devops-update-manager",
+        "devops-infrastructure-engineer",
+        "ops-legal-compliance"
+      ]
+    },
+    {
+      "title": "Marketing & Operations",
+      "description": "Skills for content calendar, copywriting, campaigns, and user support.",
+      "skills": [
+        "marketing-content-planner",
+        "marketing-copywriter",
+        "ops-customer-success"
+      ]
+    }
+  ]
+}

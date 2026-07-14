@@ -1,10 +1,30 @@
-# What's New in Startup Agents v1.1.1 🚀
+# What's New in Startup Agents v1.2.0 🚀
 
 *Read this in other languages: [English](#english), [Bahasa Indonesia](#bahasa-indonesia).*
 
 ---
 
 ## Bahasa Indonesia
+
+Kami senang mengumumkan rilis versi **v1.2.0** yang membawa kapabilitas baru untuk pengujian visual dinamis dan instalasi skill pintar!
+
+### 🌟 Fitur Baru di v1.2.0
+
+#### 1. 🌐 Integrasi Chrome DevTools MCP
+Agen kini dapat melihat dan berinteraksi langsung dengan browser Anda menggunakan Chrome DevTools MCP. Ini memungkinkan:
+- **Visual UI/UX Audit**: Agen UI/UX dapat menangkap screenshot langsung dari halaman yang dirender dan memverifikasi computed CSS (seperti jarak margin, font, dan warna HSL).
+- **QA Dynamic Testing**: Agen QA kini bisa mengecek responsivitas mobile-first, memindai error pada console JS, dan menganalisa kegagalan *network request* secara langsung.
+- **Growth & Performance Tracing**: Agen Growth & Infra bisa menguji klik CTA yang memicu *tracking events* (Mixpanel/GA) serta menjalankan audit Lighthouse (Core Web Vitals) pada *staging*.
+
+#### 2. 🧩 Ekosistem skills.sh & Dynamic Skill Acquisition
+Kami telah mendaftarkan repositori ini ke dalam ekosistem Vercel `skills.sh`:
+- **Pengelompokan Otomatis (`skills.sh.json`)**: 22 skill agen kini terorganisir rapi ke dalam 4 divisi (Product, Development, DevOps, Marketing).
+- **Pencarian Skill Dinamis**: Jika agen menemukan pemblokir (*blocker*) yang membutuhkan keahlian khusus di luar 22 skill standar, ia diinstruksikan untuk mencari di *registry* via `npx skills find` dan menawarkan instalasi.
+- **Keamanan Konfirmasi**: Agen **wajib** meminta persetujuan eksplisit Anda sebelum menginstal skill baru via `npx skills add`.
+
+---
+
+## Rilis Sebelumnya (v1.1.1)
 
 Kami senang mengumumkan rilis versi **v1.1.1** yang membawa pembaruan besar pada kemudahan penggunaan (*user experience*) dan kecerdasan personalisasi agen AI Anda.
 
@@ -47,7 +67,25 @@ Agen sekarang dibekali memori sesi terstruktur di `.agents/session_memory.md`. S
 
 ## English
 
-We are excited to announce the release of **v1.1.1**, bringing major updates to the user experience and personalization capabilities of your AI agents.
+We are excited to announce the release of **v1.2.0**, bringing new capabilities for dynamic visual testing and smart skill installations!
+
+### 🌟 New Features in v1.2.0
+
+#### 1. 🌐 Chrome DevTools MCP Integration
+Agents can now view and interact directly with your browser using Chrome DevTools MCP. This enables:
+- **Visual UI/UX Audits**: UI/UX agents can capture live screenshots of rendered pages and verify computed CSS (such as margin spacing, fonts, and HSL colors).
+- **QA Dynamic Testing**: QA agents can now check mobile-first responsiveness, scan for JS console errors, and trace failing network requests live.
+- **Growth & Performance Tracing**: Growth & Infra agents can test CTA clicks that trigger tracking events (Mixpanel/GA) and run Lighthouse audits (Core Web Vitals) on staging.
+
+#### 2. 🧩 skills.sh Ecosystem & Dynamic Skill Acquisition
+We have registered this repository into the Vercel `skills.sh` ecosystem:
+- **Automatic Grouping (`skills.sh.json`)**: 22 agent skills are now neatly organized into 4 divisions (Product, Development, DevOps, Marketing).
+- **Dynamic Skill Search**: If an agent encounters a blocker requiring specialized skills outside the standard 22, it is instructed to search the registry via `npx skills find` and propose an installation.
+- **Confirmation Safety**: Agents are **strictly required** to ask for your explicit approval before installing new skills via `npx skills add`.
+
+---
+
+## Previous Release (v1.1.1)
 
 ### Key Features & Updates
 

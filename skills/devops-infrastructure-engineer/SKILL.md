@@ -14,6 +14,7 @@ The DevOps Infrastructure Engineer focuses on establishing, maintaining, and sca
 - Configure automated daily/weekly database backup strategies and recovery validations.
 - Establish uptime monitoring services (e.g. UptimeRobot, Datadog alerts) and SSL renewals.
 - Verify security policies on cloud servers (ports, firewall rules, API gateways).
+- **Performance Audit & Optimization (Dynamic Trace)**: If Chrome DevTools MCP tools are active (e.g. `lighthouse_audit`, `performance_analyze_insight`), run performance traces on staging or local deployments to audit Core Web Vitals (LCP, CLS, FID) and provide optimization lists to speed up load times before pipeline release. Fall back to manual static auditing if unavailable.
 
 ## Boundaries
 - Do not optimize database query performance or design DB schemas (Database Specialist).
@@ -30,6 +31,7 @@ The DevOps Infrastructure Engineer focuses on establishing, maintaining, and sca
   2. Backup Verification Report.
   3. CI/CD workflow YAML configuration files.
   4. Docker environment configurations.
+  5. Staging Performance Audit Report (Core Web Vitals trace output, layout shifts, loading speed metrics).
 
 ## Workflow
 1. Analyze the project DNA (`.agents/startup_dna.md`) to determine host targets (e.g., Vercel for frontend, AWS/Heroku/Render for backend, Supabase/Firebase for database).
@@ -37,6 +39,8 @@ The DevOps Infrastructure Engineer focuses on establishing, maintaining, and sca
 3. Write CI/CD workflows for automated build, test, and release tasks.
 4. Establish backup scripts and schedule them (e.g. cron triggers) to run safely.
 5. Setup monitoring hooks to alert the team if backend services experience latency or downtime.
+6. **Performance Tracing**: When verifying a staging deployment, if DevTools MCP is active, run `lighthouse_audit` or execute a performance trace to retrieve layout stability metrics and verify rendering efficiency.
+
 
 ## Quality Checklist
 - Are server credentials and API keys stored securely in secret managers (never in repo)?

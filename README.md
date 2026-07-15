@@ -6,19 +6,17 @@
 
 ## Bahasa Indonesia
 
-### 🚀 Apa yang Baru di v1.2.0
-- **Chrome DevTools MCP**: Kemampuan agen (UI/UX, QA, Infra, Growth) untuk melakukan *dynamic testing* langsung di browser Anda (screenshot, console log, network trace, lighthouse).
-- **skills.sh Ecosystem**: Pengelompokan leaderboard (`skills.sh.json`) & instalasi skill spesialis ekstra secara dinamis melalui prompt AI dengan keamanan konfirmasi.
-- **Seamless Agent Handoff**: Pembaruan sistem `session_memory.md` untuk menjembatani perpindahan antar asisten AI (misal dari Antigravity ke Claude Code) secara mulus.
-- **Mobile-First & UI Fixes**: Menu navigasi responsif baru untuk versi mobile dan penyempurnaan UI.
-- **Auto-Scan Project DNA**: Script `bin/init-dna.js` untuk memindai dependencies proyek.
-- Selengkapnya baca di [WHATS_NEW.md](file:///c:/Users/ACER/Documents/antigravity/Startup-Agents/WHATS_NEW.md).
+### 🚀 Apa yang Baru di v1.3.0
+- **Obsidian Knowledge Architect**: Skill baru (`obsidian-knowledge-architect`) untuk menyusun, menghubungkan (*backlinking* `[[...]]`), dan memformat semua *deliverable* agen ke dalam Obsidian Vault (*Startup Second Brain*) berstandar PARA & Dataview.
+- **Chrome DevTools MCP**: Kemampuan agen (UI/UX, QA, Infra, Growth) untuk melakukan *dynamic testing* langsung di browser Anda.
+- **skills.sh Ecosystem**: Pengelompokan leaderboard (`skills.sh.json`) & instalasi skill spesialis ekstra secara dinamis.
+- Selengkapnya baca di [WHATS_NEW.md](WHATS_NEW.md).
 
 ---
 
 Repositori ini adalah kumpulan **Skills** modular untuk **Startup Agent** — sebuah tim virtual agen AI yang dirancang untuk mengotomatiskan seluruh siklus hidup startup digital, mulai dari perencanaan strategi bisnis, desain produk, pengembangan perangkat lunak, hingga peluncuran dan pemasaran.
 
-### Kumpulan Skill yang Tersedia (22 Skills)
+### Kumpulan Skill yang Tersedia (23 Skills)
 
 #### 🏢 Divisi Strategi & Produk (Product & Strategy)
 1.  **startup-workflow-orchestrator** — Menentukan urutan agent, handoff, dan security gate dari strategi sampai rilis.
@@ -28,6 +26,7 @@ Repositori ini adalah kumpulan **Skills** modular untuk **Startup Agent** — se
 5.  **prd-generator** — Menghasilkan dokumen Product Requirements Document (PRD) final.
 6.  **designer-uiux-specialist** — Merancang wireframe, desain antarmuka, dan panduan UI/UX.
 7.  **ops-growth-analytics** — Menyusun tracking events, memantau metrik operasional (CAC/LTV/churn), analisa A/B testing, dan merancang growth loops.
+8.  **obsidian-knowledge-architect** — Menyusun dan menginterkoneksikan output seluruh agen ke dalam struktur Obsidian Vault (Dataview YAML, backlinks, Canvas flows).
 
 #### 💻 Divisi Pengembangan (Development)
 8.  **developer-scrum-master** — Mengelola sprint, membuat backlog tiket dengan Acceptance Criteria.
@@ -59,19 +58,16 @@ Repositori ini adalah kumpulan **Skills** modular untuk **Startup Agent** — se
 
 ## English
 
-### 🚀 What's New in v1.2.0
-- **Chrome DevTools MCP**: Dynamic browser testing for agents (UI/UX, QA, Infra, Growth) to capture screenshots, console logs, network traces, and lighthouse audits.
-- **skills.sh Ecosystem**: Leaderboard groupings (`skills.sh.json`) & dynamic installation of extra specialist skills via AI prompts with confirmation safety.
-- **Seamless Agent Handoff**: Updated `session_memory.md` architecture to bridge workflows seamlessly between different AI assistants (e.g., Antigravity to Claude Code).
-- **Mobile-First & UI Fixes**: New responsive sliding navigation menu and UI refinements.
-- **Auto-Scan Project DNA**: `bin/init-dna.js` script to scan dependencies automatically.
-- Read more in [WHATS_NEW.md](file:///c:/Users/ACER/Documents/antigravity/Startup-Agents/WHATS_NEW.md).
+### 🚀 What's New in v1.3.0
+- **Obsidian Knowledge Architect**: New specialized skill (`obsidian-knowledge-architect`) to structure, format, cross-link (`[[...]]`), and convert agent deliverables into an interlinked Obsidian Vault (*Startup Second Brain*) adhering to PARA and Dataview standards.
+- **Chrome DevTools MCP**: Dynamic browser testing for agents (UI/UX, QA, Infra, Growth).
+- Read more in [WHATS_NEW.md](WHATS_NEW.md).
 
 ---
 
 This repository is a modular collection of **Skills** for **Startup Agents** — a virtual AI team designed to automate the entire digital startup lifecycle, from business strategy planning, product design, software development, to launch and marketing.
 
-### Available Skills (22 Skills)
+### Available Skills (23 Skills)
 
 #### 🏢 Product & Strategy Division
 1.  **startup-workflow-orchestrator** — Selects agent sequence, handoffs, and security gates from strategy through release.
@@ -81,6 +77,7 @@ This repository is a modular collection of **Skills** for **Startup Agents** —
 5.  **prd-generator** — Generates the final Product Requirements Document (PRD).
 6.  **designer-uiux-specialist** — Wireframe design, UI/UX interface, and design guidelines.
 7.  **ops-growth-analytics** — Designs event-tracking plans, monitors business metrics (CAC/LTV/churn), plans A/B tests, and designs growth loops.
+8.  **obsidian-knowledge-architect** — Formats and interlinks all agent outputs into an Obsidian Vault (Dataview YAML, backlinks, Canvas flows).
 
 #### 💻 Development Division
 8.  **developer-scrum-master** — Sprint management, backlog tickets with Acceptance Criteria.

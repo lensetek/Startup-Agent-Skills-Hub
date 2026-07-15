@@ -197,6 +197,15 @@ const SKILLS_DATA = [
         category: "product",
         responsibility: "Designs event-tracking plans, monitors business metrics (CAC, LTV, churn), maps funnels, organizes A/B tests, and designs growth loops.",
         boundaries: "No final corporate strategy decisions, no analytical tracking code implementation, no raw campaign copywriting."
+    },
+    {
+        id: "obsidian-knowledge-architect",
+        name: "obsidian-knowledge-architect",
+        role: "Obsidian Knowledge Architect",
+        icon: "fa-brain",
+        category: "product",
+        responsibility: "Organizes all agent outputs into an interlinked Obsidian Vault using PARA structuring, Dataview YAML frontmatter, backlinking, and Obsidian Canvas flow maps.",
+        boundaries: "No alteration of functional PM requirements or source code logic without approval."
     }
 ];
 

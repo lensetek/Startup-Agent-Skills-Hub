@@ -1,10 +1,26 @@
-# What's New in Startup Agents v1.2.0 🚀
+# What's New in Startup Agents v1.3.0 🚀
 
 *Read this in other languages: [English](#english), [Bahasa Indonesia](#bahasa-indonesia).*
 
 ---
 
 ## Bahasa Indonesia
+
+Kami senang mengumumkan rilis versi **v1.3.0** yang menghadirkan arsitektur pengetahuan terintegrasi untuk **Obsidian**!
+
+### 🌟 Fitur Baru di v1.3.0
+
+#### 🧠 1. Skill Agen: Obsidian Knowledge Architect (`obsidian-knowledge-architect`)
+Agen spesialis ke-23 yang bertugas mengorganisasi dan menginterkoneksikan seluruh hasil kerja (*deliverables*) agen AI ke dalam format **Obsidian Vault** (*Startup Second Brain*):
+- **Standardized YAML Frontmatter**: Menambahkan header metadata pada dokumen agar kompatibel dengan query **Obsidian Dataview**.
+- **Bi-directional Backlinking (`[[Link]]`)**: Otomatis menghubungkan dokumen PRD dengan analisis pasar, skema database, tiket sprint, dan brief pemasaran.
+- **PARA System Vault Organization**: Pengelompokan folder sistematis (`01_Projects`, `02_Areas`, `03_Resources`, `04_Archives`).
+- **Obsidian Canvas Flow Exporter (`.canvas`)**: Mengubah alur pengguna (*user journeys*) dan arsitektur agen menjadi diagram visual `.canvas`.
+- **Master Home Dashboard**: File `00_Home_Dashboard.md` lengkap dengan snippet Dataview untuk pemantauan proyek secara real-time.
+
+---
+
+## Rilis v1.2.0
 
 Kami senang mengumumkan rilis versi **v1.2.0** yang membawa kapabilitas baru untuk pengujian visual dinamis dan instalasi skill pintar!
 

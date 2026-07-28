@@ -206,6 +206,15 @@ const SKILLS_DATA = [
         category: "product",
         responsibility: "Organizes all agent outputs into an interlinked Obsidian Vault using PARA structuring, Dataview YAML frontmatter, backlinking, and Obsidian Canvas flow maps.",
         boundaries: "No alteration of functional PM requirements or source code logic without approval."
+    },
+    {
+        id: "computer-use",
+        name: "computer-use",
+        role: "Computer Use Specialist",
+        icon: "fa-desktop",
+        category: "development",
+        responsibility: "Operates web browsers and GUI desktop applications using stablyai/orca@computer-use with automated Fallback References (midscene-skills and gemini-computer-use) for resilient UI automation.",
+        boundaries: "No bypass of unauthorized security controls, no exposure of secret tokens in screenshot logs, no PM scope alterations."
     }
 ];
 

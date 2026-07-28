@@ -1,10 +1,29 @@
-# What's New in Startup Agents v1.3.0 🚀
+# What's New in Startup Agents v1.4.0 🚀
 
 *Read this in other languages: [English](#english), [Bahasa Indonesia](#bahasa-indonesia).*
 
 ---
 
 ## Bahasa Indonesia
+
+Kami senang mengumumkan rilis versi **v1.4.0** yang membawa skill automasi browser/GUI baru **`computer-use`** beserta arsitektur **Fallback References & Auto-Recovery**!
+
+### 🌟 Fitur Baru di v1.4.0
+
+#### 🖥️ 1. Skill Agen: Computer Use Specialist (`computer-use`)
+Agen spesialis ke-24 yang bertugas mengendalikan antarmuka browser dan aplikasi GUI untuk pengujian E2E interaktif, verifikasi visual layout, serta automasi *user flows*:
+- **Skill Utama (Primary Skill)**: `stablyai/orca@computer-use`
+- **Fallback References & Auto-Recovery**:
+  - `web-infra-dev/midscene-skills@computer-automation` (Vision-Based UI Automation)
+  - `am-will/codex-skills@gemini-computer-use` (Gemini-Optimized Schema)
+- **Mekanisme Auto-Recovery**: Jika eksekusi skill utama mengalami kegagalan (misalnya elemen UI tidak responsif, permission error, atau screenshot terhenti), agen secara otomatis membaca referensi fallback, mengunduh/memanggil skill alternatif secara *on-demand*, dan melanjutkan tugas tanpa terhenti.
+
+#### 🔄 2. Integrasi & Perbarui 5 Skill Eksisting
+Skill `startup-workflow-orchestrator`, `developer-qa-reviewer`, `designer-uiux-specialist`, `ops-growth-analytics`, dan `devops-infrastructure-engineer` telah disesuaikan untuk mengintegrasikan kapabilitas `computer-use` dan mematuhi protokol *Auto-Recovery*.
+
+---
+
+## Rilis v1.3.0
 
 Kami senang mengumumkan rilis versi **v1.3.0** yang menghadirkan arsitektur pengetahuan terintegrasi untuk **Obsidian**!
 

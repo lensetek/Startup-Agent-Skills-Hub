@@ -20,3 +20,7 @@ This file serves as the global instructions for all AI coding assistants, models
 - **Blocker Resolution**: If a task or phase requires a specialized skill/capability not present in the local `skills/` workspace (e.g. specialized databases, academic peer reviews, citation validators), search for a match on Vercel's `skills.sh` registry using `npx skills find <keyword>`.
 - **Mandatory User Approval**: If a relevant skill package is found, explain why it is needed and explicitly ask for user confirmation before executing `npx skills add <package>` to install it. Silent installations are strictly prohibited.
 
+## 5. Fallback References & Auto-Recovery
+- **Primary Execution & On-Demand Fallback**: When executing skills configured with fallback references (such as `computer-use` using primary skill `stablyai/orca@computer-use`), agents must attempt the primary skill first.
+- **Auto-Recovery**: If execution encounters blocking errors (e.g. unresponsive UI elements, permission issues, or screenshot timeouts), agents must not crash or fail. Instead, read the `fallback_references` defined in the skill file, fetch/invoke the alternative skill on-demand (e.g. `web-infra-dev/midscene-skills@computer-automation` or `am-will/codex-skills@gemini-computer-use`), and resume execution seamlessly.
+

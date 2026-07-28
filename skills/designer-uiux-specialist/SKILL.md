@@ -13,7 +13,7 @@ The Designer UI/UX Specialist maps out the visual architecture, creates user jou
 - Establish design system guidelines (color themes, typography hierarchies, spacing rules).
 - Review frontend layout mockups for usability and consistency.
 - Ensure layouts prioritize a premium, mobile-first aesthetic.
-- **Design Fidelity Audit (Dynamic Verification)**: If browser tools are available (e.g. `take_screenshot`, `evaluate_script`), open the rendered page in a browser, grab screenshots, and inspect computed CSS properties (colors, sizing, margins) to audit frontend alignment with the original style guide. Fall back to code file inspection if unavailable.
+- **Design Fidelity Audit (Dynamic Verification)**: Use `computer-use` (`stablyai/orca@computer-use`) or browser tools to open rendered pages, capture screenshots, and audit computed CSS alignment. If element inspection stalls or fails, trigger Auto-Recovery fallbacks (`midscene-skills@computer-automation` or `codex-skills@gemini-computer-use`).
 
 ## Boundaries
 - Do not write final production code (HTML, CSS, or JS).

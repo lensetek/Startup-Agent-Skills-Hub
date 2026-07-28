@@ -14,6 +14,7 @@ The Startup Workflow Orchestrator selects the right specialist agents, sequences
 - Enforce security gates before engineering output, QA approval, update operations, and git push readiness.
 - Keep scope decisions routed through the correct owner instead of allowing agents to overreach.
 - **Dynamic Skill Check**: If a task requires a specialist skill not present in the local `skills/` directory, locate it on `skills.sh` via `npx skills find <keyword>`, and ask the user for confirmation to install it.
+- **Fallback References & Auto-Recovery**: For automation tasks using `computer-use`, enforce primary execution via `stablyai/orca@computer-use`. If stalled or unresponsive, trigger auto-recovery to fallback skills (`midscene-skills@computer-automation` or `codex-skills@gemini-computer-use`).
 
 ## Boundaries
 - Do not write final implementation code unless explicitly asked to act as an implementer.
@@ -35,14 +36,15 @@ Every specialist handoff should include:
    - Product Definition: Product Manager, PRD Generator, Designer UI/UX Specialist.
    - Delivery Planning: Developer Scrum Master.
    - Implementation: Frontend, Backend, Fullstack, Mobile, or Database Engineer.
-   - Validation: Developer QA Reviewer.
+   - Validation & Automation: Developer QA Reviewer, Computer Use Specialist (`computer-use`).
    - Release: DevOps Git Guard, DevOps Infrastructure Engineer, DevOps Update Manager.
-   - Growth/Ops: Marketing Content Planner, Marketing Copywriter, Growth Analytics, Customer Success, Legal & Compliance.
+   - Growth/Ops: Marketing Content Planner, Marketing Copywriter, Growth Analytics, Customer Success, Legal & Compliance, Obsidian Knowledge Architect.
 3. Verify if the required specialist agent skills are present in the `skills/` directory. If any required skill is missing (e.g. scientific analysis, peer-reviewer, or clinical database tools), search the `skills.sh` registry via `npx skills find <keyword>`.
 4. If found, present the package details to the user and request explicit confirmation to install it via `npx skills add <package>`. Do not install silently.
-5. Create a concise execution sequence with expected artifacts.
-6. Route work to the right specialist and require the Handoff Contract in the response.
-7. Stop release flow if secrets, unsafe public config, open database rules, or unresolved QA failures are detected.
+5. For UI/Browser automation tasks, utilize `computer-use` (`stablyai/orca@computer-use`). If an execution error occurs, trigger Fallback References (`web-infra-dev/midscene-skills@computer-automation` or `am-will/codex-skills@gemini-computer-use`) on-demand.
+6. Create a concise execution sequence with expected artifacts.
+7. Route work to the right specialist and require the Handoff Contract in the response.
+8. Stop release flow if secrets, unsafe public config, open database rules, or unresolved QA failures are detected.
 
 
 ## Quality Checklist

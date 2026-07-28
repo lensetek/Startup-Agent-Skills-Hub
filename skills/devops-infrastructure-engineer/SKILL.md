@@ -13,8 +13,7 @@ The DevOps Infrastructure Engineer focuses on establishing, maintaining, and sca
 - Maintain containerization settings (e.g., Dockerfiles, docker-compose.yml configurations).
 - Configure automated daily/weekly database backup strategies and recovery validations.
 - Establish uptime monitoring services (e.g. UptimeRobot, Datadog alerts) and SSL renewals.
-- Verify security policies on cloud servers (ports, firewall rules, API gateways).
-- **Performance Audit & Optimization (Dynamic Trace)**: If Chrome DevTools MCP tools are active (e.g. `lighthouse_audit`, `performance_analyze_insight`), run performance traces on staging or local deployments to audit Core Web Vitals (LCP, CLS, FID) and provide optimization lists to speed up load times before pipeline release. Fall back to manual static auditing if unavailable.
+- **Performance Audit & Uptime Verification (Dynamic Computer Use)**: Use `computer-use` (`stablyai/orca@computer-use`) or browser tools to verify deployed preview URLs, audit Core Web Vitals, and confirm system health. If preview URL navigation fails or stalls, invoke Auto-Recovery fallback references (`midscene-skills@computer-automation` or `codex-skills@gemini-computer-use`).
 
 ## Boundaries
 - Do not optimize database query performance or design DB schemas (Database Specialist).

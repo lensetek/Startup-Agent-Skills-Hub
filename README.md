@@ -6,17 +6,16 @@
 
 ## Bahasa Indonesia
 
-### 🚀 Apa yang Baru di v1.3.0
-- **Obsidian Knowledge Architect**: Skill baru (`obsidian-knowledge-architect`) untuk menyusun, menghubungkan (*backlinking* `[[...]]`), dan memformat semua *deliverable* agen ke dalam Obsidian Vault (*Startup Second Brain*) berstandar PARA & Dataview.
-- **Chrome DevTools MCP**: Kemampuan agen (UI/UX, QA, Infra, Growth) untuk melakukan *dynamic testing* langsung di browser Anda.
-- **skills.sh Ecosystem**: Pengelompokan leaderboard (`skills.sh.json`) & instalasi skill spesialis ekstra secara dinamis.
+### 🚀 Apa yang Baru di v1.4.0
+- **Computer Use & Auto-Recovery**: Skill baru (`computer-use`) berbasis `stablyai/orca@computer-use` (Skill Utama) dilengkapi arsitektur **Fallback References & Auto-Recovery** (`midscene-skills@computer-automation` & `codex-skills@gemini-computer-use`) untuk automasi browser/GUI yang tangguh.
+- **Obsidian Knowledge Architect**: Skill agen (`obsidian-knowledge-architect`) untuk menyusun Obsidian Vault berstandar PARA & Dataview.
 - Selengkapnya baca di [WHATS_NEW.md](WHATS_NEW.md).
 
 ---
 
 Repositori ini adalah kumpulan **Skills** modular untuk **Startup Agent** — sebuah tim virtual agen AI yang dirancang untuk mengotomatiskan seluruh siklus hidup startup digital, mulai dari perencanaan strategi bisnis, desain produk, pengembangan perangkat lunak, hingga peluncuran dan pemasaran.
 
-### Kumpulan Skill yang Tersedia (23 Skills)
+### Kumpulan Skill yang Tersedia (24 Skills)
 
 #### 🏢 Divisi Strategi & Produk (Product & Strategy)
 1.  **startup-workflow-orchestrator** — Menentukan urutan agent, handoff, dan security gate dari strategi sampai rilis.
@@ -29,13 +28,14 @@ Repositori ini adalah kumpulan **Skills** modular untuk **Startup Agent** — se
 8.  **obsidian-knowledge-architect** — Menyusun dan menginterkoneksikan output seluruh agen ke dalam struktur Obsidian Vault (Dataview YAML, backlinks, Canvas flows).
 
 #### 💻 Divisi Pengembangan (Development)
-8.  **developer-scrum-master** — Mengelola sprint, membuat backlog tiket dengan Acceptance Criteria.
-9.  **developer-frontend-engineer** — Membangun antarmuka pengguna (frontend).
-10. **developer-backend-engineer** — Membangun logika server dan API (backend).
-11. **developer-fullstack-engineer** — Pengembangan end-to-end (frontend + backend).
-12. **developer-mobile-engineer** — Pengembangan aplikasi mobile.
-13. **developer-database-specialist** — Desain skema database, query, dan optimasi.
-14. **developer-qa-reviewer** — Pengujian kualitas kode, scanning API key di client-side.
+9.  **developer-scrum-master** — Mengelola sprint, membuat backlog tiket dengan Acceptance Criteria.
+10. **developer-frontend-engineer** — Membangun antarmuka pengguna (frontend).
+11. **developer-backend-engineer** — Membangun logika server dan API (backend).
+12. **developer-fullstack-engineer** — Pengembangan end-to-end (frontend + backend).
+13. **developer-mobile-engineer** — Pengembangan aplikasi mobile.
+14. **developer-database-specialist** — Desain skema database, query, dan optimasi.
+15. **developer-qa-reviewer** — Pengujian kualitas kode, scanning API key di client-side.
+16. **computer-use** — Automasi GUI & browser menggunakan `stablyai/orca@computer-use` dengan mekanisme Fallback References & Auto-Recovery (`midscene-skills` / `gemini-computer-use`).
 
 #### 🚀 Divisi DevOps & Keuangan (DevOps & Finance)
 15. **devops-git-guard** — Audit keamanan pre-push: cek credential, validasi `.gitignore`, dan pembaruan dokumentasi.
@@ -58,16 +58,15 @@ Repositori ini adalah kumpulan **Skills** modular untuk **Startup Agent** — se
 
 ## English
 
-### 🚀 What's New in v1.3.0
-- **Obsidian Knowledge Architect**: New specialized skill (`obsidian-knowledge-architect`) to structure, format, cross-link (`[[...]]`), and convert agent deliverables into an interlinked Obsidian Vault (*Startup Second Brain*) adhering to PARA and Dataview standards.
-- **Chrome DevTools MCP**: Dynamic browser testing for agents (UI/UX, QA, Infra, Growth).
+### 🚀 What's New in v1.4.0
+- **Computer Use & Auto-Recovery**: New specialized skill (`computer-use`) powered by `stablyai/orca@computer-use` (Primary Skill) with built-in **Fallback References & Auto-Recovery** architecture (`midscene-skills@computer-automation` & `codex-skills@gemini-computer-use`) for resilient UI/browser automation.
 - Read more in [WHATS_NEW.md](WHATS_NEW.md).
 
 ---
 
 This repository is a modular collection of **Skills** for **Startup Agents** — a virtual AI team designed to automate the entire digital startup lifecycle, from business strategy planning, product design, software development, to launch and marketing.
 
-### Available Skills (23 Skills)
+### Available Skills (24 Skills)
 
 #### 🏢 Product & Strategy Division
 1.  **startup-workflow-orchestrator** — Selects agent sequence, handoffs, and security gates from strategy through release.
@@ -80,13 +79,14 @@ This repository is a modular collection of **Skills** for **Startup Agents** —
 8.  **obsidian-knowledge-architect** — Formats and interlinks all agent outputs into an Obsidian Vault (Dataview YAML, backlinks, Canvas flows).
 
 #### 💻 Development Division
-8.  **developer-scrum-master** — Sprint management, backlog tickets with Acceptance Criteria.
-9.  **developer-frontend-engineer** — Builds user interfaces (frontend).
-10. **developer-backend-engineer** — Builds server logic and APIs (backend).
-11. **developer-fullstack-engineer** — End-to-end development (frontend + backend).
-12. **developer-mobile-engineer** — Mobile application development.
-13. **developer-database-specialist** — Database schema design, queries, and optimization.
-14. **developer-qa-reviewer** — Code quality testing, client-side API key scanning.
+9.  **developer-scrum-master** — Sprint management, backlog tickets with Acceptance Criteria.
+10. **developer-frontend-engineer** — Builds user interfaces (frontend).
+11. **developer-backend-engineer** — Builds server logic and APIs (backend).
+12. **developer-fullstack-engineer** — End-to-end development (frontend + backend).
+13. **developer-mobile-engineer** — Mobile application development.
+14. **developer-database-specialist** — Database schema design, queries, and optimization.
+15. **developer-qa-reviewer** — Code quality testing, client-side API key scanning.
+16. **computer-use** — GUI & browser automation using `stablyai/orca@computer-use` with Fallback References & Auto-Recovery (`midscene-skills` / `gemini-computer-use`).
 
 #### 🚀 DevOps & Finance Division
 15. **devops-git-guard** — Pre-push security audit: credential checks, `.gitignore` validation, and documentation updates.

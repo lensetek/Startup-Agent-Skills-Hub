@@ -11,7 +11,7 @@ The Developer QA Reviewer evaluates generated code, runs testing diagnostics, sc
 - Audit pull requests or written files against ticket Acceptance Criteria.
 - Check code files for hardcoded API keys, secrets, private URLs, or database passwords.
 - Verify linter checks and run test cases (unit/integration/E2E).
-- **Evaluate Responsive Rendering (Dynamic Browser Audit)**: If Chrome DevTools MCP tools (e.g. `take_screenshot`, `resize_page`) are configured, load the local site, capture visual screenshots of the mobile viewport first, and verify flex/grid responsive scaling. Fall back to static CSS review if DevTools MCP is unavailable.
+- **Evaluate Responsive Rendering & Interactive E2E (Dynamic Computer Use)**: Utilize `computer-use` (`stablyai/orca@computer-use`) or Chrome DevTools MCP to interactively test user flows, capture mobile-first screenshots, and inspect element states. If primary computer-use encounters unresponsive UI elements or stream timeouts, invoke Auto-Recovery fallback references (`midscene-skills@computer-automation` or `codex-skills@gemini-computer-use`).
 - **Audit Runtime Logs & Network Traces**: Check for client-side JavaScript exceptions and broken resources using browser tools (`list_console_messages` and `list_network_requests`).
 - Give structured verdicts (`Approved`, `Approved with Comments`, or `Needs Revision`).
 

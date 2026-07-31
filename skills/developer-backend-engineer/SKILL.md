@@ -9,6 +9,8 @@ The Developer Backend Engineer designs database structures, builds server APIs, 
 
 ## Responsibilities
 - Architect backend structure (Express.js, Django, FastAPI, etc.) and databases (Supabase, PostgreSQL).
+- Query Graphify AST Knowledge Graph (`shortest_path`, `query_graph`) to check route/controller dependencies before refactoring.
+- Adhere strictly to **Contract-First Locks** in `.agents/session_memory.md` when executing tasks in **Parallel Multi-Agent Execution** mode.
 - Create secure API routes matching backend ticket requirements.
 - Set up proxy endpoints to securely handle LLM (Gemini), payments (Midtrans), and other third-party API keys.
 - Manage environment configurations and write `.env.example` templates.

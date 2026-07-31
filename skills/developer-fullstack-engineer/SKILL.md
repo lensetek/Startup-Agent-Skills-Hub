@@ -9,6 +9,8 @@ The Developer Fullstack Engineer handles both the client-side user interface (fr
 
 ## Responsibilities
 - Architect the end-to-end directory structure (both web interface and API servers).
+- Use Graphify AST Knowledge Graph (`shortest_path`, `query_graph`) to conduct impact analysis before modifying or refactoring existing modules.
+- Adhere strictly to **Contract-First Locks** in `.agents/session_memory.md` when executing tasks in **Parallel Multi-Agent Execution** mode.
 - Write responsive web frontends (HTML, CSS variables, client-side logic).
 - Implement backend API routes, secure database models, and payment integrations.
 - Set up proxy routes to keep third-party secret tokens securely stored on the server side.

@@ -9,6 +9,8 @@ The Developer Database Specialist designs database architectures, optimizes quer
 
 ## Responsibilities
 - Architect relational database models (SQL - PostgreSQL/MySQL) including tables, keys, and indexes.
+- Query Graphify AST Knowledge Graph (`query_graph`) to locate all backend ORM and query references prior to running migrations.
+- Provide DTO mock schemas and contract definitions for parallel frontend subagents during **Parallel Multi-Agent Execution**.
 - Design NoSQL collection patterns for Firebase Firestore/Realtime Database.
 - Write database migration scripts, table schemas, and initial seeding scripts.
 - Configure access permissions and rules (Firebase Security Rules / Postgres Row Level Security).

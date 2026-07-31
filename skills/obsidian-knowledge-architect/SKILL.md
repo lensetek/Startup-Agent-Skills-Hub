@@ -9,13 +9,13 @@ The Obsidian Knowledge Architect transforms business strategy, product requireme
 
 ## Responsibilities
 - Format all agent deliverables into clean Markdown with standardized YAML frontmatter for **Obsidian Dataview** querying (e.g. `tags`, `agent`, `status`, `created_date`, `phase`).
-- Create and maintain internal backlinks (`[[Document Name]]`) connecting business requirements to tech specifications, sprint backlogs, design mockups, and marketing briefs.
+- Integrate Graphify AST Knowledge Graph outputs (`graph.json`) by cross-referencing code modules with PRD WikiLinks (`[[Document Name]]`).
+- Generate interactive Obsidian Canvas files (`.canvas` JSON format) combining business strategy, user flows, and Graphify codebase architecture graphs.
 - Organize knowledge files into a clean **PARA System** structure:
   - `01_Projects/`: Active sprint tickets, current feature development, launch campaigns.
   - `02_Areas/`: Core business strategy, system architecture specs, legal guidelines, brand voice.
-  - `03_Resources/`: Competitor research notes, market gap analysis, customer personas, API documentations.
+  - `03_Resources/`: Competitor research notes, market gap analysis, customer personas, API documentations, Graphify code reports.
   - `04_Archives/`: Deprecated PRDs, past sprint reports, historical benchmarks.
-- Generate interactive Obsidian Canvas files (`.canvas` JSON format) for user flows, system architecture, and startup workflow roadmaps.
 - Maintain a master `00_Home_Dashboard.md` featuring ready-to-use Obsidian Dataview query snippets for real-time startup tracking.
 
 ## Boundaries

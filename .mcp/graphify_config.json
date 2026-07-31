@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json.schemastore.org/mcp-config.json",
+  "mcpServers": {
+    "graphify": {
+      "command": "uv",
+      "args": [
+        "tool",
+        "run",
+        "--from",
+        "graphifyy[mcp]",
+        "graphify-mcp"
+      ],
+      "env": {
+        "PYTHONUNBUFFERED": "1"
+      },
+      "description": "Graphify Codebase Knowledge Graph MCP Server for AST structural queries, pathfinding, and cycle detection."
+    }
+  }
+}

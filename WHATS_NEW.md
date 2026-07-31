@@ -6,23 +6,24 @@
 
 ## Bahasa Indonesia
 
-Kami senang mengumumkan rilis versi **v1.5.0** yang membawa kecerdasan struktur kode *on-device* dengan **Graphify Knowledge Graph** dan protokol fallback 2-tingkat!
+Kami senang mengumumkan rilis versi **v1.5.0** yang menghadirkan **Graphify AST Knowledge Graph & MCP Harness**, **Framework Eksekusi Pararel Multi-Agent**, serta **Two-Tier Resilient Fallback Protocol**!
 
 ### 🌟 Fitur Baru di v1.5.0
 
-#### 1. 🧠 Graphify Knowledge Graph Intelligence (Akses CLI Lokal)
-Agen kini memiliki pemahaman arsitektur kode secara deterministik menggunakan engine *on-device knowledge graph* (AST-based tree-sitter):
-- **Local CLI Primary**: Agen menjalankan kueri `graphify query` dan `graphify path` langsung melalui terminal lokal tanpa memerlukan *background server* yang terus berjalan.
-- **Architectural Boundary Verification**: Agen QA Reviewer dan Git Guard memverifikasi isolasi arsitektur (misal: memastikan tampilan UI tidak mengimpor koneksi database/rahasia secara langsung).
-- **Smart Task Context Slicing**: Scrum Master dapat melampirkan daftar file dependensi yang presisi pada setiap tiket sprint untuk menghemat *context window*.
+#### 🕸️ 1. Skill Agen Ke-25: Graphify Codebase Architect (`graphify-codebase-architect`)
+Agen spesialis ke-25 yang memetakan seluruh arsitektur kode (36+ bahasa via tree-sitter AST) menjadi Knowledge Graph terstruktur (`graph.json`, `GRAPH_REPORT.md`, `graph.html`) dan MCP Server (`graphifyy[mcp]`):
+- **Graph AST Traversal**: Agen dapat mengkueri relasi antar-fungsi dan dependensi kode (`query_graph`, `shortest_path`, `explore`) tanpa memuat seluruh file ke context window, menghemat token LLM hingga 70%+.
+- **MCP Server Harness Template**: Disertakan templat `.mcp/graphify_config.json` bawaan untuk integrasi langsung di Claude Code, Cursor, Windsurf, dan Antigravity IDE.
+- **Architectural Health Audits**: Mendeteksi modul *bottleneck* berkepadatan tinggi (`pagerank`) dan ketergantungan melingkar (`detect_cycles`).
 
-#### 2. 🛡️ Two-Tier Resilient Fallback Protocol
+#### 🔀 2. Framework Eksekusi Pararel Multi-Agent (Multi-Agent Concurrent Tracks)
+- **Scrum Master & Workflow Orchestrator**: Menawarkan 2 mode eksekusi sprint: *Mode 1 (Sequential Execution)* dan *Mode 2 (Parallel Multi-Agent Execution)*.
+- **Contract-First Lock**: Sebelum eksekusi pararel dimulai, agen mengunci skema API, TypeScript interface, dan DTO di `.agents/session_memory.md` agar subagent yang berjalan secara bersamaan via `invoke_subagent` tidak mengalami konflik kode atau salah tipe data.
+
+#### 🛡️ 3. Two-Tier Resilient Fallback Protocol
 Jaminan ketersediaan alur kerja 100% tanpa error:
 - **Tier 1 (Primary)**: Kueri deterministik ke knowledge graph Graphify jika Python/Graphify terpasang.
 - **Tier 2 (Fallback)**: Jika Graphify/Python tidak tersedia, semua agen otomatis beralih menggunakan tools native (`git diff`, `grep_search`) tanpa menghentikan tugas.
-
-#### 3. 🔌 Passive MCP Configuration (`.mcp.json`)
-Menyediakan file `.mcp.json` di root repositori untuk koneksi instan ke server MCP Graphify bagi pengguna IDE atau CLI berbasis MCP (Cursor, Windsurf, Claude Code).
 
 ---
 

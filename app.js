@@ -1,4 +1,4 @@
-// 22 Specialized Agent Skills Database
+// 25 Specialized Agent Skills Database
 const SKILLS_DATA = [
     {
         id: "startup-workflow-orchestrator",
@@ -215,6 +215,15 @@ const SKILLS_DATA = [
         category: "development",
         responsibility: "Operates web browsers and GUI desktop applications using stablyai/orca@computer-use with automated Fallback References (midscene-skills and gemini-computer-use) for resilient UI automation.",
         boundaries: "No bypass of unauthorized security controls, no exposure of secret tokens in screenshot logs, no PM scope alterations."
+    },
+    {
+        id: "graphify-codebase-architect",
+        name: "graphify-codebase-architect",
+        role: "Graphify Codebase Architect",
+        icon: "fa-network-wired",
+        category: "development",
+        responsibility: "Parses codebases (36+ languages via tree-sitter AST) into queryable Knowledge Graphs (graph.json, GRAPH_REPORT.md, graph.html) & MCP Server for low-token structural queries and parallel multi-agent synchronization.",
+        boundaries: "No direct modification of business logic code; focus strictly on AST parsing, structural traversal, dependency cycle audits, and MCP tools."
     }
 ];
 

@@ -7,31 +7,30 @@
 ## Bahasa Indonesia
 
 ### 🚀 Apa yang Baru di v1.5.0
-- **Graphify Knowledge Graph Intelligence**: Integrasi engine *on-device knowledge graph* (AST-based) untuk analisis dependensi kode, audit batas arsitektur (QA Reviewer & Git Guard), dan *smart task context slicing* (Scrum Master).
+- **Graphify AST Knowledge Graph & MCP Harness**: Skill agen ke-25 (`graphify-codebase-architect`) berbasis tree-sitter AST parser untuk memetakan codebase menjadi Knowledge Graph (`graph.json`, `GRAPH_REPORT.md`, `graph.html`) dan MCP Server (`graphifyy[mcp]`) untuk kueri struktur ber-token rendah.
+- **Parallel Multi-Agent Execution Framework**: Opsi eksekusi sprint pararel terintegrasi (dengan *Contract-First Lock* di `.agents/session_memory.md`) pada Scrum Master dan Workflow Orchestrator.
 - **Two-Tier Resilient Fallback Protocol**: Jaminan ketersediaan alur kerja 100%. Jika Graphify/Python tidak tersedia, semua agen otomatis kembali menggunakan tools native (`git diff`, `grep_search`) tanpa error.
-- **Passive MCP Configuration (`.mcp.json`)**: Dukungan file konfigurasi `.mcp.json` pasif untuk koneksi instan di IDE/CLI berbasis MCP (Cursor, Windsurf, Claude Code).
-- **Computer Use & Auto-Recovery**: Skill baru (`computer-use`) berbasis `stablyai/orca@computer-use` dengan arsitektur Fallback References.
-- **Obsidian Knowledge Architect**: Skill agen (`obsidian-knowledge-architect`) untuk penyusunan Obsidian Vault.
+- **MCP Configuration (`.mcp/graphify_config.json` & `.mcp.json`)**: Dukungan konfigurasi MCP untuk koneksi instan di IDE/CLI berbasis MCP (Cursor, Windsurf, Claude Code, Antigravity IDE).
 - Selengkapnya baca di [WHATS_NEW.md](WHATS_NEW.md).
 
 ---
 
 Repositori ini adalah kumpulan **Skills** modular untuk **Startup Agent** — sebuah tim virtual agen AI yang dirancang untuk mengotomatiskan seluruh siklus hidup startup digital, mulai dari perencanaan strategi bisnis, desain produk, pengembangan perangkat lunak, hingga peluncuran dan pemasaran.
 
-### Kumpulan Skill yang Tersedia (24 Skills)
+### Kumpulan Skill yang Tersedia (25 Skills)
 
 #### 🏢 Divisi Strategi & Produk (Product & Strategy)
-1.  **startup-workflow-orchestrator** — Menentukan urutan agent, handoff, dan security gate dari strategi sampai rilis.
+1.  **startup-workflow-orchestrator** — Menentukan urutan agent, handoff, eksekusi pararel multi-agent, dan security gate dari strategi sampai rilis.
 2.  **ceo-strategy-planner** — Menyusun visi CEO, misi bisnis, segmentasi target pengguna, dan peta jalan 3 fase.
 3.  **market-analyst** — Analisis kompetitor, matriks harga, celah pasar, dan laporan peluang.
 4.  **product-manager** — Manajemen fitur produk dengan prioritasi MoSCoW dan lingkup MVP.
 5.  **prd-generator** — Menghasilkan dokumen Product Requirements Document (PRD) final.
 6.  **designer-uiux-specialist** — Merancang wireframe, desain antarmuka, dan panduan UI/UX.
 7.  **ops-growth-analytics** — Menyusun tracking events, memantau metrik operasional (CAC/LTV/churn), analisa A/B testing, dan merancang growth loops.
-8.  **obsidian-knowledge-architect** — Menyusun dan menginterkoneksikan output seluruh agen ke dalam struktur Obsidian Vault (Dataview YAML, backlinks, Canvas flows).
+8.  **obsidian-knowledge-architect** — Menyusun dan menginterkoneksikan output seluruh agen ke dalam struktur Obsidian Vault (Dataview YAML, backlinks, Canvas flows, Graphify AST graphs).
 
 #### 💻 Divisi Pengembangan (Development)
-9.  **developer-scrum-master** — Mengelola sprint, membuat backlog tiket dengan Acceptance Criteria.
+9.  **developer-scrum-master** — Mengelola sprint, opsi eksekusi pararel/sekuensial, dan backlog tiket dengan Acceptance Criteria.
 10. **developer-frontend-engineer** — Membangun antarmuka pengguna (frontend).
 11. **developer-backend-engineer** — Membangun logika server dan API (backend).
 12. **developer-fullstack-engineer** — Pengembangan end-to-end (frontend + backend).
@@ -39,6 +38,7 @@ Repositori ini adalah kumpulan **Skills** modular untuk **Startup Agent** — se
 14. **developer-database-specialist** — Desain skema database, query, dan optimasi.
 15. **developer-qa-reviewer** — Pengujian kualitas kode, scanning API key di client-side.
 16. **computer-use** — Automasi GUI & browser menggunakan `stablyai/orca@computer-use` dengan mekanisme Fallback References & Auto-Recovery (`midscene-skills` / `gemini-computer-use`).
+17. **graphify-codebase-architect** — Parsing codebase (36+ bahasa via tree-sitter AST) menjadi Knowledge Graph & MCP Server untuk kueri terstruktur dan sinkronisasi agen pararel.
 
 #### 🚀 Divisi DevOps & Keuangan (DevOps & Finance)
 15. **devops-git-guard** — Audit keamanan pre-push: cek credential, validasi `.gitignore`, dan pembaruan dokumentasi.
@@ -61,28 +61,29 @@ Repositori ini adalah kumpulan **Skills** modular untuk **Startup Agent** — se
 
 ## English
 
-### 🚀 What's New in v1.4.0
-- **Computer Use & Auto-Recovery**: New specialized skill (`computer-use`) powered by `stablyai/orca@computer-use` (Primary Skill) with built-in **Fallback References & Auto-Recovery** architecture (`midscene-skills@computer-automation` & `codex-skills@gemini-computer-use`) for resilient UI/browser automation.
+### 🚀 What's New in v1.5.0
+- **Graphify AST Knowledge Graph & MCP Harness**: 25th specialized skill (`graphify-codebase-architect`) powered by tree-sitter AST parser to transform codebases into queryable Knowledge Graphs (`graph.json`, `GRAPH_REPORT.md`, `graph.html`) & MCP Server (`graphifyy[mcp]`) for low-token structural queries.
+- **Parallel Multi-Agent Execution Framework**: Integrated parallel sprint execution options (with *Contract-First Lock* in `.agents/session_memory.md`) for Scrum Master and Workflow Orchestrator.
 - Read more in [WHATS_NEW.md](WHATS_NEW.md).
 
 ---
 
 This repository is a modular collection of **Skills** for **Startup Agents** — a virtual AI team designed to automate the entire digital startup lifecycle, from business strategy planning, product design, software development, to launch and marketing.
 
-### Available Skills (24 Skills)
+### Available Skills (25 Skills)
 
 #### 🏢 Product & Strategy Division
-1.  **startup-workflow-orchestrator** — Selects agent sequence, handoffs, and security gates from strategy through release.
+1.  **startup-workflow-orchestrator** — Selects agent sequence, handoffs, parallel multi-agent execution, and security gates from strategy through release.
 2.  **ceo-strategy-planner** — Drafts CEO vision, business mission, target user segmentation, and a 3-phase roadmap.
 3.  **market-analyst** — Competitor analysis, pricing matrix, market gaps, and opportunity reports.
 4.  **product-manager** — Product feature management with MoSCoW prioritization and MVP scoping.
 5.  **prd-generator** — Generates the final Product Requirements Document (PRD).
 6.  **designer-uiux-specialist** — Wireframe design, UI/UX interface, and design guidelines.
 7.  **ops-growth-analytics** — Designs event-tracking plans, monitors business metrics (CAC/LTV/churn), plans A/B tests, and designs growth loops.
-8.  **obsidian-knowledge-architect** — Formats and interlinks all agent outputs into an Obsidian Vault (Dataview YAML, backlinks, Canvas flows).
+8.  **obsidian-knowledge-architect** — Formats and interlinks all agent outputs into an Obsidian Vault (Dataview YAML, backlinks, Canvas flows, Graphify AST graphs).
 
 #### 💻 Development Division
-9.  **developer-scrum-master** — Sprint management, backlog tickets with Acceptance Criteria.
+9.  **developer-scrum-master** — Sprint management, parallel/sequential execution mode options, backlog tickets with Acceptance Criteria.
 10. **developer-frontend-engineer** — Builds user interfaces (frontend).
 11. **developer-backend-engineer** — Builds server logic and APIs (backend).
 12. **developer-fullstack-engineer** — End-to-end development (frontend + backend).
@@ -90,6 +91,7 @@ This repository is a modular collection of **Skills** for **Startup Agents** —
 14. **developer-database-specialist** — Database schema design, queries, and optimization.
 15. **developer-qa-reviewer** — Code quality testing, client-side API key scanning.
 16. **computer-use** — GUI & browser automation using `stablyai/orca@computer-use` with Fallback References & Auto-Recovery (`midscene-skills` / `gemini-computer-use`).
+17. **graphify-codebase-architect** — Parses codebases (36+ languages via tree-sitter AST) into Knowledge Graphs & MCP Server for structural queries and parallel agent synchronization.
 
 #### 🚀 DevOps & Finance Division
 15. **devops-git-guard** — Pre-push security audit: credential checks, `.gitignore` validation, and documentation updates.

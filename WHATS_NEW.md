@@ -1,10 +1,32 @@
-# What's New in Startup Agents v1.4.0 🚀
+# What's New in Startup Agents v1.5.0 🚀
 
 *Read this in other languages: [English](#english), [Bahasa Indonesia](#bahasa-indonesia).*
 
 ---
 
 ## Bahasa Indonesia
+
+Kami senang mengumumkan rilis versi **v1.5.0** yang membawa kecerdasan struktur kode *on-device* dengan **Graphify Knowledge Graph** dan protokol fallback 2-tingkat!
+
+### 🌟 Fitur Baru di v1.5.0
+
+#### 1. 🧠 Graphify Knowledge Graph Intelligence (Akses CLI Lokal)
+Agen kini memiliki pemahaman arsitektur kode secara deterministik menggunakan engine *on-device knowledge graph* (AST-based tree-sitter):
+- **Local CLI Primary**: Agen menjalankan kueri `graphify query` dan `graphify path` langsung melalui terminal lokal tanpa memerlukan *background server* yang terus berjalan.
+- **Architectural Boundary Verification**: Agen QA Reviewer dan Git Guard memverifikasi isolasi arsitektur (misal: memastikan tampilan UI tidak mengimpor koneksi database/rahasia secara langsung).
+- **Smart Task Context Slicing**: Scrum Master dapat melampirkan daftar file dependensi yang presisi pada setiap tiket sprint untuk menghemat *context window*.
+
+#### 2. 🛡️ Two-Tier Resilient Fallback Protocol
+Jaminan ketersediaan alur kerja 100% tanpa error:
+- **Tier 1 (Primary)**: Kueri deterministik ke knowledge graph Graphify jika Python/Graphify terpasang.
+- **Tier 2 (Fallback)**: Jika Graphify/Python tidak tersedia, semua agen otomatis beralih menggunakan tools native (`git diff`, `grep_search`) tanpa menghentikan tugas.
+
+#### 3. 🔌 Passive MCP Configuration (`.mcp.json`)
+Menyediakan file `.mcp.json` di root repositori untuk koneksi instan ke server MCP Graphify bagi pengguna IDE atau CLI berbasis MCP (Cursor, Windsurf, Claude Code).
+
+---
+
+## Rilis v1.4.0
 
 Kami senang mengumumkan rilis versi **v1.4.0** yang membawa skill automasi browser/GUI baru **`computer-use`** beserta arsitektur **Fallback References & Auto-Recovery**!
 
@@ -16,46 +38,25 @@ Agen spesialis ke-24 yang bertugas mengendalikan antarmuka browser dan aplikasi 
 - **Fallback References & Auto-Recovery**:
   - `web-infra-dev/midscene-skills@computer-automation` (Vision-Based UI Automation)
   - `am-will/codex-skills@gemini-computer-use` (Gemini-Optimized Schema)
-- **Mekanisme Auto-Recovery**: Jika eksekusi skill utama mengalami kegagalan (misalnya elemen UI tidak responsif, permission error, atau screenshot terhenti), agen secara otomatis membaca referensi fallback, mengunduh/memanggil skill alternatif secara *on-demand*, dan melanjutkan tugas tanpa terhenti.
-
-#### 🔄 2. Integrasi & Perbarui 5 Skill Eksisting
-Skill `startup-workflow-orchestrator`, `developer-qa-reviewer`, `designer-uiux-specialist`, `ops-growth-analytics`, dan `devops-infrastructure-engineer` telah disesuaikan untuk mengintegrasikan kapabilitas `computer-use` dan mematuhi protokol *Auto-Recovery*.
+- **Mekanisme Auto-Recovery**: Jika eksekusi skill utama mengalami kegagalan, agen secara otomatis membaca referensi fallback dan melanjutkan tugas.
 
 ---
-
-## Rilis v1.3.0
-
-Kami senang mengumumkan rilis versi **v1.3.0** yang menghadirkan arsitektur pengetahuan terintegrasi untuk **Obsidian**!
-
-### 🌟 Fitur Baru di v1.3.0
-
-#### 🧠 1. Skill Agen: Obsidian Knowledge Architect (`obsidian-knowledge-architect`)
-Agen spesialis ke-23 yang bertugas mengorganisasi dan menginterkoneksikan seluruh hasil kerja (*deliverables*) agen AI ke dalam format **Obsidian Vault** (*Startup Second Brain*):
-- **Standardized YAML Frontmatter**: Menambahkan header metadata pada dokumen agar kompatibel dengan query **Obsidian Dataview**.
-- **Bi-directional Backlinking (`[[Link]]`)**: Otomatis menghubungkan dokumen PRD dengan analisis pasar, skema database, tiket sprint, dan brief pemasaran.
-- **PARA System Vault Organization**: Pengelompokan folder sistematis (`01_Projects`, `02_Areas`, `03_Resources`, `04_Archives`).
-- **Obsidian Canvas Flow Exporter (`.canvas`)**: Mengubah alur pengguna (*user journeys*) dan arsitektur agen menjadi diagram visual `.canvas`.
-- **Master Home Dashboard**: File `00_Home_Dashboard.md` lengkap dengan snippet Dataview untuk pemantauan proyek secara real-time.
-
----
-
-## Rilis v1.2.0
-
-Kami senang mengumumkan rilis versi **v1.2.0** yang membawa kapabilitas baru untuk pengujian visual dinamis dan instalasi skill pintar!
 
 ### 🌟 Fitur Baru di v1.2.0
 
-#### 1. 🌐 Integrasi Chrome DevTools MCP
-Agen kini dapat melihat dan berinteraksi langsung dengan browser Anda menggunakan Chrome DevTools MCP. Ini memungkinkan:
-- **Visual UI/UX Audit**: Agen UI/UX dapat menangkap screenshot langsung dari halaman yang dirender dan memverifikasi computed CSS (seperti jarak margin, font, dan warna HSL).
-- **QA Dynamic Testing**: Agen QA kini bisa mengecek responsivitas mobile-first, memindai error pada console JS, dan menganalisa kegagalan *network request* secara langsung.
-- **Growth & Performance Tracing**: Agen Growth & Infra bisa menguji klik CTA yang memicu *tracking events* (Mixpanel/GA) serta menjalankan audit Lighthouse (Core Web Vitals) pada *staging*.
+#### 1. 🧠 Graphify Knowledge Graph Intelligence (Akses CLI Lokal)
+Agen kini memiliki pemahaman arsitektur kode secara deterministik menggunakan engine *on-device knowledge graph* (AST-based tree-sitter):
+- **Local CLI Primary**: Agen menjalankan kueri `graphify query` dan `graphify path` langsung melalui terminal lokal tanpa memerlukan *background server* yang terus berjalan.
+- **Architectural Boundary Verification**: Agen QA Reviewer dan Git Guard memverifikasi isolasi arsitektur (misal: memastikan tampilan UI tidak mengimpor koneksi database/rahasia secara langsung).
+- **Smart Task Context Slicing**: Scrum Master dapat melampirkan daftar file dependensi yang presisi pada setiap tiket sprint untuk menghemat *context window*.
 
-#### 2. 🧩 Ekosistem skills.sh & Dynamic Skill Acquisition
-Kami telah mendaftarkan repositori ini ke dalam ekosistem Vercel `skills.sh`:
-- **Pengelompokan Otomatis (`skills.sh.json`)**: 22 skill agen kini terorganisir rapi ke dalam 4 divisi (Product, Development, DevOps, Marketing).
-- **Pencarian Skill Dinamis**: Jika agen menemukan pemblokir (*blocker*) yang membutuhkan keahlian khusus di luar 22 skill standar, ia diinstruksikan untuk mencari di *registry* via `npx skills find` dan menawarkan instalasi.
-- **Keamanan Konfirmasi**: Agen **wajib** meminta persetujuan eksplisit Anda sebelum menginstal skill baru via `npx skills add`.
+#### 2. 🛡️ Two-Tier Resilient Fallback Protocol
+Jaminan ketersediaan alur kerja 100% tanpa error:
+- **Tier 1 (Primary)**: Kueri deterministik ke knowledge graph Graphify jika Python/Graphify terpasang.
+- **Tier 2 (Fallback)**: Jika Graphify/Python tidak tersedia, semua agen otomatis beralih menggunakan tools native (`git diff`, `grep_search`) tanpa menghentikan tugas.
+
+#### 3. 🔌 Passive MCP Configuration (`.mcp.json`)
+Menyediakan file `.mcp.json` di root repositori untuk koneksi instan ke server MCP Graphify bagi pengguna IDE atau CLI berbasis MCP (Cursor, Windsurf, Claude Code).
 
 ---
 

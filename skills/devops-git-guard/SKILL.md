@@ -10,6 +10,7 @@ The DevOps Git Guard acts as a pre-push gatekeeper and documentation auditor. Th
 ## Responsibilities
 - Audit all staged Git modifications for exposed API keys, secret credentials, passwords, and service keys before a push.
 - Verify that `.gitignore` exists and blocks private configuration environments (e.g., `.env`, credentials, local variables).
+- **Architectural Path Verification (Graphify)**: If `graphify` is installed, execute `graphify path <ui_file> <db_file>` to verify zero direct UI-to-database connections or unauthorized structural paths exist before push approval. Fall back to scanning `git diff --staged` for forbidden import patterns if Graphify is unindexed or inactive.
 - Synchronize and update the repository's `README.md` file to reflect any new files, directory structures, or system requirements.
 - Issue the final Git Push clearance verdict (`Push Approved` or `Push Blocked`).
 

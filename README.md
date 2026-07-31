@@ -6,9 +6,12 @@
 
 ## Bahasa Indonesia
 
-### 🚀 Apa yang Baru di v1.4.0
-- **Computer Use & Auto-Recovery**: Skill baru (`computer-use`) berbasis `stablyai/orca@computer-use` (Skill Utama) dilengkapi arsitektur **Fallback References & Auto-Recovery** (`midscene-skills@computer-automation` & `codex-skills@gemini-computer-use`) untuk automasi browser/GUI yang tangguh.
-- **Obsidian Knowledge Architect**: Skill agen (`obsidian-knowledge-architect`) untuk menyusun Obsidian Vault berstandar PARA & Dataview.
+### 🚀 Apa yang Baru di v1.5.0
+- **Graphify Knowledge Graph Intelligence**: Integrasi engine *on-device knowledge graph* (AST-based) untuk analisis dependensi kode, audit batas arsitektur (QA Reviewer & Git Guard), dan *smart task context slicing* (Scrum Master).
+- **Two-Tier Resilient Fallback Protocol**: Jaminan ketersediaan alur kerja 100%. Jika Graphify/Python tidak tersedia, semua agen otomatis kembali menggunakan tools native (`git diff`, `grep_search`) tanpa error.
+- **Passive MCP Configuration (`.mcp.json`)**: Dukungan file konfigurasi `.mcp.json` pasif untuk koneksi instan di IDE/CLI berbasis MCP (Cursor, Windsurf, Claude Code).
+- **Computer Use & Auto-Recovery**: Skill baru (`computer-use`) berbasis `stablyai/orca@computer-use` dengan arsitektur Fallback References.
+- **Obsidian Knowledge Architect**: Skill agen (`obsidian-knowledge-architect`) untuk penyusunan Obsidian Vault.
 - Selengkapnya baca di [WHATS_NEW.md](WHATS_NEW.md).
 
 ---

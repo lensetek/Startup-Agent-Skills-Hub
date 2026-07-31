@@ -24,3 +24,9 @@ This file serves as the global instructions for all AI coding assistants, models
 - **Primary Execution & On-Demand Fallback**: When executing skills configured with fallback references (such as `computer-use` using primary skill `stablyai/orca@computer-use`), agents must attempt the primary skill first.
 - **Auto-Recovery**: If execution encounters blocking errors (e.g. unresponsive UI elements, permission issues, or screenshot timeouts), agents must not crash or fail. Instead, read the `fallback_references` defined in the skill file, fetch/invoke the alternative skill on-demand (e.g. `web-infra-dev/midscene-skills@computer-automation` or `am-will/codex-skills@gemini-computer-use`), and resume execution seamlessly.
 
+## 6. Structural Knowledge & Resilient Fallback Protocol (Graphify)
+- **Local AST Indexing**: Whenever major architectural changes or file additions occur, update the local codebase index by running `/graphify .` or `graphify .` via the CLI.
+- **Two-Tier Resilient Check**:
+  - **Tier 1 (Primary - Graphify)**: Query the Graphify knowledge graph (`graphify query`, `graphify path`, or `.mcp.json` tools) to trace dependencies, audit architectural boundaries, and perform smart task context slicing.
+  - **Tier 2 (Fallback - Native Tools)**: If Graphify or Python is missing, fails, or `graphify-out/` does not exist, agents must seamlessly fall back to native `git diff`, `grep_search`, and file inspection without stopping or failing the task.
+

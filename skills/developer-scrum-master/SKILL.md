@@ -10,6 +10,7 @@ The Developer Scrum Master facilitates Agile methods, manages the sprint backlog
 ## Responsibilities
 - Translate functional specifications from the PRD into clear Developer Tickets (User Stories).
 - Define precise Acceptance Criteria for each ticket.
+- **Smart Context Slicing (Graphify Intelligence)**: If `graphify` is installed, query `graphify query` or `graphify.serve` to attach the exact list of affected dependency files to each ticket, keeping context windows targeted. If Graphify is unindexed or inactive, fall back to listing parent directory files manually.
 - Define a "Definition of Ready" (DoR) and "Definition of Done" (DoD).
 - Prioritize and organize tasks into Sprint 1 backlog.
 - Flag and track potential technical or resource blockers.

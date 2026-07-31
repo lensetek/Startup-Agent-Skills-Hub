@@ -11,6 +11,7 @@ The DevOps Update Manager periodically checks for version updates of the Startup
 - Fetch the latest version information from the remote repository's `package.json` file.
 - Compare the remote version with the local `package.json` version.
 - Query the remote release log (e.g. `WHATS_NEW.md` or git commits) if there is an update.
+- **Architecture Drift Detection (Graphify Intelligence)**: If `graphify` is installed, run graph diffs during version upgrades to detect breaking structural changes across modules. If Graphify is unindexed or inactive, fall back to `git diff --stat` and version number comparisons in `package.json`.
 - Notify the user in clear, friendly natural language of any available version updates.
 - Fetch remote Git metadata, preview incoming changes, update the local workspace through Git, and re-run installation to target agent platforms (e.g., Antigravity, Codex, Claude Code) upon user confirmation.
 - Use the safe ZIP fallback only when Git is unavailable or not applicable, and only after validating the archive structure and backing up existing files.

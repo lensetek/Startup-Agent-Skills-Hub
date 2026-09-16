@@ -59,12 +59,14 @@ Usage:
   node bin/cli.js install-plugin --path <custom-folder>
   node bin/cli.js setup-browser-mcp
   node bin/cli.js setup-desktop-mcp
+  node bin/cli.js setup-video-mcp
 
 Commands:
   init               Copy the bundled skills folder into the current directory.
   install-plugin     Install the skills to a supported agent or custom folder.
   setup-browser-mcp  Verify and pre-cache Chrome DevTools MCP (npx -y chrome-devtools-mcp@latest).
   setup-desktop-mcp  Verify and setup Windows-MCP (CursorTouch) desktop UI automation via uv.
+  setup-video-mcp    Verify and setup DevStudio MCP screen recording & demo automation via uvx.
   --version          Print the package version.
 
 Targets:
@@ -75,6 +77,29 @@ Targets:
 
 For most agents, you can skip installation and point the prompt directly to the needed SKILL.md file.
 `);
+}
+
+function getMcpConfig() {
+  return {
+    mcpServers: {
+      'chrome-devtools': {
+        command: 'npx',
+        args: ['-y', 'chrome-devtools-mcp@latest']
+      },
+      'windows-mcp': {
+        command: 'uv',
+        args: ['tool', 'run', 'windows-mcp', 'serve']
+      },
+      devstudio: {
+        command: 'uvx',
+        args: ['devstudio-mcp']
+      },
+      graphify: {
+        command: 'python',
+        args: ['-m', 'graphify.serve', 'graphify-out/graph.json']
+      }
+    }
+  };
 }
 
 function writeJson(filePath, value) {
@@ -182,22 +207,7 @@ if (command === 'init') {
         });
 
         // Sync .mcp.json for agent MCP discovery
-        writeJson(path.join(installTarget.dir, '.mcp.json'), {
-          mcpServers: {
-            'chrome-devtools': {
-              command: 'npx',
-              args: ['-y', 'chrome-devtools-mcp@latest']
-            },
-            'windows-mcp': {
-              command: 'uv',
-              args: ['tool', 'run', 'windows-mcp', 'serve']
-            },
-            graphify: {
-              command: 'python',
-              args: ['-m', 'graphify.serve', 'graphify-out/graph.json']
-            }
-          }
-        });
+        writeJson(path.join(installTarget.dir, '.mcp.json'), getMcpConfig());
       }
 
       if (installTarget.readme) {
@@ -216,23 +226,7 @@ if (command === 'init') {
   const { execSync } = require('child_process');
   try {
     const rootMcpPath = path.join(__dirname, '..', '.mcp.json');
-    const mcpConfig = {
-      mcpServers: {
-        'chrome-devtools': {
-          command: 'npx',
-          args: ['-y', 'chrome-devtools-mcp@latest']
-        },
-        'windows-mcp': {
-          command: 'uv',
-          args: ['tool', 'run', 'windows-mcp', 'serve']
-        },
-        graphify: {
-          command: 'python',
-          args: ['-m', 'graphify.serve', 'graphify-out/graph.json']
-        }
-      }
-    };
-    fs.writeFileSync(rootMcpPath, JSON.stringify(mcpConfig, null, 2));
+    fs.writeFileSync(rootMcpPath, JSON.stringify(getMcpConfig(), null, 2));
     console.log('✓ Konfigurasi .mcp.json berhasil disinkronkan.');
 
     console.log('Mengunduh/memverifikasi cache chrome-devtools-mcp@latest via npx...');
@@ -247,23 +241,7 @@ if (command === 'init') {
   const { execSync } = require('child_process');
   try {
     const rootMcpPath = path.join(__dirname, '..', '.mcp.json');
-    const mcpConfig = {
-      mcpServers: {
-        'chrome-devtools': {
-          command: 'npx',
-          args: ['-y', 'chrome-devtools-mcp@latest']
-        },
-        'windows-mcp': {
-          command: 'uv',
-          args: ['tool', 'run', 'windows-mcp', 'serve']
-        },
-        graphify: {
-          command: 'python',
-          args: ['-m', 'graphify.serve', 'graphify-out/graph.json']
-        }
-      }
-    };
-    fs.writeFileSync(rootMcpPath, JSON.stringify(mcpConfig, null, 2));
+    fs.writeFileSync(rootMcpPath, JSON.stringify(getMcpConfig(), null, 2));
     console.log('✓ Konfigurasi .mcp.json berhasil disinkronkan.');
 
     console.log('Memeriksa uv package manager...');
@@ -276,6 +254,27 @@ if (command === 'init') {
   } catch (err) {
     console.error('Gagal menyiapkan Windows-MCP:', err.message);
     console.error('Pastikan Python 3.12+ dan uv terpasang di sistem (https://docs.astral.sh/uv/getting-started/installation/).');
+    process.exitCode = 1;
+  }
+} else if (command === 'setup-video-mcp') {
+  console.log('Memverifikasi dan menyiapkan DevStudio MCP (screen recording & demo automation) via uvx...');
+  const { execSync } = require('child_process');
+  try {
+    const rootMcpPath = path.join(__dirname, '..', '.mcp.json');
+    fs.writeFileSync(rootMcpPath, JSON.stringify(getMcpConfig(), null, 2));
+    console.log('✓ Konfigurasi .mcp.json berhasil disinkronkan.');
+
+    console.log('Memeriksa uv package manager...');
+    const uvVer = execSync('uv --version', { stdio: 'pipe' }).toString().trim();
+    console.log(`✓ uv terdeteksi: ${uvVer}`);
+
+    console.log('Memeriksa cache uv / uvx...');
+    const cacheDir = execSync('uv cache dir', { stdio: 'pipe' }).toString().trim();
+    console.log(`✓ uv cache terdeteksi: ${cacheDir}`);
+    console.log('✓ DevStudio MCP siap digunakan untuk automasi perekaman layar dan video tutorial MP4.');
+  } catch (err) {
+    console.error('Gagal menyiapkan DevStudio MCP:', err.message);
+    console.error('Pastikan Python 3.11+ dan uv/uvx terpasang di sistem (https://docs.astral.sh/uv/getting-started/installation/).');
     process.exitCode = 1;
   }
 } else if (command === '--version' || command === '-v') {

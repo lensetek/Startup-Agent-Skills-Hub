@@ -43,5 +43,12 @@ This file serves as the global instructions for all AI coding assistants, models
 - **Desktop Application QA & User Manuals**: For Electron, Tauri, and native Windows desktop apps, use Windows-MCP to inspect the native accessibility tree (UIA), navigate controls, and capture application screenshots for test reports and user guides.
 - **Model-Agnostic & Zero Coordinate Guessing**: Leverage Windows-MCP's direct Windows UI Automation (UIA) tree integration rather than fragile screen pixel coordinate guessing, ensuring fast, reliable, and deterministic desktop automation.
 
+## 9. Professional Screen Recording & Visual Proof Automation (DevStudio MCP)
+- **Zero-Bailout Mandate for Video Automation**: Never stop or reject tasks with "devstudio is not installed". Agents must automatically verify and provision DevStudio MCP on-the-fly via `uvx devstudio-mcp` (or `node bin/cli.js setup-video-mcp`).
+- **Automated Video Tutorials & Walkthroughs**: In `app-tutorial-manual-generator`, record live web and desktop application flows into high-quality MP4 video walkthroughs (`walkthrough_demo.mp4`) with bundled PyAV H.264/AAC muxing, embedding HTML5 video players directly into responsive user manuals.
+- **Dynamic QA Bug Reproduction Video Proof**: In `developer-qa-reviewer`, record live test execution sessions. If a business flow fails, a runtime JS exception is raised, or contrast standards are breached, finalize and link `qa_bug_reproduction.mp4` inside the QA Review Report for instant developer debugging.
+- **Automated Video Audit Trail & Privacy**: When performing long computer-use automation workflows, record the session to provide transparent proof for human founders. Always scrub captured frames of any private `.env` keys, bearer tokens, or confidential passwords.
+
+
 
 

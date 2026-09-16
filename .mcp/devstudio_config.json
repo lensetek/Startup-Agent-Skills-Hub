@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json.schemastore.org/mcp-config.json",
+  "mcpServers": {
+    "devstudio": {
+      "command": "uvx",
+      "args": [
+        "devstudio-mcp"
+      ],
+      "env": {
+        "PYTHONUNBUFFERED": "1"
+      },
+      "description": "DevStudio MCP Server for professional screen recording, multi-monitor video capture, audio/video muxing, and demo automation."
+    }
+  }
+}

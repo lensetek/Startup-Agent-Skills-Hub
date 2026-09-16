@@ -6,12 +6,11 @@
 
 ## Bahasa Indonesia
 
-### 🚀 Apa yang Baru di v1.7.0
-- **Windows Native OS & Desktop Automation (`windows-mcp`)**: Integrasi server MCP resmi Windows Desktop Automation (`cursortouch/windows-mcp`) via `uv` yang mengakses UI Automation (UIA) tree tanpa tebak koordinat piksel.
-- **Dual-Engine Browser + OS Dialog Bridging Protocol**: Menghilangkan hambatan dialog file picker saat web testing (`<input type="file">` / print modal) dengan bridging otomatis antara Chrome DevTools MCP dan Windows-MCP.
-- **Arsitektur Automasi 3-Tier (`computer-use`)**: Tier 1 (Browser: Chrome DevTools MCP), Tier 2 (OS & Desktop: Windows-MCP), dan Tier 3 (Vision GUI: `stablyai/orca@computer-use` dengan fallback references).
-- **Desktop QA & Panduan Aplikasi**: `developer-qa-reviewer` dan `app-tutorial-manual-generator` kini mendukung pengujian serta penyusunan manual untuk aplikasi desktop native (Electron, Tauri, .NET).
-- **CLI Pre-Cache Command**: Command baru `node bin/cli.js setup-desktop-mcp` untuk memverifikasi `uv` dan mem-precache `windows-mcp`.
+### 🚀 Apa yang Baru di v1.8.0
+- **Integrasi DevStudio MCP Video Recording (`nihitgupta2/devstudio`)**: Perekaman layar tingkat sistem otomatis untuk browser dan desktop Windows menggunakan bundled PyAV FFmpeg (H.264/AAC MP4).
+- **Automated Video Walkthrough Demos (`app-tutorial-manual-generator`)**: Menghasilkan video walkthrough MP4 (`walkthrough_demo.mp4`) di samping ekspor manual teks HTML+CSS, PDF, dan DOCX.
+- **Definitive Bug Reproduction Videos (`developer-qa-reviewer`)**: Merekam jalannya live E2E test dan otomatis melampirkan video reproduksi bug `qa_bug_reproduction.mp4` saat assertion/flow gagal.
+- **Unified 4-MCP Server Sync CLI**: Perintah `node bin/cli.js setup-video-mcp` untuk mem-precache `devstudio-mcp` dan mensinkronisasikan 4 MCP servers (`chrome-devtools`, `windows-mcp`, `devstudio`, `graphify`).
 - Selengkapnya baca di [WHATS_NEW.md](WHATS_NEW.md).
 
 ---
@@ -37,8 +36,8 @@ Repositori ini adalah kumpulan **Skills** modular untuk **Startup Agent** — se
 12. **developer-fullstack-engineer** — Pengembangan end-to-end (frontend + backend).
 13. **developer-mobile-engineer** — Pengembangan aplikasi mobile.
 14. **developer-database-specialist** — Desain skema database, query, dan optimasi.
-15. **developer-qa-reviewer** — Pengujian kualitas kode, Live E2E Auto QA (Chrome DevTools MCP & Windows-MCP), penanganan OS file dialog, audit kontras warna, dan scanning API key.
-16. **computer-use** — Automasi 3-Tier untuk web & desktop: Chrome DevTools MCP, Windows-MCP, dan stablyai/orca@computer-use dengan mekanisme Fallback References & Auto-Recovery.
+15. **developer-qa-reviewer** — Pengujian kualitas kode, Live E2E Auto QA (Chrome DevTools MCP & Windows-MCP), rekaman video bug reproduction (`qa_bug_reproduction.mp4` via DevStudio MCP), penanganan OS file dialog, audit kontras warna, dan scanning API key.
+16. **computer-use** — Automasi 3-Tier untuk web & desktop: Chrome DevTools MCP, Windows-MCP, video recording audit trail (DevStudio MCP), dan stablyai/orca@computer-use dengan mekanisme Fallback References & Auto-Recovery.
 17. **graphify-codebase-architect** — Parsing codebase (36+ bahasa via tree-sitter AST) menjadi Knowledge Graph & MCP Server untuk kueri terstruktur dan sinkronisasi agen pararel.
 
 #### 🚀 Divisi DevOps & Keuangan (DevOps & Finance)
@@ -52,7 +51,7 @@ Repositori ini adalah kumpulan **Skills** modular untuk **Startup Agent** — se
 23. **marketing-content-planner** — Penyusunan kalender konten 30 hari dan brief peluncuran.
 24. **marketing-copywriter** — Pembuatan copywriting untuk media sosial, SEO, dan email kampanye.
 25. **ops-customer-success** — Penyusunan help center FAQ, dokumentasi panduan pengguna, rancangan support ticketing workflow, dan laporan feedback pengguna.
-26. **app-tutorial-manual-generator** — Pembuat manual aplikasi dan tutorial interaktif langkah-demi-langkah dengan screenshot live via Chrome DevTools MCP & Windows-MCP, mengekspor ke format HTML+CSS, PDF, dan DOCX.
+26. **app-tutorial-manual-generator** — Pembuat manual aplikasi dan video walkthrough langkah-demi-langkah dengan screenshot live via Chrome DevTools MCP & Windows-MCP serta video MP4 (`walkthrough_demo.mp4`) via DevStudio MCP, mengekspor ke format HTML+CSS, PDF, DOCX, dan MP4.
 
 ---
 
@@ -63,12 +62,11 @@ Repositori ini adalah kumpulan **Skills** modular untuk **Startup Agent** — se
 
 ## English
 
-### 🚀 What's New in v1.7.0
-- **Windows Native OS & Desktop Automation (`windows-mcp`)**: Official Windows Desktop Automation MCP server (`cursortouch/windows-mcp`) integrated via `uv`, directly accessing the UI Automation (UIA) tree without pixel guessing.
-- **Dual-Engine Browser + OS Dialog Bridging Protocol**: Eliminates file picker deadlock in web automation (`<input type="file">` / print modal) by automatically bridging between Chrome DevTools MCP and Windows-MCP.
-- **3-Tier Automation Engine Architecture (`computer-use`)**: Tier 1 (Browser: Chrome DevTools MCP), Tier 2 (OS & Desktop: Windows-MCP), and Tier 3 (Vision GUI: `stablyai/orca@computer-use` with fallback references).
-- **Desktop QA & App Tutorials**: `developer-qa-reviewer` and `app-tutorial-manual-generator` now support native Windows desktop apps (Electron, Tauri, .NET) as well as web applications.
-- **CLI Pre-Cache Command**: New `node bin/cli.js setup-desktop-mcp` command to verify `uv` and pre-cache `windows-mcp`.
+### 🚀 What's New in v1.8.0
+- **DevStudio MCP Video Recording Integration (`nihitgupta2/devstudio`)**: Automated system-level screen recording for browser and native Windows desktop applications using bundled PyAV FFmpeg (H.264/AAC MP4).
+- **Automated Video Walkthrough Demos (`app-tutorial-manual-generator`)**: Produces MP4 video walkthroughs (`walkthrough_demo.mp4`) alongside structured HTML+CSS, PDF, and DOCX manuals.
+- **Definitive Bug Reproduction Videos (`developer-qa-reviewer`)**: Records live E2E test sessions and automatically attaches `qa_bug_reproduction.mp4` on failed assertions or business flow errors.
+- **Unified 4-MCP Server Sync CLI**: Run `node bin/cli.js setup-video-mcp` to pre-cache `devstudio-mcp` and synchronize all 4 MCP servers (`chrome-devtools`, `windows-mcp`, `devstudio`, `graphify`).
 - Read more in [WHATS_NEW.md](WHATS_NEW.md).
 
 ---
@@ -94,8 +92,8 @@ This repository is a modular collection of **Skills** for **Startup Agents** —
 12. **developer-fullstack-engineer** — End-to-end development (frontend + backend).
 13. **developer-mobile-engineer** — Mobile application development.
 14. **developer-database-specialist** — Database schema design, queries, and optimization.
-15. **developer-qa-reviewer** — Code quality testing, Live E2E Auto QA (Chrome DevTools MCP & Windows-MCP), OS dialog handling, contrast audits, and API key scanning.
-16. **computer-use** — 3-Tier web & desktop automation: Chrome DevTools MCP, Windows-MCP, and stablyai/orca@computer-use with Fallback References & Auto-Recovery.
+15. **developer-qa-reviewer** — Code quality testing, Live E2E Auto QA (Chrome DevTools MCP & Windows-MCP), bug reproduction video recording (`qa_bug_reproduction.mp4` via DevStudio MCP), OS dialog handling, contrast audits, and API key scanning.
+16. **computer-use** — 3-Tier web & desktop automation: Chrome DevTools MCP, Windows-MCP, video recording audit trail (DevStudio MCP), and stablyai/orca@computer-use with Fallback References & Auto-Recovery.
 17. **graphify-codebase-architect** — Parses codebases (36+ languages via tree-sitter AST) into Knowledge Graphs & MCP Server for structural queries and parallel agent synchronization.
 
 #### 🚀 DevOps & Finance Division
@@ -109,7 +107,7 @@ This repository is a modular collection of **Skills** for **Startup Agents** —
 23. **marketing-content-planner** — 30-day content calendar and launch brief creation.
 24. **marketing-copywriter** — Social media copywriting, SEO copies, and campaign emails.
 25. **ops-customer-success** — Drafts help center FAQs and guides, designs customer support ticketing workflows, and compiles user feedback reports.
-26. **app-tutorial-manual-generator** — Generates step-by-step application manuals and tutorials with live screenshots via Chrome DevTools MCP & Windows-MCP, exporting to HTML+CSS, PDF, and DOCX formats.
+26. **app-tutorial-manual-generator** — Generates step-by-step application manuals and walkthrough videos with live screenshots via Chrome DevTools MCP & Windows-MCP plus MP4 video walkthroughs (`walkthrough_demo.mp4`) via DevStudio MCP, exporting to HTML+CSS, PDF, DOCX, and MP4 formats.
 
 ---
 

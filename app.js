@@ -78,7 +78,7 @@ const SKILLS_DATA = [
         role: "Developer QA Reviewer",
         icon: "fa-clipboard-check",
         category: "development",
-        responsibility: "Evaluates code against Acceptance Criteria, scans for credential leaks, executes live E2E browser & desktop QA with Chrome DevTools MCP & Windows-MCP, audits WCAG contrast, and issues quality verdicts.",
+        responsibility: "Evaluates code against Acceptance Criteria, scans for credential leaks, executes live E2E QA with Chrome DevTools MCP & Windows-MCP, records dynamic bug reproduction MP4 video proof with DevStudio MCP, audits WCAG contrast, and issues quality verdicts.",
         boundaries: "No implementation code, no requirement modifications, strict gatekeeping for security/testing."
     },
     {
@@ -213,7 +213,7 @@ const SKILLS_DATA = [
         role: "Computer Use Specialist",
         icon: "fa-desktop",
         category: "development",
-        responsibility: "Operates web browsers and native Windows desktop apps using a 3-tier automation engine: Chrome DevTools MCP (browser), Windows-MCP (native OS & dialogs), and stablyai/orca@computer-use (vision GUI) with automated Fallback References.",
+        responsibility: "Operates web browsers and native Windows desktop apps using Chrome DevTools MCP, Windows-MCP, DevStudio MCP session video recording, and stablyai/orca@computer-use with automated Fallback References.",
         boundaries: "No bypass of unauthorized security controls, no exposure of secret tokens in screenshot logs, no PM scope alterations."
     },
     {
@@ -231,7 +231,7 @@ const SKILLS_DATA = [
         role: "App Tutorial & Manual Generator",
         icon: "fa-book-open-reader",
         category: "marketing",
-        responsibility: "Navigates running apps via Chrome DevTools MCP (web) and Windows-MCP (desktop/OS dialogs) to capture live step screenshots and automatically generate user manuals and tutorials in HTML+CSS, PDF, and DOCX formats.",
+        responsibility: "Navigates running apps via Chrome DevTools MCP & Windows-MCP to capture live step screenshots and record automated MP4 video walkthroughs via DevStudio MCP, exporting manuals to HTML+CSS, PDF, DOCX, and MP4 video formats.",
         boundaries: "No source code changes, no exposure of secret credentials in captured screenshots, no alteration of product scopes."
     }
 ];

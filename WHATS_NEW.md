@@ -1,10 +1,39 @@
-# What's New in Startup Agents v1.7.0 🚀
+# What's New in Startup Agents v1.8.0 🚀
 
 *Read this in other languages: [English](#english), [Bahasa Indonesia](#bahasa-indonesia).*
 
 ---
 
 ## Bahasa Indonesia
+
+Kami senang mengumumkan rilis versi **v1.8.0** yang menghadirkan **DevStudio MCP Video Recording (`nihitgupta2/devstudio`)**, **Automated Video Walkthrough Demos (`app-tutorial-manual-generator`)**, **Definitive E2E Bug Reproduction Videos (`developer-qa-reviewer`)**, dan **CLI Sync Command (`node bin/cli.js setup-video-mcp`)**!
+
+### 🌟 Fitur Baru di v1.8.0
+
+#### 🎥 1. DevStudio MCP Screen Recording Integration (`devstudio`)
+Integrasi server MCP resmi screen recording ([nihitgupta2/devstudio](https://github.com/nihitgupta2/devstudio)) via `uvx devstudio-mcp`:
+- **Headless & Native Desktop Capture**: Perekaman layar tingkat sistem untuk browser maupun aplikasi desktop Windows native secara terprogram.
+- **Bundled PyAV FFmpeg Engine**: Dilengkapi enkoder PyAV bawaan (H.264 video + AAC audio ke kontainer MP4 standar) tanpa mewajibkan pengguna menginstal biner FFmpeg sistem secara manual.
+- **Zero-Bailout Mandate**: Agen dilarang menolak permintaan dengan alasan *"devstudio-mcp tidak terinstall"*. Sistem secara otonom memverifikasi dan menjalankannya melalui `uvx devstudio-mcp` atau `node bin/cli.js setup-video-mcp`.
+- **Credential Scrubbing**: Wajib menghentikan rekaman atau menyembunyikan input kata sandi, token JWT, dan API keys agar tidak terekam dalam video MP4.
+
+#### 🎬 2. Automated Video Walkthrough Demos di `app-tutorial-manual-generator`
+Selain ekspor panduan teks (HTML+CSS, PDF, dan DOCX), agen kini mampu memproduksi video tutorial langsung:
+- **Full Flow Walkthrough MP4**: Merekam navigasi langkah-demi-langkah penggunaan aplikasi nyata (`walkthrough_demo.mp4`).
+- **Smooth Pacing**: Memberikan jeda waktu (1.5-2 detik) pada setiap interaksi agar kursor dan navigasi tampak alami bagi pengguna akhir.
+
+#### 🐞 3. Definitive Bug Reproduction Video di `developer-qa-reviewer`
+Meningkatkan kualitas pelaporan bug dengan bukti video yang dapat diputar ulang:
+- **Live E2E Recording**: Merekam sesi pengujian dinamis pada dev server lokal atau aplikasi desktop.
+- **Auto-Attach Evidence on Failure**: Saat assertion atau flow bisnis gagal, agen otomatis menghentikan perekaman dan melampirkan `qa_bug_reproduction.mp4` beserta timestamp detik terjadinya error ke dalam `QA_REPORT.md`.
+
+#### 🛠️ 4. 4-MCP Unified CLI Management
+- Perintah CLI `node bin/cli.js setup-video-mcp` untuk sinkronisasi otomatis `.mcp.json` dan pre-cache `devstudio-mcp`.
+- Mendukung orkestrasi 4 MCP server secara bersamaan: `chrome-devtools`, `windows-mcp`, `devstudio`, dan `graphify`.
+
+---
+
+## Rilis v1.7.0
 
 Kami senang mengumumkan rilis versi **v1.7.0** yang menghadirkan **Windows Native OS & Desktop UI Automation via Windows-MCP (`cursortouch/windows-mcp`)**, **Dual-Engine Browser + OS Dialog Bridging Protocol**, dan **Arsitektur Automasi 3-Tier**!
 
@@ -159,6 +188,35 @@ Agen sekarang dibekali memori sesi terstruktur di `.agents/session_memory.md`. S
 ---
 
 ## English
+
+We are excited to announce **v1.8.0**, introducing **DevStudio MCP Video Recording (`nihitgupta2/devstudio`)**, **Automated Video Walkthrough Demos (`app-tutorial-manual-generator`)**, **Definitive E2E Bug Reproduction Videos (`developer-qa-reviewer`)**, and **CLI Sync Command (`node bin/cli.js setup-video-mcp`)**!
+
+### 🌟 New Features in v1.8.0
+
+#### 🎥 1. DevStudio MCP Screen Recording Integration (`devstudio`)
+Official screen recording MCP server integration ([nihitgupta2/devstudio](https://github.com/nihitgupta2/devstudio)) via `uvx devstudio-mcp`:
+- **Headless & Native Desktop Capture**: Programmatic system-level screen recording for both browser sessions and native Windows desktop applications.
+- **Bundled PyAV FFmpeg Engine**: Bundles PyAV for out-of-the-box H.264/AAC MP4 encoding without requiring separate OS-level FFmpeg binaries.
+- **Zero-Bailout Mandate**: Agents must never reject tasks with *"devstudio-mcp is not installed"*. The system automatically checks and executes it via `uvx devstudio-mcp` or `node bin/cli.js setup-video-mcp`.
+- **Credential Scrubbing Protocol**: Stops recording or masks inputs before handling passwords, tokens, or API keys to guarantee zero secret leakage in exported MP4s.
+
+#### 🎬 2. Automated Video Walkthrough Demos in `app-tutorial-manual-generator`
+Alongside structured text manuals (HTML+CSS, PDF, and DOCX), the agent now produces interactive demo videos:
+- **Full Flow Walkthrough MP4**: Programmatically captures live end-to-end user journeys (`walkthrough_demo.mp4`).
+- **Smooth Pacing**: Introduces deliberate 1.5-2 second pauses between UI steps to create clear, human-readable video guides.
+
+#### 🐞 3. Definitive Bug Reproduction Video Clips in `developer-qa-reviewer`
+Elevates QA reports with reproducible video evidence:
+- **Live E2E Recording**: Automatically captures test executions on local dev servers or native desktop apps.
+- **Auto-Attach Evidence on Failure**: On failed assertions or broken user journeys, the agent stops capture and attaches `qa_bug_reproduction.mp4` with exact error timestamps into `QA_REPORT.md`.
+
+#### 🛠️ 4. 4-MCP Unified CLI Management
+- Run `node bin/cli.js setup-video-mcp` to sync `.mcp.json` and pre-cache `devstudio-mcp`.
+- Unified support for all 4 MCP servers: `chrome-devtools`, `windows-mcp`, `devstudio`, and `graphify`.
+
+---
+
+## Release v1.7.0
 
 We are excited to announce the release of **v1.7.0**, bringing **Windows Native OS & Desktop UI Automation via Windows-MCP (`cursortouch/windows-mcp`)**, **Dual-Engine Browser + OS Dialog Bridging Protocol**, and a **3-Tier Resilient Automation Architecture**!
 

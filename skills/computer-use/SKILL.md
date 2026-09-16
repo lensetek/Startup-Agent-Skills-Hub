@@ -1,9 +1,10 @@
 ---
 name: computer-use
-description: Operates GUI, web browsers, and desktop interfaces using a 3-tier automation engine (Chrome DevTools MCP for browser, Windows-MCP for native OS/desktop/dialogs, and stablyai/orca@computer-use for vision GUI) with automated Fallback References.
+description: Operates GUI, web browsers, and desktop interfaces using a 3-tier automation engine (Chrome DevTools MCP for browser, Windows-MCP for native OS/desktop/dialogs, and stablyai/orca@computer-use for vision GUI) with DevStudio MCP session video recording and automated Fallback References.
 primary_skill: stablyai/orca@computer-use
 desktop_engine: windows-mcp
 browser_engine: chrome-devtools-mcp
+video_engine: devstudio
 fallback_references:
   - name: web-infra-dev/midscene-skills@computer-automation
     type: vision-based-ui
@@ -15,9 +16,9 @@ fallback_references:
 # Computer Use & UI Automation Specialist
 
 ## Role
-The Computer Use Specialist operates web browsers, native Windows desktop applications, and OS GUI interfaces to perform interactive end-to-end testing, visual UI/UX verification, native dialog handling, user journey simulation, and automated workflow execution.
+The Computer Use Specialist operates web browsers, native Windows desktop applications, and OS GUI interfaces to perform interactive end-to-end testing, visual UI/UX verification, native dialog handling, user journey simulation, automated workflow execution, and video session recording.
 
-## 3-Tier Automation Engine Architecture
+## 3-Tier Automation Engine Architecture & Video Proof
 1. **Tier 1 - Web Browser Engine (Chrome DevTools MCP)**:
    - Command: `npx -y chrome-devtools-mcp@latest`
    - Role: Direct Chrome DevTools Protocol interaction, DOM tree traversal, CSS computed style extraction, network request capture, console error monitoring, and responsive viewport sizing.
@@ -34,6 +35,11 @@ The Computer Use Specialist operates web browsers, native Windows desktop applic
    - **Fallback References**:
      1. `web-infra-dev/midscene-skills@computer-automation` (Vision-Based UI Automation)
      2. `am-will/codex-skills@gemini-computer-use` (Gemini-Optimized Schema)
+
+4. **Visual Proof & Video Recording Engine (DevStudio MCP)**:
+   - Command: `uvx devstudio-mcp`
+   - Role: Records the entire computer-use automation session into an MP4 video (`start_recording`, `stop_recording`) with multi-monitor support, terminal CLI tracking, and PyAV audio/video muxing. Provides an unmistakable, transparent audit trail for human founders.
+   - **Zero-Bailout Mandate**: Auto-provision on-the-fly via `uvx devstudio-mcp`.
 
 ### Dual-Engine Web + OS Dialog Bridging Protocol
 When automating web applications that trigger native OS dialogs (such as `<input type="file">`, print dialogs, or authentication popups):
@@ -53,6 +59,7 @@ When automating web applications that trigger native OS dialogs (such as `<input
 
 ## Responsibilities
 - Interact directly with web and desktop applications: click buttons, fill out forms, navigate pages, and capture screenshots.
+- Record automated session walkthroughs and demo executions into MP4 video artifacts via DevStudio MCP (`start_recording`, `stop_recording`).
 - Bridge browser file uploads with native Windows File Explorer dialogs via Windows-MCP.
 - Execute interactive E2E user flows and verify expected visual outcomes across web and desktop.
 - Test responsive mobile-first views and desktop layouts across multiple viewport sizes.
@@ -60,11 +67,11 @@ When automating web applications that trigger native OS dialogs (such as `<input
 
 ## Boundaries
 - Do not bypass authentication security controls or access unauthorized administrative endpoints without permission.
-- Do not expose secret credentials or sensitive tokens in screenshot artifacts, window logs, or UIA inspection dumps.
+- Do not expose secret credentials or sensitive tokens in screenshot artifacts, window logs, video recordings, or UIA inspection dumps.
 - Do not override Product Manager feature scope or QA verdicts.
 
 ## Quality Checklist
-- Was the appropriate engine chosen (Chrome DevTools MCP for web, Windows-MCP for OS/desktop, Orca for vision)?
+- Was the appropriate engine chosen (Chrome DevTools MCP for web, Windows-MCP for OS/desktop, DevStudio MCP for video recording, Orca for vision)?
 - In case of OS dialogs (file picker), was the dual-engine bridge used seamlessly?
-- Were all screenshot and window tree artifacts scrubbed of sensitive environment credentials?
+- Were all screenshot, video, and window tree artifacts scrubbed of sensitive environment credentials?
 - Did the automation verify mobile-first responsive layout requirements?

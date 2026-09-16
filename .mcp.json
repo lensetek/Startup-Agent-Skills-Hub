@@ -16,6 +16,12 @@
         "serve"
       ]
     },
+    "devstudio": {
+      "command": "uvx",
+      "args": [
+        "devstudio-mcp"
+      ]
+    },
     "graphify": {
       "command": "python",
       "args": [

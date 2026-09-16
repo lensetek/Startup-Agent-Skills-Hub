@@ -1,10 +1,36 @@
-# What's New in Startup Agents v1.5.0 🚀
+# What's New in Startup Agents v1.6.0 🚀
 
 *Read this in other languages: [English](#english), [Bahasa Indonesia](#bahasa-indonesia).*
 
 ---
 
 ## Bahasa Indonesia
+
+Kami senang mengumumkan rilis versi **v1.6.0** yang menghadirkan **Chrome DevTools MCP Zero-Bailout Auto-Provisioning**, **Live E2E Auto QA Mode (Audit Error, Proses Bisnis & Kontras Warna UI/UX)**, serta Skill Baru Ke-26 **`app-tutorial-manual-generator`**!
+
+### 🌟 Fitur Baru di v1.6.0
+
+#### 🌐 1. Chrome DevTools MCP Zero-Bailout Auto-Provisioning
+Integrasi engine browser resmi Google ([ChromeDevTools/chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp)) dengan protokol *Zero-Bailout*:
+- **Auto-Download On-The-Fly**: Agen dilarang menolak atau beralasan *"chrome-devtools tidak terinstall"*. Jika server MCP belum aktif, sistem secara mandiri langsung mengunduh dan menjalankannya melalui `npx -y chrome-devtools-mcp@latest`.
+- **Pre-Cache & Sync CLI**: Penambahan perintah `node bin/cli.js setup-browser-mcp` untuk memvalidasi dan mem-precache MCP server ke lokal.
+- **Konfigurasi MCP Otomatis**: Memperbarui `.mcp.json` dan menyediakan template `.mcp/chrome_devtools_config.json` agar siap dipakai oleh Claude Code, Cursor, Windsurf, dan Antigravity IDE.
+
+#### 🧪 2. Live E2E Auto QA Mode (Uji Nyata & Kontras Warna)
+Pada agen [developer-qa-reviewer](skills/developer-qa-reviewer/SKILL.md), mode QA ditingkatkan menjadi pengujian langsung pada aplikasi yang sedang berjalan:
+- **Audit Console & Network Error**: Menangkap unhandled JavaScript errors, Promise rejections, dan status HTTP 4xx/5xx secara dinamis.
+- **Simulasi Alur Proses Bisnis**: Mensimulasikan klik tombol, pengisian formulir data, dan alur transaksi secara interaktif.
+- **Audit Kontras Warna Text & Background**: Mengevaluasi computed styles (`getComputedStyle`) untuk memastikan rasio kontras teks terhadap latar belakang memenuhi standar WCAG AA (minimal 4.5:1), mencegah teks tidak tampak atau sulit dibaca pada Light maupun Dark mode.
+- **Verifikasi Mobile-First**: Otomatis mengubah viewport ke 360px dan mengambil screenshot untuk memastikan layout tidak terpotong.
+
+#### 📖 3. Skill Agen Ke-26: App Tutorial & Manual Generator (`app-tutorial-manual-generator`)
+Agen spesialis ke-26 yang bertugas menelusuri aplikasi nyata menggunakan Chrome DevTools MCP dan menyusun manual panduan pengguna:
+- **Live Step Screenshot**: Menangkap screenshot beresolusi tinggi pada setiap tahapan alur penggunaan aplikasi.
+- **Multi-Format Export**: Menghasilkan dokumen manual lengkap dalam format **HTML+CSS responsif**, **PDF siap cetak**, dan **DOCX (Microsoft Word)** yang rapi dengan tabel dan callout navigasi.
+
+---
+
+## Rilis v1.5.0
 
 Kami senang mengumumkan rilis versi **v1.5.0** yang menghadirkan **Graphify AST Knowledge Graph & MCP Harness**, **Framework Eksekusi Pararel Multi-Agent**, serta **Two-Tier Resilient Fallback Protocol**!
 

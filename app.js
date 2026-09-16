@@ -1,4 +1,4 @@
-// 25 Specialized Agent Skills Database
+// 26 Specialized Agent Skills Database
 const SKILLS_DATA = [
     {
         id: "startup-workflow-orchestrator",
@@ -224,6 +224,15 @@ const SKILLS_DATA = [
         category: "development",
         responsibility: "Parses codebases (36+ languages via tree-sitter AST) into queryable Knowledge Graphs (graph.json, GRAPH_REPORT.md, graph.html) & MCP Server for low-token structural queries and parallel multi-agent synchronization.",
         boundaries: "No direct modification of business logic code; focus strictly on AST parsing, structural traversal, dependency cycle audits, and MCP tools."
+    },
+    {
+        id: "app-tutorial-manual-generator",
+        name: "app-tutorial-manual-generator",
+        role: "App Tutorial & Manual Generator",
+        icon: "fa-book-open-reader",
+        category: "marketing",
+        responsibility: "Navigates running apps via Chrome DevTools MCP to capture live step screenshots and automatically generate user manuals and tutorials in HTML+CSS, PDF, and DOCX formats.",
+        boundaries: "No source code changes, no exposure of secret credentials in captured screenshots, no alteration of product scopes."
     }
 ];
 

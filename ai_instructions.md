@@ -30,3 +30,11 @@ This file serves as the global instructions for all AI coding assistants, models
 - **Parallel Multi-Agent Execution**: When `developer-scrum-master` or `startup-workflow-orchestrator` selects Parallel Multi-Agent Execution mode, all concurrent subagents must lock interface contracts in `.agents/session_memory.md` before writing code to prevent merge conflicts and naming mismatches.
 - **Cycle Audit Gate**: Run `detect_cycles()` via `devops-git-guard` before approving branch merges or code pushes.
 
+## 7. Chrome DevTools MCP & Zero-Bailout Auto-Provisioning
+- **Zero-Bailout Mandate**: Never stop, reject, or complain that "chrome-devtools is not installed" when a task requires browser interaction, UI auditing, or screenshot capture.
+- **On-the-Fly Provisioning**: If Chrome DevTools MCP is not active, agents must autonomously run or trigger `npx -y chrome-devtools-mcp@latest` (or `node bin/cli.js setup-browser-mcp`), ensuring zero manual friction for the user.
+- **Live E2E Auto QA & Real App Testing**: When reviewing frontend or fullstack code, `developer-qa-reviewer` must actively test the real running application, auditing runtime console errors, network failures, and interactive business logic.
+- **UI/UX Text & Background Contrast Rule**: Always verify that computed text colors contrast clearly with background elements (WCAG AA ratio 4.5:1 minimum) in both light and dark themes to ensure text is never invisible or unreadable.
+- **Live User Manual Generation**: Use `app-tutorial-manual-generator` to capture live application flows and generate multi-format documentation (HTML+CSS, PDF, DOCX).
+
+

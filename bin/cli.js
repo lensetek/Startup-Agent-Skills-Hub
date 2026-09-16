@@ -57,11 +57,13 @@ Usage:
   node bin/cli.js install-plugin --target codex
   node bin/cli.js install-plugin --target claude
   node bin/cli.js install-plugin --path <custom-folder>
+  node bin/cli.js setup-browser-mcp
 
 Commands:
-  init            Copy the bundled skills folder into the current directory.
-  install-plugin  Install the skills to a supported agent or custom folder.
-  --version       Print the package version.
+  init               Copy the bundled skills folder into the current directory.
+  install-plugin     Install the skills to a supported agent or custom folder.
+  setup-browser-mcp  Verify and pre-cache Chrome DevTools MCP (npx -y chrome-devtools-mcp@latest).
+  --version          Print the package version.
 
 Targets:
   antigravity     ~/.gemini/config/plugins/startup-agent-skills
@@ -176,6 +178,20 @@ if (command === 'init') {
           description: 'Startup Agent Skills Hub for Antigravity',
           version: packageJson.version
         });
+
+        // Sync .mcp.json for agent MCP discovery
+        writeJson(path.join(installTarget.dir, '.mcp.json'), {
+          mcpServers: {
+            'chrome-devtools': {
+              command: 'npx',
+              args: ['-y', 'chrome-devtools-mcp@latest']
+            },
+            graphify: {
+              command: 'python',
+              args: ['-m', 'graphify.serve', 'graphify-out/graph.json']
+            }
+          }
+        });
       }
 
       if (installTarget.readme) {
@@ -188,6 +204,33 @@ if (command === 'init') {
       console.error('Gagal menginstal plugin:', err.message);
       process.exitCode = 1;
     }
+  }
+} else if (command === 'setup-browser-mcp') {
+  console.log('Memverifikasi dan menyiapkan Chrome DevTools MCP...');
+  const { execSync } = require('child_process');
+  try {
+    const rootMcpPath = path.join(__dirname, '..', '.mcp.json');
+    const mcpConfig = {
+      mcpServers: {
+        'chrome-devtools': {
+          command: 'npx',
+          args: ['-y', 'chrome-devtools-mcp@latest']
+        },
+        graphify: {
+          command: 'python',
+          args: ['-m', 'graphify.serve', 'graphify-out/graph.json']
+        }
+      }
+    };
+    fs.writeFileSync(rootMcpPath, JSON.stringify(mcpConfig, null, 2));
+    console.log('✓ Konfigurasi .mcp.json berhasil disinkronkan.');
+
+    console.log('Mengunduh/memverifikasi cache chrome-devtools-mcp@latest via npx...');
+    const result = execSync('npx -y chrome-devtools-mcp@latest --version', { stdio: 'pipe' }).toString().trim();
+    console.log(`✓ Chrome DevTools MCP siap digunakan (versi: ${result || 'latest'}).`);
+  } catch (err) {
+    console.error('Gagal menyiapkan Chrome DevTools MCP:', err.message);
+    process.exitCode = 1;
   }
 } else if (command === '--version' || command === '-v') {
   console.log(packageJson.version);

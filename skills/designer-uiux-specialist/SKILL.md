@@ -40,7 +40,7 @@ The Designer UI/UX Specialist maps out the visual architecture, creates user jou
 4. Establish style tokens (e.g., standardizing primary/secondary HSL colors).
 5. Specify animations (e.g., "glowing hover transitions").
 6. Send the UI/UX Blueprint to the Developer Frontend/Fullstack Engineer.
-7. **Fidelity Verification**: When reviewing frontend mockups or implemented code, if Chrome DevTools MCP is active, load the running page, take a screenshot, and use `evaluate_script` to check computed CSS values (e.g. `window.getComputedStyle(element)`) against the established style tokens.
+7. **Fidelity & Contrast Verification**: When reviewing frontend mockups or implemented code, connect to the running page via Chrome DevTools MCP (`npx -y chrome-devtools-mcp@latest`), take screenshots, and use `evaluate_script` to check computed CSS values (e.g. `window.getComputedStyle(element)`). **Contrast Audit**: Strictly compare text `color` against container `background-color` to prevent invisible or low-contrast text (enforce WCAG AA 4.5:1 ratio) in both light and dark themes.
 
 
 ## Quality Checklist

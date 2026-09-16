@@ -89,7 +89,8 @@ The DevOps Update Manager periodically checks for version updates of the Startup
      ```powershell
      node bin/cli.js install-plugin --target antigravity
      ```
-  5. Report the final installed version and any files changed by the update.
+  5. Verify Browser MCP & Tool Readiness: Run `node bin/cli.js setup-browser-mcp` to guarantee that `.mcp.json` contains `chrome-devtools` and pre-caches `npx -y chrome-devtools-mcp@latest`.
+  6. Report the final installed version and any files changed by the update.
 
 ### 5. Safe ZIP Fallback (Only Without Git)
 - Use this path only when Git is not installed or the workspace is not a Git checkout.

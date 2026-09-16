@@ -16,13 +16,15 @@ fallback_references:
 The Computer Use Specialist operates web browsers, GUI desktop applications, and web interfaces to perform interactive end-to-end testing, visual UI/UX verification, user journey simulation, and automated browser tasks.
 
 ## Primary Skill & Fallback Strategy
-- **Primary Skill**: `stablyai/orca@computer-use`
+- **Browser Automation Engines**:
+  1. **Chrome DevTools MCP (Official Native Browser Engine)**: `npx -y chrome-devtools-mcp@latest`. **Zero-Bailout Rule**: Never report "chrome-devtools is not installed"; auto-provision and execute immediately on-the-fly.
+  2. **Primary GUI Skill**: `stablyai/orca@computer-use`
 - **Fallback References & Auto-Recovery**:
   1. `web-infra-dev/midscene-skills@computer-automation` (Vision-Based UI Automation)
   2. `am-will/codex-skills@gemini-computer-use` (Gemini-Optimized Schema)
 
-### Auto-Recovery Protocol
-1. Execute computer automation tasks using `stablyai/orca@computer-use` first.
+### Auto-Recovery & Provisioning Protocol
+1. For web browser tasks, execute via **Chrome DevTools MCP** or `stablyai/orca@computer-use`. If Chrome DevTools MCP is not yet active, auto-run `npx -y chrome-devtools-mcp@latest` immediately.
 2. If execution fails or stalls due to:
    - Unresponsive or hidden UI elements
    - Permission errors or missing browser capabilities

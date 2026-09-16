@@ -6,18 +6,18 @@
 
 ## Bahasa Indonesia
 
-### 🚀 Apa yang Baru di v1.5.0
-- **Graphify AST Knowledge Graph & MCP Harness**: Skill agen ke-25 (`graphify-codebase-architect`) berbasis tree-sitter AST parser untuk memetakan codebase menjadi Knowledge Graph (`graph.json`, `GRAPH_REPORT.md`, `graph.html`) dan MCP Server (`graphifyy[mcp]`) untuk kueri struktur ber-token rendah.
-- **Parallel Multi-Agent Execution Framework**: Opsi eksekusi sprint pararel terintegrasi (dengan *Contract-First Lock* di `.agents/session_memory.md`) pada Scrum Master dan Workflow Orchestrator.
-- **Two-Tier Resilient Fallback Protocol**: Jaminan ketersediaan alur kerja 100%. Jika Graphify/Python tidak tersedia, semua agen otomatis kembali menggunakan tools native (`git diff`, `grep_search`) tanpa error.
-- **MCP Configuration (`.mcp/graphify_config.json` & `.mcp.json`)**: Dukungan konfigurasi MCP untuk koneksi instan di IDE/CLI berbasis MCP (Cursor, Windsurf, Claude Code, Antigravity IDE).
+### 🚀 Apa yang Baru di v1.6.0
+- **Chrome DevTools MCP Zero-Bailout Auto-Provisioning**: Integrasi browser engine resmi Google `chrome-devtools-mcp` via `npx -y` yang langsung diunduh otomatis tanpa manual setup atau pesan error "tidak terinstall".
+- **Live E2E Auto QA Mode**: Evaluasi dinamis aplikasi nyata yang sedang berjalan (console error, network failures, simulasi alur bisnis) serta **Audit Kontras Warna Text-Background** (WCAG AA) untuk mencegah teks hilang/tidak terbaca.
+- **Skill Agen Ke-26 (`app-tutorial-manual-generator`)**: Pembuat manual, SOP, dan tutorial interaktif langkah-demi-langkah dengan screenshot aplikasi nyata via Chrome DevTools MCP, siap diekspor ke **HTML+CSS responsif**, **PDF**, dan **DOCX**.
+- **Auto-Updater MCP Sync**: Penambahan command `setup-browser-mcp` di `bin/cli.js` dan sinkronisasi otomatis `.mcp.json` saat update plugin dijalankan.
 - Selengkapnya baca di [WHATS_NEW.md](WHATS_NEW.md).
 
 ---
 
 Repositori ini adalah kumpulan **Skills** modular untuk **Startup Agent** — sebuah tim virtual agen AI yang dirancang untuk mengotomatiskan seluruh siklus hidup startup digital, mulai dari perencanaan strategi bisnis, desain produk, pengembangan perangkat lunak, hingga peluncuran dan pemasaran.
 
-### Kumpulan Skill yang Tersedia (25 Skills)
+### Kumpulan Skill yang Tersedia (26 Skills)
 
 #### 🏢 Divisi Strategi & Produk (Product & Strategy)
 1.  **startup-workflow-orchestrator** — Menentukan urutan agent, handoff, eksekusi pararel multi-agent, dan security gate dari strategi sampai rilis.
@@ -25,7 +25,7 @@ Repositori ini adalah kumpulan **Skills** modular untuk **Startup Agent** — se
 3.  **market-analyst** — Analisis kompetitor, matriks harga, celah pasar, dan laporan peluang.
 4.  **product-manager** — Manajemen fitur produk dengan prioritasi MoSCoW dan lingkup MVP.
 5.  **prd-generator** — Menghasilkan dokumen Product Requirements Document (PRD) final.
-6.  **designer-uiux-specialist** — Merancang wireframe, desain antarmuka, dan panduan UI/UX.
+6.  **designer-uiux-specialist** — Merancang wireframe, desain antarmuka, audit kontras warna, dan panduan UI/UX.
 7.  **ops-growth-analytics** — Menyusun tracking events, memantau metrik operasional (CAC/LTV/churn), analisa A/B testing, dan merancang growth loops.
 8.  **obsidian-knowledge-architect** — Menyusun dan menginterkoneksikan output seluruh agen ke dalam struktur Obsidian Vault (Dataview YAML, backlinks, Canvas flows, Graphify AST graphs).
 
@@ -36,21 +36,22 @@ Repositori ini adalah kumpulan **Skills** modular untuk **Startup Agent** — se
 12. **developer-fullstack-engineer** — Pengembangan end-to-end (frontend + backend).
 13. **developer-mobile-engineer** — Pengembangan aplikasi mobile.
 14. **developer-database-specialist** — Desain skema database, query, dan optimasi.
-15. **developer-qa-reviewer** — Pengujian kualitas kode, scanning API key di client-side.
-16. **computer-use** — Automasi GUI & browser menggunakan `stablyai/orca@computer-use` dengan mekanisme Fallback References & Auto-Recovery (`midscene-skills` / `gemini-computer-use`).
+15. **developer-qa-reviewer** — Pengujian kualitas kode, Live E2E Auto QA (Chrome DevTools MCP), audit kontras warna, dan scanning API key di client-side.
+16. **computer-use** — Automasi GUI & browser menggunakan Chrome DevTools MCP & `stablyai/orca@computer-use` dengan mekanisme Fallback References & Auto-Recovery (`midscene-skills` / `gemini-computer-use`).
 17. **graphify-codebase-architect** — Parsing codebase (36+ bahasa via tree-sitter AST) menjadi Knowledge Graph & MCP Server untuk kueri terstruktur dan sinkronisasi agen pararel.
 
 #### 🚀 Divisi DevOps & Keuangan (DevOps & Finance)
-15. **devops-git-guard** — Audit keamanan pre-push: cek credential, validasi `.gitignore`, dan pembaruan dokumentasi.
-16. **startup-finance-planner** — Model keuangan startup: unit economics, proyeksi biaya backend & API.
-17. **devops-update-manager** — Cek update versi agent lewat Git secara default, dengan ZIP fallback aman untuk pengguna tanpa Git.
-18. **devops-infrastructure-engineer** — Konfigurasi deployment cloud hosting, pipeline CI/CD (GitHub Actions), containerization (Docker), backup data, dan monitoring uptime.
-19. **ops-legal-compliance** — Penyusunan berkas Terms of Service, Privacy Policy (kepatuhan GDPR/PDPA), compliance checklist, dan draf kontrak kesepakatan standar.
+18. **devops-git-guard** — Audit keamanan pre-push: cek credential, validasi `.gitignore`, dan pembaruan dokumentasi.
+19. **startup-finance-planner** — Model keuangan startup: unit economics, proyeksi biaya backend & API.
+20. **devops-update-manager** — Cek update versi agent lewat Git secara default, sinkronisasi MCP, dengan ZIP fallback aman untuk pengguna tanpa Git.
+21. **devops-infrastructure-engineer** — Konfigurasi deployment cloud hosting, pipeline CI/CD (GitHub Actions), containerization (Docker), backup data, dan monitoring uptime.
+22. **ops-legal-compliance** — Penyusunan berkas Terms of Service, Privacy Policy (kepatuhan GDPR/PDPA), compliance checklist, dan draf kontrak kesepakatan standar.
 
 #### 📣 Divisi Pemasaran & Operasional (Marketing & Operations)
-20. **marketing-content-planner** — Penyusunan kalender konten 30 hari dan brief peluncuran.
-21. **marketing-copywriter** — Pembuatan copywriting untuk media sosial, SEO, dan email kampanye.
-22. **ops-customer-success** — Penyusunan help center FAQ, dokumentasi panduan pengguna, rancangan support ticketing workflow, dan laporan feedback pengguna.
+23. **marketing-content-planner** — Penyusunan kalender konten 30 hari dan brief peluncuran.
+24. **marketing-copywriter** — Pembuatan copywriting untuk media sosial, SEO, dan email kampanye.
+25. **ops-customer-success** — Penyusunan help center FAQ, dokumentasi panduan pengguna, rancangan support ticketing workflow, dan laporan feedback pengguna.
+26. **app-tutorial-manual-generator** — Pembuat manual aplikasi dan tutorial interaktif langkah-demi-langkah dengan screenshot live via Chrome DevTools MCP, mengekspor ke format HTML+CSS, PDF, dan DOCX.
 
 ---
 
@@ -61,16 +62,18 @@ Repositori ini adalah kumpulan **Skills** modular untuk **Startup Agent** — se
 
 ## English
 
-### 🚀 What's New in v1.5.0
-- **Graphify AST Knowledge Graph & MCP Harness**: 25th specialized skill (`graphify-codebase-architect`) powered by tree-sitter AST parser to transform codebases into queryable Knowledge Graphs (`graph.json`, `GRAPH_REPORT.md`, `graph.html`) & MCP Server (`graphifyy[mcp]`) for low-token structural queries.
-- **Parallel Multi-Agent Execution Framework**: Integrated parallel sprint execution options (with *Contract-First Lock* in `.agents/session_memory.md`) for Scrum Master and Workflow Orchestrator.
+### 🚀 What's New in v1.6.0
+- **Chrome DevTools MCP Zero-Bailout Auto-Provisioning**: Official Google browser engine (`chrome-devtools-mcp`) integrated via `npx -y` that auto-downloads and launches immediately without manual setup or "not installed" errors.
+- **Live E2E Auto QA Mode**: Dynamic live-application testing (console errors, network traces, end-to-end business flow verification) and **UI/UX Text & Background Contrast Audit** (WCAG AA) to prevent invisible or low-contrast text in light and dark modes.
+- **26th Specialized Skill (`app-tutorial-manual-generator`)**: Generates step-by-step user manuals, onboarding guides, and SOPs with real application screenshots taken via Chrome DevTools MCP, exporting to **responsive HTML+CSS**, **PDF**, and **DOCX** formats.
+- **Auto-Updater MCP Sync**: Added `setup-browser-mcp` CLI command and automatic `.mcp.json` synchronization during plugin installations.
 - Read more in [WHATS_NEW.md](WHATS_NEW.md).
 
 ---
 
 This repository is a modular collection of **Skills** for **Startup Agents** — a virtual AI team designed to automate the entire digital startup lifecycle, from business strategy planning, product design, software development, to launch and marketing.
 
-### Available Skills (25 Skills)
+### Available Skills (26 Skills)
 
 #### 🏢 Product & Strategy Division
 1.  **startup-workflow-orchestrator** — Selects agent sequence, handoffs, parallel multi-agent execution, and security gates from strategy through release.
@@ -78,7 +81,7 @@ This repository is a modular collection of **Skills** for **Startup Agents** —
 3.  **market-analyst** — Competitor analysis, pricing matrix, market gaps, and opportunity reports.
 4.  **product-manager** — Product feature management with MoSCoW prioritization and MVP scoping.
 5.  **prd-generator** — Generates the final Product Requirements Document (PRD).
-6.  **designer-uiux-specialist** — Wireframe design, UI/UX interface, and design guidelines.
+6.  **designer-uiux-specialist** — Wireframe design, UI/UX interface, text contrast audits, and design guidelines.
 7.  **ops-growth-analytics** — Designs event-tracking plans, monitors business metrics (CAC/LTV/churn), plans A/B tests, and designs growth loops.
 8.  **obsidian-knowledge-architect** — Formats and interlinks all agent outputs into an Obsidian Vault (Dataview YAML, backlinks, Canvas flows, Graphify AST graphs).
 
@@ -89,21 +92,22 @@ This repository is a modular collection of **Skills** for **Startup Agents** —
 12. **developer-fullstack-engineer** — End-to-end development (frontend + backend).
 13. **developer-mobile-engineer** — Mobile application development.
 14. **developer-database-specialist** — Database schema design, queries, and optimization.
-15. **developer-qa-reviewer** — Code quality testing, client-side API key scanning.
-16. **computer-use** — GUI & browser automation using `stablyai/orca@computer-use` with Fallback References & Auto-Recovery (`midscene-skills` / `gemini-computer-use`).
+15. **developer-qa-reviewer** — Code quality testing, Live E2E Auto QA (Chrome DevTools MCP), text-background contrast audits, and client-side API key scanning.
+16. **computer-use** — GUI & browser automation using Chrome DevTools MCP & `stablyai/orca@computer-use` with Fallback References & Auto-Recovery (`midscene-skills` / `gemini-computer-use`).
 17. **graphify-codebase-architect** — Parses codebases (36+ languages via tree-sitter AST) into Knowledge Graphs & MCP Server for structural queries and parallel agent synchronization.
 
 #### 🚀 DevOps & Finance Division
-15. **devops-git-guard** — Pre-push security audit: credential checks, `.gitignore` validation, and documentation updates.
-16. **startup-finance-planner** — Startup financial modeling: unit economics, backend & API cost projections.
-17. **devops-update-manager** — Checks for agent updates via Git by default, with a guarded ZIP fallback for users without Git.
-18. **devops-infrastructure-engineer** — Configures cloud hosting deployment environments, CI/CD pipelines (GitHub Actions), containerization (Docker), backups, and uptime monitoring.
-19. **ops-legal-compliance** — Drafts Terms of Service, Privacy Policies (GDPR/PDPA compliance), security checklists, and standard business contracts.
+18. **devops-git-guard** — Pre-push security audit: credential checks, `.gitignore` validation, and documentation updates.
+19. **startup-finance-planner** — Startup financial modeling: unit economics, backend & API cost projections.
+20. **devops-update-manager** — Checks for agent updates via Git by default, MCP synchronization, with a guarded ZIP fallback for users without Git.
+21. **devops-infrastructure-engineer** — Configures cloud hosting deployment environments, CI/CD pipelines (GitHub Actions), containerization (Docker), backups, and uptime monitoring.
+22. **ops-legal-compliance** — Drafts Terms of Service, Privacy Policies (GDPR/PDPA compliance), security checklists, and standard business contracts.
 
 #### 📣 Marketing & Sales Division
-20. **marketing-content-planner** — 30-day content calendar and launch brief creation.
-21. **marketing-copywriter** — Social media copywriting, SEO copies, and campaign emails.
-22. **ops-customer-success** — Drafts help center FAQs and guides, designs customer support ticketing workflows, and compiles user feedback reports.
+23. **marketing-content-planner** — 30-day content calendar and launch brief creation.
+24. **marketing-copywriter** — Social media copywriting, SEO copies, and campaign emails.
+25. **ops-customer-success** — Drafts help center FAQs and guides, designs customer support ticketing workflows, and compiles user feedback reports.
+26. **app-tutorial-manual-generator** — Generates step-by-step application manuals and tutorials with live screenshots via Chrome DevTools MCP, exporting to HTML+CSS, PDF, and DOCX formats.
 
 ---
 

@@ -12,7 +12,9 @@ The Developer QA Reviewer evaluates generated code, runs testing diagnostics, sc
 - Check code files for hardcoded API keys, secrets, private URLs, or database passwords.
 - Verify linter checks and run test cases (unit/integration/E2E).
 - **Architectural Boundary Audit (Graphify Intelligence)**: If `graphify` is installed, run `graphify query` / `graphify path` to verify MVC boundary isolation (e.g., ensuring client-side views do not directly import DB/auth secrets or raw connections). If Graphify is inactive, fall back to regex scanning (`grep_search`) for forbidden import/require patterns.
-- **Live E2E Auto QA Mode (Chrome DevTools MCP & Computer Use)**: Actively launch and navigate the real running application (e.g., dev server on `localhost:3000` / `localhost:5173`). **Zero-Bailout Mandate**: Never stop with 'chrome-devtools is not installed'. If DevTools MCP is not already active, immediately auto-provision and execute via `npx -y chrome-devtools-mcp@latest`.
+-- **Live E2E Auto QA Mode (Chrome DevTools MCP & Windows-MCP)**: Actively launch and navigate the real running application (e.g., dev server on `localhost:3000` / `localhost:5173` or desktop executables). **Zero-Bailout Mandate**: Never stop with 'tool is not installed'. If DevTools MCP or Windows-MCP is not active, immediately auto-provision via `npx -y chrome-devtools-mcp@latest` or `uv tool run windows-mcp serve`.
+- **Native File Picker & OS Dialog Bridge**: When web testing triggers OS file pickers (`<input type="file">`), print dialogs, or system authentication modals, bridge out to Windows-MCP to operate the Windows File Explorer dialog directly without hanging the test suite.
+- **Desktop Application QA (Electron / Tauri / Native)**: For non-web or desktop client targets, use Windows-MCP to inspect the native accessibility tree (UIA), navigate controls, and verify desktop business flows.
 - **Business Process & Interactive Flow Simulation**: Simulate end-to-end user actions (form filling, button triggers, order checkouts, route transitions) to ensure functional logic works end-to-end.
 - **UI/UX Color Contrast & Legibility Audit**: Inspect computed CSS styles (`getComputedStyle(element)`) comparing text `color` against `background-color`. Enforce WCAG AA contrast standards (minimum 4.5:1) across both Light and Dark themes to strictly prevent invisible text.
 - **Audit Runtime Logs & Network Traces**: Check for client-side JavaScript exceptions and broken resources using browser tools (`list_console_messages` and `list_network_requests`).
@@ -32,7 +34,7 @@ The Developer QA Reviewer evaluates generated code, runs testing diagnostics, sc
 ## Inputs
 - **Generated Source Code Files** (from Developer Coder)
 - **Sprint Tickets & Acceptance Criteria** (from Scrum Master)
-- **Running Application Endpoint** (e.g. `http://localhost:3000`)
+- **Running Application Endpoint** (e.g. `http://localhost:3000` or desktop executable)
 
 ## Outputs
 - **QA Review Report**:
@@ -40,22 +42,24 @@ The Developer QA Reviewer evaluates generated code, runs testing diagnostics, sc
   2. Security Scan Verdict (Credential Check: Pass/Fail)
   3. Acceptance Criteria Match (Pass/Fail per ticket)
   4. Live Business Process Simulation Verdict (Pass/Fail)
-  5. UI/UX Color Contrast & Legibility Audit (Pass/Fail - light/dark mode text readability)
-  6. Responsive UI Check Status (with 360px mobile & desktop screenshot details)
-  7. Browser Console Error Audit (Pass/Fail/Not Run)
-  8. Network Resource Load Audit (Pass/Fail/Not Run)
-  9. Final Verdict (`Approved` / `Approved with Comments` / `Needs Revision`)
-  10. Detailed revision requests if failing
+  5. OS Dialog & Native Integration Check (Pass/Fail/Not Applicable)
+  6. UI/UX Color Contrast & Legibility Audit (Pass/Fail - light/dark mode text readability)
+  7. Responsive UI Check Status (with 360px mobile & desktop screenshot details)
+  8. Browser Console Error Audit (Pass/Fail/Not Run)
+  9. Network Resource Load Audit (Pass/Fail/Not Run)
+  10. Final Verdict (`Approved` / `Approved with Comments` / `Needs Revision`)
+  11. Detailed revision requests if failing
 
 ## Workflow
 1. Review the generated code files.
 2. Search all files for strings resembling secrets (e.g., API keys, passwords, keys).
 3. Classify any public client config and verify provider-side access controls.
 4. Validate layout CSS rules to ensure they include mobile media queries.
-5. **Live E2E Auto QA Execution (Chrome DevTools MCP)**:
-   - Ensure Chrome DevTools MCP is active (if not yet running, auto-launch via `npx -y chrome-devtools-mcp@latest`).
-   - Navigate to the running web application endpoint.
+5. **Live E2E Auto QA Execution (Chrome DevTools MCP & Windows-MCP)**:
+   - Ensure Chrome DevTools MCP and/or Windows-MCP are active (auto-launching via `npx -y chrome-devtools-mcp@latest` and `uv tool run windows-mcp serve` if required).
+   - Navigate to the running web application endpoint or launch desktop target.
    - **Business Flow**: Execute interactive user journey steps (click buttons, fill text inputs, simulate checkout/submission).
+   - **OS Dialog Handling**: If a step invokes native file upload, switch to Windows-MCP to automate the File Explorer dialog, select the test file fixture, and confirm upload.
    - **Error Audit**: Inspect `list_console_messages` and `list_network_requests` for runtime JS exceptions, unhandled Promise rejections, or 4xx/5xx HTTP errors.
    - **UI/UX Contrast & Visibility**: Evaluate computed styles on primary text, buttons, and cards in both light and dark modes. Flag any instances where text contrast falls below WCAG AA (4.5:1) causing text to blend into the background.
    - **Mobile-First Responsive Verification**: Resize viewport to 360px (`resize_page`) and desktop (1280px), capture screenshots (`take_screenshot`), and confirm no horizontal overflow or clipped components.
@@ -63,9 +67,9 @@ The Developer QA Reviewer evaluates generated code, runs testing diagnostics, sc
 7. Compile findings into a QA Review Report (include browser screenshot paths if generated).
 8. Return report to the Scrum Master and Developer Coder.
 
-
 ## Quality Checklist
 - Did you check for credential leakage?
+- Did you verify native file picker dialogs with Windows-MCP if file uploads are present?
 - Is there a clear final verdict matching one of the three standard choices?
 - Are the requested changes specific and actionable?
 

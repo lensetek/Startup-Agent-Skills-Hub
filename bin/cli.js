@@ -58,11 +58,13 @@ Usage:
   node bin/cli.js install-plugin --target claude
   node bin/cli.js install-plugin --path <custom-folder>
   node bin/cli.js setup-browser-mcp
+  node bin/cli.js setup-desktop-mcp
 
 Commands:
   init               Copy the bundled skills folder into the current directory.
   install-plugin     Install the skills to a supported agent or custom folder.
   setup-browser-mcp  Verify and pre-cache Chrome DevTools MCP (npx -y chrome-devtools-mcp@latest).
+  setup-desktop-mcp  Verify and setup Windows-MCP (CursorTouch) desktop UI automation via uv.
   --version          Print the package version.
 
 Targets:
@@ -186,6 +188,10 @@ if (command === 'init') {
               command: 'npx',
               args: ['-y', 'chrome-devtools-mcp@latest']
             },
+            'windows-mcp': {
+              command: 'uv',
+              args: ['tool', 'run', 'windows-mcp', 'serve']
+            },
             graphify: {
               command: 'python',
               args: ['-m', 'graphify.serve', 'graphify-out/graph.json']
@@ -216,6 +222,10 @@ if (command === 'init') {
           command: 'npx',
           args: ['-y', 'chrome-devtools-mcp@latest']
         },
+        'windows-mcp': {
+          command: 'uv',
+          args: ['tool', 'run', 'windows-mcp', 'serve']
+        },
         graphify: {
           command: 'python',
           args: ['-m', 'graphify.serve', 'graphify-out/graph.json']
@@ -230,6 +240,42 @@ if (command === 'init') {
     console.log(`✓ Chrome DevTools MCP siap digunakan (versi: ${result || 'latest'}).`);
   } catch (err) {
     console.error('Gagal menyiapkan Chrome DevTools MCP:', err.message);
+    process.exitCode = 1;
+  }
+} else if (command === 'setup-desktop-mcp') {
+  console.log('Memverifikasi dan menyiapkan Windows-MCP (CursorTouch) desktop UI automation via uv...');
+  const { execSync } = require('child_process');
+  try {
+    const rootMcpPath = path.join(__dirname, '..', '.mcp.json');
+    const mcpConfig = {
+      mcpServers: {
+        'chrome-devtools': {
+          command: 'npx',
+          args: ['-y', 'chrome-devtools-mcp@latest']
+        },
+        'windows-mcp': {
+          command: 'uv',
+          args: ['tool', 'run', 'windows-mcp', 'serve']
+        },
+        graphify: {
+          command: 'python',
+          args: ['-m', 'graphify.serve', 'graphify-out/graph.json']
+        }
+      }
+    };
+    fs.writeFileSync(rootMcpPath, JSON.stringify(mcpConfig, null, 2));
+    console.log('✓ Konfigurasi .mcp.json berhasil disinkronkan.');
+
+    console.log('Memeriksa uv package manager...');
+    const uvVer = execSync('uv --version', { stdio: 'pipe' }).toString().trim();
+    console.log(`✓ uv terdeteksi: ${uvVer}`);
+
+    console.log('Mengunduh/memverifikasi cache windows-mcp via uv tool...');
+    execSync('uv tool run windows-mcp --help', { stdio: 'pipe' });
+    console.log('✓ Windows-MCP (CursorTouch) siap digunakan untuk automasi desktop & OS dialog.');
+  } catch (err) {
+    console.error('Gagal menyiapkan Windows-MCP:', err.message);
+    console.error('Pastikan Python 3.12+ dan uv terpasang di sistem (https://docs.astral.sh/uv/getting-started/installation/).');
     process.exitCode = 1;
   }
 } else if (command === '--version' || command === '-v') {

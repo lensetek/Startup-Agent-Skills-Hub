@@ -1,6 +1,6 @@
 {
   "name": "startup-agent-skills-hub",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "description": "Kumpulan skill modular terstruktur untuk Startup Agent.",
   "files": [
     "skills",

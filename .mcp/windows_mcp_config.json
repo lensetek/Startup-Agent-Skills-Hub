@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json.schemastore.org/mcp-config.json",
+  "mcpServers": {
+    "windows-mcp": {
+      "command": "uv",
+      "args": [
+        "tool",
+        "run",
+        "windows-mcp",
+        "serve"
+      ],
+      "env": {
+        "PYTHONUNBUFFERED": "1"
+      },
+      "description": "Windows-MCP Server by CursorTouch for native Windows UI Automation (UIA), desktop window management, file dialog handling, and OS-level keyboard/mouse control."
+    }
+  }
+}

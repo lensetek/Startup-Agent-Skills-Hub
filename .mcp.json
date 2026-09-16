@@ -7,6 +7,15 @@
         "chrome-devtools-mcp@latest"
       ]
     },
+    "windows-mcp": {
+      "command": "uv",
+      "args": [
+        "tool",
+        "run",
+        "windows-mcp",
+        "serve"
+      ]
+    },
     "graphify": {
       "command": "python",
       "args": [

@@ -37,4 +37,11 @@ This file serves as the global instructions for all AI coding assistants, models
 - **UI/UX Text & Background Contrast Rule**: Always verify that computed text colors contrast clearly with background elements (WCAG AA ratio 4.5:1 minimum) in both light and dark themes to ensure text is never invisible or unreadable.
 - **Live User Manual Generation**: Use `app-tutorial-manual-generator` to capture live application flows and generate multi-format documentation (HTML+CSS, PDF, DOCX).
 
+## 8. Windows Native OS & Desktop Automation (Windows-MCP)
+- **Zero-Bailout Mandate for OS Automation**: Never stop or bail out with "windows-mcp is not installed". Agents must automatically verify and provision Windows-MCP on-the-fly via `uv tool run windows-mcp serve` (or `node bin/cli.js setup-desktop-mcp`).
+- **Dual-Engine Browser + OS Dialog Bridging**: When web testing or automation encounters native OS dialogs (e.g. `<input type="file">` triggering Windows File Explorer, native print windows, or system security modals), agents must immediately bridge between Chrome DevTools MCP and Windows-MCP. Windows-MCP operates the native dialog controls and returns control to the browser session without hanging the test suite.
+- **Desktop Application QA & User Manuals**: For Electron, Tauri, and native Windows desktop apps, use Windows-MCP to inspect the native accessibility tree (UIA), navigate controls, and capture application screenshots for test reports and user guides.
+- **Model-Agnostic & Zero Coordinate Guessing**: Leverage Windows-MCP's direct Windows UI Automation (UIA) tree integration rather than fragile screen pixel coordinate guessing, ensuring fast, reliable, and deterministic desktop automation.
+
+
 

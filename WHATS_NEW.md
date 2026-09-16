@@ -1,10 +1,40 @@
-# What's New in Startup Agents v1.6.0 🚀
+# What's New in Startup Agents v1.7.0 🚀
 
 *Read this in other languages: [English](#english), [Bahasa Indonesia](#bahasa-indonesia).*
 
 ---
 
 ## Bahasa Indonesia
+
+Kami senang mengumumkan rilis versi **v1.7.0** yang menghadirkan **Windows Native OS & Desktop UI Automation via Windows-MCP (`cursortouch/windows-mcp`)**, **Dual-Engine Browser + OS Dialog Bridging Protocol**, dan **Arsitektur Automasi 3-Tier**!
+
+### 🌟 Fitur Baru di v1.7.0
+
+#### 🪟 1. Windows Native OS & Desktop Automation (`windows-mcp`)
+Integrasi server MCP resmi Windows Desktop Automation ([cursortouch/windows-mcp](https://github.com/cursortouch/windows-mcp)) berbasis Python/`uv`:
+- **UI Automation (UIA) Tree Integration**: Mengakses pohon aksesibilitas Windows secara model-agnostik tanpa menebak koordinat piksel layar yang rapuh.
+- **Zero-Bailout Mandate**: Agen dilarang menolak dengan alasan *"windows-mcp tidak terinstall"*. Jika belum aktif, sistem secara mandiri memverifikasi dan menjalankannya melalui `uv tool run windows-mcp serve` (atau `node bin/cli.js setup-desktop-mcp`).
+- **Dukungan Aplikasi Desktop**: Menguji dan mengotomasi software Electron, Tauri, .NET, dan aplikasi Windows native.
+
+#### 🌉 2. Dual-Engine Web + OS Dialog Bridging Protocol
+Menyelesaikan masalah *deadlock* pada pengujian web yang membuka dialog sistem operasi:
+- Saat pengujian web memicu input file upload (`<input type="file">`), print window, atau popup otentikasi native OS, **Chrome DevTools MCP** secara mulus menyerahkan kontrol ke **Windows-MCP**.
+- **Windows-MCP** menavigasi File Explorer dialog secara native, memilih berkas *fixture*, dan menekan tombol Open.
+- Kontrol kembali otomatis ke sesi browser untuk melanjutkan verifikasi flow bisnis.
+
+#### ⚙️ 3. Arsitektur Automasi 3-Tier pada `computer-use`
+- **Tier 1 (Browser)**: Chrome DevTools MCP (`npx -y chrome-devtools-mcp@latest`)
+- **Tier 2 (OS & Desktop)**: Windows-MCP (`uv tool run windows-mcp serve`)
+- **Tier 3 (Vision GUI)**: `stablyai/orca@computer-use` dengan fallback references ke Midscene & Gemini Computer Use.
+
+#### 🛠️ 4. Peningkatan QA Reviewer, Manual Generator & Setup CLI
+- **`developer-qa-reviewer`**: Menguji aplikasi web maupun desktop native, termasuk verifikasi proses upload berkas tanpa terhenti di dialog OS.
+- **`app-tutorial-manual-generator`**: Mampu menyusun panduan instalasi wizard dan SOP software desktop ke dalam format HTML+CSS, PDF, dan DOCX.
+- **CLI Setup Command**: Jalankan `node bin/cli.js setup-desktop-mcp` untuk sinkronisasi otomatis `.mcp.json` dan mem-precache `windows-mcp` via `uv`.
+
+---
+
+## Rilis v1.6.0
 
 Kami senang mengumumkan rilis versi **v1.6.0** yang menghadirkan **Chrome DevTools MCP Zero-Bailout Auto-Provisioning**, **Live E2E Auto QA Mode (Audit Error, Proses Bisnis & Kontras Warna UI/UX)**, serta Skill Baru Ke-26 **`app-tutorial-manual-generator`**!
 
@@ -130,12 +160,44 @@ Agen sekarang dibekali memori sesi terstruktur di `.agents/session_memory.md`. S
 
 ## English
 
-We are excited to announce the release of **v1.2.0**, bringing new capabilities for dynamic visual testing and smart skill installations!
+We are excited to announce the release of **v1.7.0**, bringing **Windows Native OS & Desktop UI Automation via Windows-MCP (`cursortouch/windows-mcp`)**, **Dual-Engine Browser + OS Dialog Bridging Protocol**, and a **3-Tier Resilient Automation Architecture**!
 
-### 🌟 New Features in v1.2.0
+### 🌟 New Features in v1.7.0
 
-#### 1. 🌐 Chrome DevTools MCP Integration
-Agents can now view and interact directly with your browser using Chrome DevTools MCP. This enables:
+#### 🪟 1. Windows Native OS & Desktop Automation (`windows-mcp`)
+Official Windows Desktop Automation MCP server integration ([cursortouch/windows-mcp](https://github.com/cursortouch/windows-mcp)) powered by Python & `uv`:
+- **UI Automation (UIA) Tree Integration**: Accesses the native Windows accessibility tree model-agnostically without relying on fragile pixel coordinate guessing.
+- **Zero-Bailout Mandate**: Agents must never reject tasks with *"windows-mcp is not installed"*. The system automatically checks and provisions it on-the-fly via `uv tool run windows-mcp serve` (or `node bin/cli.js setup-desktop-mcp`).
+- **Desktop Application Support**: Seamlessly tests and automates Electron, Tauri, .NET, and native Windows software.
+
+#### 🌉 2. Dual-Engine Web + OS Dialog Bridging Protocol
+Resolves test suite deadlocks when web applications open native operating system dialogs:
+- When a web workflow triggers file uploads (`<input type="file">`), print dialogs, or system authentication modals, **Chrome DevTools MCP** seamlessly hands control to **Windows-MCP**.
+- **Windows-MCP** navigates the native File Explorer dialog, picks the target file fixture, and confirms selection.
+- Control returns instantly to the browser session to resume business process verification.
+
+#### ⚙️ 3. 3-Tier Automation Architecture in `computer-use`
+- **Tier 1 (Browser)**: Chrome DevTools MCP (`npx -y chrome-devtools-mcp@latest`)
+- **Tier 2 (OS & Desktop)**: Windows-MCP (`uv tool run windows-mcp serve`)
+- **Tier 3 (Vision GUI)**: `stablyai/orca@computer-use` with fallback references to Midscene & Gemini Computer Use.
+
+#### 🛠️ 4. Enhanced QA Reviewer, Manual Generator & CLI Setup
+- **`developer-qa-reviewer`**: Audits web and native desktop applications, handling native file picker dialogs effortlessly.
+- **`app-tutorial-manual-generator`**: Generates software installation guides and desktop application SOPs in responsive HTML+CSS, PDF, and DOCX formats.
+- **CLI Setup Command**: Run `node bin/cli.js setup-desktop-mcp` to sync `.mcp.json` and pre-cache `windows-mcp` via `uv`.
+
+---
+
+## Release v1.6.0
+
+We are excited to announce **v1.6.0** featuring **Chrome DevTools MCP Zero-Bailout Auto-Provisioning**, **Live E2E Auto QA Mode (Error Auditing, Business Flows & UI/UX Contrast)**, and the 26th Specialist Agent **`app-tutorial-manual-generator`**!
+
+### 🌟 New Features in v1.6.0
+- **Chrome DevTools MCP Auto-Provisioning**: Official Google browser engine with zero-friction on-the-fly execution via `npx -y chrome-devtools-mcp@latest`.
+- **Live E2E Auto QA**: Active runtime testing on dev servers (`localhost:3000`), catching JS exceptions, validating user journeys, auditing WCAG AA contrast (4.5:1), and mobile viewport verification.
+- **App Tutorial & Manual Generator**: Automatically records live application user flows and generates responsive HTML+CSS manuals, print-ready PDFs, and editable Word (.docx) documents.
+
+---
 - **Visual UI/UX Audits**: UI/UX agents can capture live screenshots of rendered pages and verify computed CSS (such as margin spacing, fonts, and HSL colors).
 - **QA Dynamic Testing**: QA agents can now check mobile-first responsiveness, scan for JS console errors, and trace failing network requests live.
 - **Growth & Performance Tracing**: Growth & Infra agents can test CTA clicks that trigger tracking events (Mixpanel/GA) and run Lighthouse audits (Core Web Vitals) on staging.

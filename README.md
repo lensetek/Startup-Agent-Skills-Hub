@@ -6,11 +6,12 @@
 
 ## Bahasa Indonesia
 
-### 🚀 Apa yang Baru di v1.6.0
-- **Chrome DevTools MCP Zero-Bailout Auto-Provisioning**: Integrasi browser engine resmi Google `chrome-devtools-mcp` via `npx -y` yang langsung diunduh otomatis tanpa manual setup atau pesan error "tidak terinstall".
-- **Live E2E Auto QA Mode**: Evaluasi dinamis aplikasi nyata yang sedang berjalan (console error, network failures, simulasi alur bisnis) serta **Audit Kontras Warna Text-Background** (WCAG AA) untuk mencegah teks hilang/tidak terbaca.
-- **Skill Agen Ke-26 (`app-tutorial-manual-generator`)**: Pembuat manual, SOP, dan tutorial interaktif langkah-demi-langkah dengan screenshot aplikasi nyata via Chrome DevTools MCP, siap diekspor ke **HTML+CSS responsif**, **PDF**, dan **DOCX**.
-- **Auto-Updater MCP Sync**: Penambahan command `setup-browser-mcp` di `bin/cli.js` dan sinkronisasi otomatis `.mcp.json` saat update plugin dijalankan.
+### 🚀 Apa yang Baru di v1.7.0
+- **Windows Native OS & Desktop Automation (`windows-mcp`)**: Integrasi server MCP resmi Windows Desktop Automation (`cursortouch/windows-mcp`) via `uv` yang mengakses UI Automation (UIA) tree tanpa tebak koordinat piksel.
+- **Dual-Engine Browser + OS Dialog Bridging Protocol**: Menghilangkan hambatan dialog file picker saat web testing (`<input type="file">` / print modal) dengan bridging otomatis antara Chrome DevTools MCP dan Windows-MCP.
+- **Arsitektur Automasi 3-Tier (`computer-use`)**: Tier 1 (Browser: Chrome DevTools MCP), Tier 2 (OS & Desktop: Windows-MCP), dan Tier 3 (Vision GUI: `stablyai/orca@computer-use` dengan fallback references).
+- **Desktop QA & Panduan Aplikasi**: `developer-qa-reviewer` dan `app-tutorial-manual-generator` kini mendukung pengujian serta penyusunan manual untuk aplikasi desktop native (Electron, Tauri, .NET).
+- **CLI Pre-Cache Command**: Command baru `node bin/cli.js setup-desktop-mcp` untuk memverifikasi `uv` dan mem-precache `windows-mcp`.
 - Selengkapnya baca di [WHATS_NEW.md](WHATS_NEW.md).
 
 ---
@@ -36,8 +37,8 @@ Repositori ini adalah kumpulan **Skills** modular untuk **Startup Agent** — se
 12. **developer-fullstack-engineer** — Pengembangan end-to-end (frontend + backend).
 13. **developer-mobile-engineer** — Pengembangan aplikasi mobile.
 14. **developer-database-specialist** — Desain skema database, query, dan optimasi.
-15. **developer-qa-reviewer** — Pengujian kualitas kode, Live E2E Auto QA (Chrome DevTools MCP), audit kontras warna, dan scanning API key di client-side.
-16. **computer-use** — Automasi GUI & browser menggunakan Chrome DevTools MCP & `stablyai/orca@computer-use` dengan mekanisme Fallback References & Auto-Recovery (`midscene-skills` / `gemini-computer-use`).
+15. **developer-qa-reviewer** — Pengujian kualitas kode, Live E2E Auto QA (Chrome DevTools MCP & Windows-MCP), penanganan OS file dialog, audit kontras warna, dan scanning API key.
+16. **computer-use** — Automasi 3-Tier untuk web & desktop: Chrome DevTools MCP, Windows-MCP, dan stablyai/orca@computer-use dengan mekanisme Fallback References & Auto-Recovery.
 17. **graphify-codebase-architect** — Parsing codebase (36+ bahasa via tree-sitter AST) menjadi Knowledge Graph & MCP Server untuk kueri terstruktur dan sinkronisasi agen pararel.
 
 #### 🚀 Divisi DevOps & Keuangan (DevOps & Finance)
@@ -51,7 +52,7 @@ Repositori ini adalah kumpulan **Skills** modular untuk **Startup Agent** — se
 23. **marketing-content-planner** — Penyusunan kalender konten 30 hari dan brief peluncuran.
 24. **marketing-copywriter** — Pembuatan copywriting untuk media sosial, SEO, dan email kampanye.
 25. **ops-customer-success** — Penyusunan help center FAQ, dokumentasi panduan pengguna, rancangan support ticketing workflow, dan laporan feedback pengguna.
-26. **app-tutorial-manual-generator** — Pembuat manual aplikasi dan tutorial interaktif langkah-demi-langkah dengan screenshot live via Chrome DevTools MCP, mengekspor ke format HTML+CSS, PDF, dan DOCX.
+26. **app-tutorial-manual-generator** — Pembuat manual aplikasi dan tutorial interaktif langkah-demi-langkah dengan screenshot live via Chrome DevTools MCP & Windows-MCP, mengekspor ke format HTML+CSS, PDF, dan DOCX.
 
 ---
 
@@ -62,11 +63,12 @@ Repositori ini adalah kumpulan **Skills** modular untuk **Startup Agent** — se
 
 ## English
 
-### 🚀 What's New in v1.6.0
-- **Chrome DevTools MCP Zero-Bailout Auto-Provisioning**: Official Google browser engine (`chrome-devtools-mcp`) integrated via `npx -y` that auto-downloads and launches immediately without manual setup or "not installed" errors.
-- **Live E2E Auto QA Mode**: Dynamic live-application testing (console errors, network traces, end-to-end business flow verification) and **UI/UX Text & Background Contrast Audit** (WCAG AA) to prevent invisible or low-contrast text in light and dark modes.
-- **26th Specialized Skill (`app-tutorial-manual-generator`)**: Generates step-by-step user manuals, onboarding guides, and SOPs with real application screenshots taken via Chrome DevTools MCP, exporting to **responsive HTML+CSS**, **PDF**, and **DOCX** formats.
-- **Auto-Updater MCP Sync**: Added `setup-browser-mcp` CLI command and automatic `.mcp.json` synchronization during plugin installations.
+### 🚀 What's New in v1.7.0
+- **Windows Native OS & Desktop Automation (`windows-mcp`)**: Official Windows Desktop Automation MCP server (`cursortouch/windows-mcp`) integrated via `uv`, directly accessing the UI Automation (UIA) tree without pixel guessing.
+- **Dual-Engine Browser + OS Dialog Bridging Protocol**: Eliminates file picker deadlock in web automation (`<input type="file">` / print modal) by automatically bridging between Chrome DevTools MCP and Windows-MCP.
+- **3-Tier Automation Engine Architecture (`computer-use`)**: Tier 1 (Browser: Chrome DevTools MCP), Tier 2 (OS & Desktop: Windows-MCP), and Tier 3 (Vision GUI: `stablyai/orca@computer-use` with fallback references).
+- **Desktop QA & App Tutorials**: `developer-qa-reviewer` and `app-tutorial-manual-generator` now support native Windows desktop apps (Electron, Tauri, .NET) as well as web applications.
+- **CLI Pre-Cache Command**: New `node bin/cli.js setup-desktop-mcp` command to verify `uv` and pre-cache `windows-mcp`.
 - Read more in [WHATS_NEW.md](WHATS_NEW.md).
 
 ---
@@ -92,8 +94,8 @@ This repository is a modular collection of **Skills** for **Startup Agents** —
 12. **developer-fullstack-engineer** — End-to-end development (frontend + backend).
 13. **developer-mobile-engineer** — Mobile application development.
 14. **developer-database-specialist** — Database schema design, queries, and optimization.
-15. **developer-qa-reviewer** — Code quality testing, Live E2E Auto QA (Chrome DevTools MCP), text-background contrast audits, and client-side API key scanning.
-16. **computer-use** — GUI & browser automation using Chrome DevTools MCP & `stablyai/orca@computer-use` with Fallback References & Auto-Recovery (`midscene-skills` / `gemini-computer-use`).
+15. **developer-qa-reviewer** — Code quality testing, Live E2E Auto QA (Chrome DevTools MCP & Windows-MCP), OS dialog handling, contrast audits, and API key scanning.
+16. **computer-use** — 3-Tier web & desktop automation: Chrome DevTools MCP, Windows-MCP, and stablyai/orca@computer-use with Fallback References & Auto-Recovery.
 17. **graphify-codebase-architect** — Parses codebases (36+ languages via tree-sitter AST) into Knowledge Graphs & MCP Server for structural queries and parallel agent synchronization.
 
 #### 🚀 DevOps & Finance Division
@@ -107,7 +109,7 @@ This repository is a modular collection of **Skills** for **Startup Agents** —
 23. **marketing-content-planner** — 30-day content calendar and launch brief creation.
 24. **marketing-copywriter** — Social media copywriting, SEO copies, and campaign emails.
 25. **ops-customer-success** — Drafts help center FAQs and guides, designs customer support ticketing workflows, and compiles user feedback reports.
-26. **app-tutorial-manual-generator** — Generates step-by-step application manuals and tutorials with live screenshots via Chrome DevTools MCP, exporting to HTML+CSS, PDF, and DOCX formats.
+26. **app-tutorial-manual-generator** — Generates step-by-step application manuals and tutorials with live screenshots via Chrome DevTools MCP & Windows-MCP, exporting to HTML+CSS, PDF, and DOCX formats.
 
 ---
 
